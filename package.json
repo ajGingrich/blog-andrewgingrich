@@ -2,8 +2,9 @@
   "name": "nightlife",
   "version": "0.0.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "server.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
@@ -30,7 +31,6 @@
     "serve-favicon": "^2.4.3"
   },
   "description": "Objective \r ------",
-  "main": "node server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
