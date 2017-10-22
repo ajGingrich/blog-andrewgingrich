@@ -62,7 +62,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var port = process.env.PORT || 52000;
+var port = process.env.PORT || 49152;
 app.listen(port,  function () {
     console.log('Node.js listening on port ' + port + '...');
 });
