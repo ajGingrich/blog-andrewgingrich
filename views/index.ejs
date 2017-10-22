@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <% include partials/head.ejs %>
+  <body>
+    <% include partials/nav.ejs %>
+
+    <!-- warning message -->
+    <% if (message.length > 0) { %>
+    <div class="alert alert-danger"><p><%= message %></p></div>
+    <% } %>
+
+
+    <div class="container-fluid">
+    <div class="masonry">
+        <% if (allPics) { %>
+        <% for (var i=0; i< allPics.length; i++) { %>
+          <div class="item">
+            <a href="/removePic/<%- allPics[i]._id %>" class="btn close" aria-hidden="true">&times;</a>
+            <img class="mainImage" onerror="defaultImage(this)" src="<%- allPics[i].link %>">
+            <h5><%- allPics[i].description %></h5>
+              <div>
+                  <h5 style="float: left; margin: 0"><a href="userPage/<%- allPics[i].userId%>"><%- allPics[i].username %></a></h5>
+                  <% if (user) { %>
+                    <% if (allPics[i].likes.indexOf(user._id) == -1) { %>
+                        <h5 style="float: right; margin: 0"><a href="/likePic/<%- allPics[i]._id %>"><img class="heartImage" src="/img/heartEmpty.png"></a> <%- allPics[i].likes.length %></h5>
+                    <% } else { %>
+                        <h5 style="float: right; margin: 0"><a href="/dislikePic/<%- allPics[i]._id %>"><img class="heartImage" src="/img/heartFull.ico"></a> <%- allPics[i].likes.length %></h5>
+                    <% } %>
+                  <% } else { %>
+                    <h5 style="float: right; margin: 0"><a href="/likePic/<%- allPics[i]._id %>"><img class="heartImage" src="/img/heartEmpty.png"></a> <%- allPics[i].likes.length %></h5>
+                  <% } %>
+              </div>
+          </div>
+        <% } %>
+        <% } %>
+    </div>
+    </div>
+    <% include partials/modal.ejs %>
+    <% include partials/footer.ejs %>
+  </body>
+
+</html>
