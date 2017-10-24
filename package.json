@@ -1,10 +1,18 @@
 {
-  "name": "nightlife",
-  "version": "0.0.0",
+  "name": "blog",
+  "version": "1.0.0",
   "private": true,
   "main": "node server.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "do some karma tests here",
+    "start": "babel-node server/server.js",
+    "dev": "webpack"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
   },
   "dependencies": {
     "body-parser": "^1.17.2",
@@ -16,20 +24,42 @@
     "express-flash": "0.0.2",
     "express-session": "^1.15.4",
     "font-awesome": "^4.7.0",
+    "html-webpack-plugin": "^2.30.1",
     "lodash": "^4.17.4",
     "morgan": "^1.8.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react": "^16.0.0",
+    "react-hot-loader": "^3.1.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   },
-  "description": "Objective \r ------",
-  "devDependencies": {},
+  "description": "my blog",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "jsx": "^0.9.89",
+    "jsx-loader": "^0.13.2",
+    "react-dom": "^16.0.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ajGingrich/Pinterest-Replica.git"
+    "url": "https://github.com/ajGingrich/blog-andrewgingrich#readme"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ajGingrich/Pinterest-Replica/issues"
+    "url": "https://github.com/ajGingrich/blog-andrewgingrich/issues"
   },
-  "homepage": "https://github.com/ajGingrich/Pinterest-Replica#readme"
+  "homepage": "blog.andrewgingrich.com"
 }
