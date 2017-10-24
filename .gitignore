@@ -5,5 +5,3 @@ bower_components
 .idea
 *.iml
 package-lock.json
-client/dist/
-client/index.html
