@@ -4,10 +4,12 @@
   "private": true,
   "main": "server.js",
   "scripts": {
+    "clean": "rm -rf build && mkdir build",
     "test": "do some karma/mocha tests here",
     "prod": "babel server/server.js -d client/dist",
-    "build": "webpack --config=webpack.prod.config.js",
-    "start": "npm run prod && node server/server.js",
+    "build-client": "webpack --config=webpack.prod.config.js",
+    "build-server": "babel -d ./build ./server",
+    "start": "npm run clean && npm run build-server && node build/server.js",
     "serve": "babel-node server/server.js",
     "dev": "webpack"
   },
