@@ -11,7 +11,8 @@ const routes = require('./routes/index');
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
-// console.log(app.get('env'));
+console.log(app.get('env'));
+console.log(isDevelopment);
 
 if (isDevelopment) {
     //logger with morgan
