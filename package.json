@@ -9,7 +9,7 @@
     "prod": "babel server/server.js -d client/dist",
     "build-client": "webpack --config=webpack.prod.config.js",
     "build-server": "babel -d ./build ./server",
-    "start": "npm run clean && npm run build-server && node build/server.js",
+    "start": "export NODE_ENV=production npm run clean && npm run build-server && node build/server.js",
     "serve": "babel-node server/server.js",
     "dev": "webpack"
   },
