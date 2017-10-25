@@ -5,7 +5,10 @@ import fs from 'fs';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import webpack from 'webpack';
 
+const config = require('../webpack.config');
+const compiler = webpack(config);
 const routes = require('./routes/index');
 
 const app = express();
@@ -13,8 +16,14 @@ const app = express();
 // view engine setup
 app.set('view engine', 'html');
 app.engine('html', function (path, options, callbacks) {
-    fs.readFile(path, 'utf-8', callbck)
+    fs.readFile(path, 'utf-8', callback)
 });
+
+//set up webpack middleware
+app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true, publicPath: config.output.publicPath
+}));
+app.use(require('webpack-hot-middleware')(compiler));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

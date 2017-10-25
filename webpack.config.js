@@ -4,7 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: './client/index.js',
+    entry: [
+        'react-hot-loader/patch',
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+        './client/index.js'
+    ],
     output: {
         path: path.join(__dirname, 'client/dist'),
         filename: 'bundle.js'
@@ -23,6 +27,7 @@ module.exports = {
         new ExtractTextPlugin({
             filename: "./client/styles/style.css",
             disable: process.env.NODE_ENV === "development"
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 };
