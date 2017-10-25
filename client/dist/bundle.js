@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5868a2dc16afdd95a465"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a79d56a68a3d8f3c2686"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -2115,7 +2115,7 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'h1',
                 null,
-                'React hot loader like a boss'
+                'new'
             );
         }
     }]);

@@ -11,6 +11,7 @@ const routes = require('./routes/index');
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
+// console.log(app.get('env'));
 
 if (isDevelopment) {
     //logger with morgan
@@ -20,6 +21,16 @@ if (isDevelopment) {
     }));
     app.use(require('webpack-hot-middleware')(compiler));
 
+    app.get("*", (req, res, next) => {
+        compiler.outputFileSystem.readFile(path.join(__dirname, '../client/index.html'), (err, result) => {
+            if (err) {
+                return next(err);
+            }
+            res.set('content-type', 'text/html');
+            res.send(result);
+            res.end();
+        });
+    });
 }
 // view engine setup
 app.set('view engine', 'html');
