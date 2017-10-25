@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 import App from './components/app';
 import './styles/style.scss'
 
-//ReactDOM.render(<App />, document.getElementById('app'));
-
 const rootEl = document.getElementById('root');
 const render = Component =>
     ReactDOM.render(
@@ -16,4 +14,10 @@ const render = Component =>
     );
 
 render(App);
-if (module.hot) module.hot.accept('./components/app', () => render(App));
+
+if(module.hot) {
+    module.hot.accept('./components/app', () => {
+        const NextApp = require('./components/app').default;
+        render(NextApp);
+    })
+}
