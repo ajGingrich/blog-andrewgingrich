@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-// var favicon = require('serve-favicon');
+import favicon from 'serve-favicon';
 import logger from 'morgan';
 import webpack from 'webpack';
 
@@ -11,6 +11,9 @@ const routes = require('./routes/index');
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
+
+//app.use(favicon(__dirname + '../client/img/favicon.ico'));
+app.use(favicon(path.join(__dirname,'../client','img','favicon.ico')));
 
 if (isDevelopment) {
     //logger with morgan
@@ -38,7 +41,7 @@ app.engine('html', function (path, options, callbacks) {
     fs.readFile(path, 'utf-8', callback)
 });
 
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname + '../client')));
 app.use('/', routes);
 
 // catch 404 and forward to error handler
