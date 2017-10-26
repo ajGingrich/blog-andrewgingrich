@@ -11,8 +11,6 @@ const routes = require('./routes/index');
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
-console.log(app.get('env'));
-console.log(isDevelopment);
 
 if (isDevelopment) {
     //logger with morgan
@@ -33,6 +31,7 @@ if (isDevelopment) {
         });
     });
 }
+
 // view engine setup
 app.set('view engine', 'html');
 app.engine('html', function (path, options, callbacks) {

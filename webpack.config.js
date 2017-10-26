@@ -21,6 +21,7 @@ module.exports = {
       ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: 'client/index.template.ejs',
             filename: '../index.html'
@@ -28,7 +29,7 @@ module.exports = {
         new ExtractTextPlugin({
             filename: "./client/styles/style.css",
             disable: process.env.NODE_ENV === "development"
-        }),
-        new webpack.HotModuleReplacementPlugin()
+        })
+
     ]
 };
