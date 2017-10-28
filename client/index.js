@@ -2,15 +2,15 @@ import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
-import './styles/style.scss'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './styles/style.scss';
 
-const rootEl = document.getElementById('root');
 const render = Component =>
     ReactDOM.render(
         <AppContainer>
             <Component />
         </AppContainer>,
-        rootEl
+        document.getElementById('root')
     );
 
 render(App);

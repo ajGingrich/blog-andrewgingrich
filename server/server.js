@@ -2,7 +2,6 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import favicon from 'serve-favicon';
-import logger from 'morgan';
 import webpack from 'webpack';
 
 const config = require('../webpack.config');

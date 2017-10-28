@@ -18,6 +18,7 @@ module.exports = {
         loaders: [
             { test: /\.jsx?$/, loaders: ['babel-loader'], exclude: /node_modules/ },
             { test: /\.s?css$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
+            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
       ]
     },
     plugins: [
