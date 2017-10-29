@@ -1,0 +1,13 @@
+.post {
+  height: 1000px;
+  margin: 20px 0 0 0;
+  background: white;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+  .post {
+    color: orange;
+  }
+}

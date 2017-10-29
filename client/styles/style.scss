@@ -1,4 +1,20 @@
-$backgroundColor: #38b7f7;
+/******* set general background color before importing *******/
+.container {
+  background: url(../img/grey-background.jpg);
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .container {
+    color: black;
+  }
+}
+
+@import "burger-menu";
+@import "navigation.scss";
+@import "intro.scss";
+@import "post.scss";
+@import "sidebar.scss";
 
 body {
   width: 100%;
@@ -8,6 +24,5 @@ body {
   background: url(../img/dark-background.jpg);
 }
 
-.container {
-  background: url(../img/grey-background.jpg);
-}
+
+

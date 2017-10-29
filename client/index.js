@@ -1,14 +1,18 @@
 import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
+import { Provider } from 'react-redux';
+import App from './components/App';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './styles/style.scss';
+import store from './store';
 
 const render = Component =>
     ReactDOM.render(
         <AppContainer>
-            <Component />
+            <Provider store={store}>
+                <Component />
+            </Provider>
         </AppContainer>,
         document.getElementById('root')
     );
@@ -16,8 +20,8 @@ const render = Component =>
 render(App);
 
 if(module.hot) {
-    module.hot.accept('./components/app', () => {
-        const NextApp = require('./components/app').default;
+    module.hot.accept('./components/App', () => {
+        const NextApp = require('./components/App').default;
         render(NextApp);
     })
 }
