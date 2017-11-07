@@ -3,6 +3,15 @@ import path from 'path';
 import fs from 'fs';
 import favicon from 'serve-favicon';
 import webpack from 'webpack';
+import Butter from 'buttercms';
+const butter = Butter('e214fff9440099a8267608a6956d4e2ea80c0a37');
+
+butter.post.list({page: 1, page_size: 10})
+    .then(function(resp) {
+        console.log(resp.data)
+    }).catch(function(resp) {
+    console.log(resp)
+});
 
 const config = require('../webpack.config');
 const compiler = webpack(config);

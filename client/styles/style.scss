@@ -4,12 +4,6 @@
   z-index: 0;
 }
 
-@media (min-width: 768px) {
-  .container {
-    color: black;
-  }
-}
-
 @import "burger-menu";
 @import "navigation.scss";
 @import "intro.scss";
