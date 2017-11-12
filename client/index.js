@@ -2,7 +2,7 @@ import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import App from './components/App';
+import Routes from './routes/routes';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './styles/style.scss';
 import store from './store';
@@ -17,11 +17,11 @@ const render = Component =>
         document.getElementById('root')
     );
 
-render(App);
+render(Routes);
 
 if(module.hot) {
-    module.hot.accept('./components/App', () => {
-        const NextApp = require('./components/App').default;
+    module.hot.accept('./routes/routes', () => {
+        const NextApp = require('./routes/routes').default;
         render(NextApp);
     })
 }
