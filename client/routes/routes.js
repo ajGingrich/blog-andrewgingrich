@@ -9,7 +9,10 @@ import App from '../components/App';
 
 const Routes = () => (
     <Router>
-        <Route path="/:filter?" component={App}/>
+        <div>
+            <Route exact path="/:page?" component={App} />
+            <Route path="/p/:page?" component={App} />
+        </div>
     </Router>
 );
 

@@ -1,10 +1,15 @@
 .sidebar {
-  background: blue;
+  background: white;
   height: 500px;
   margin: 20px 0 0 0;
   z-index: 10;
   border-radius: 5px;
   display: block;
+  color: black;
+}
+
+.postLink {
+  margin: 10px 10px 10px 10px;
 }
 
 @media (max-width: 992px) {

@@ -1,8 +1,8 @@
 import React from 'react'
-import { NavLink } from 'react-router'
+import { Link } from 'react-router-dom'
 
 const FilterLink = ({ filter, children }) => (
-    <NavLink
+    <Link
         to={filter === 'SHOW_ALL' ? '/' : `/${ filter }`}
         activeStyle={{
             textDecoration: 'none',
@@ -10,7 +10,7 @@ const FilterLink = ({ filter, children }) => (
         }}
     >
         {children}
-    </NavLink>
+    </Link>
 )
 
 export default FilterLink

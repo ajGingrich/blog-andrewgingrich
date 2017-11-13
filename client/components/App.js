@@ -1,19 +1,20 @@
 import React from 'react';
 import PostContainer from '../containers/PostContainer';
-import SidebarContainer from '../containers/SidebarContainer';
+import LinkContainer from '../containers/LinkContainer';
 import NavigationContainer from '../containers/NavigationContainer';
 //import IntroContainer from '../containers/IntroContainer';
 
-export default class App extends React.Component {
-    render() {
-        return <div>
-                <NavigationContainer/>
-                <div className="container">
-                    <div className="row">
-                        <SidebarContainer/>
-                        <PostContainer/>
-                    </div>
-                </div>
-            </div>;
-    }
-}
+const App = ({ match: { params } }) => {
+    return <div>
+        <NavigationContainer/>
+        <div className="container">
+            <div className="row">
+                <LinkContainer/>
+                <PostContainer page={params.page || 1}/>
+            </div>
+        </div>
+    </div>;
+};
+
+
+export default App

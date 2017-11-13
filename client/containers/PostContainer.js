@@ -19,7 +19,6 @@ class PostContainer extends React.Component {
 
     fetchPosts(page) {
         butter.post.list({page: page, page_size: 10}).then((resp) => {
-            console.log(resp.data)
             this.setState({
                 loaded: true,
                 resp: resp.data
@@ -29,6 +28,7 @@ class PostContainer extends React.Component {
 
     componentWillMount() {
         //let page = this.props.params.page || 1;
+        console.log(this.props.page);
         let page = 1;
 
         this.fetchPosts(page)
@@ -37,8 +37,8 @@ class PostContainer extends React.Component {
     /*componentWillReceiveProps(nextProps) {
         this.setState({loaded: false});
 
-        //let page = nextProps.params.page || 1;
-        let page = 1;
+        let page = nextProps.params.page || 1;
+        //let page = 1;
 
         this.fetchPosts(page)
     }*/
@@ -52,7 +52,7 @@ class PostContainer extends React.Component {
                     <div className="post">
                         {this.state.resp.data.map((post) => {
                             return (
-                                <div>
+                                <div key={post.slug}>
                                     <h1 className="postTitle">{post.title}</h1>
                                     <div>{post.summary}</div>
                                 </div>
