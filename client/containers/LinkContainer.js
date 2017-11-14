@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
@@ -36,7 +36,9 @@ class LinkContainer extends React.Component {
                             //console.log(post);
                             return (
                                 <div className="postLink" key={post.slug}>
-                                    <h5 className="postTitle">{post.title} - { post.published.slice(0, 10) }</h5>
+                                    <Link to={`/article/${post.slug}`}>
+                                        <h5 className="postTitle">{post.title} - { post.published.slice(0, 10) }</h5>
+                                    </Link>
                                 </div>
                             )
                         })}

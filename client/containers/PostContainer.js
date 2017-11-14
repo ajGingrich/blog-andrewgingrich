@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
 //import Link from './Link';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
@@ -27,21 +26,16 @@ class PostContainer extends React.Component {
     }
 
     componentWillMount() {
-        //let page = this.props.params.page || 1;
-        console.log(this.props.page);
-        let page = 1;
-
+        let page = this.props.page;
         this.fetchPosts(page)
     }
 
-    /*componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(nextProps) {
         this.setState({loaded: false});
 
-        let page = nextProps.params.page || 1;
-        //let page = 1;
-
+        let page = this.props.page;;
         this.fetchPosts(page)
-    }*/
+    }
 
     render() {
         if (this.state.loaded) {
@@ -53,8 +47,8 @@ class PostContainer extends React.Component {
                         {this.state.resp.data.map((post) => {
                             return (
                                 <div key={post.slug}>
-                                    <h1 className="postTitle">{post.title}</h1>
-                                    <div>{post.summary}</div>
+                                    <Link to={`/article/${post.slug}`}><h1 className="postTitle">{post.title}</h1></Link>
+                                    <Link to={`/article/${post.slug}`}><div>{post.summary}</div></Link>
                                 </div>
                             )
                         })}

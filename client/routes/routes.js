@@ -5,6 +5,7 @@ import {
     Link
 } from 'react-router-dom';
 import App from '../components/App';
+import Post from '../components/Post';
 
 
 const Routes = () => (
@@ -12,6 +13,7 @@ const Routes = () => (
         <div>
             <Route exact path="/:page?" component={App} />
             <Route path="/p/:page?" component={App} />
+            <Route path="/article/:slug?" component={Post} />
         </div>
     </Router>
 );
