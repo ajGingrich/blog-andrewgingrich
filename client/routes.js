@@ -4,8 +4,8 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import App from '../components/App';
-import Post from '../components/Post';
+import App from './components/App';
+import Post from './components/Post';
 
 
 const Routes = () => (

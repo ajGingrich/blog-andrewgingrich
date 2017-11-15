@@ -1,5 +1,4 @@
 import React from 'react';
-//import Link from './Link';
 import { Link } from 'react-router';
 import Butter from 'buttercms';
 
@@ -9,20 +8,20 @@ const butter = Butter(process.env.BUTTERCMS_KEY);
 class FullPost extends React.Component {
 
     constructor(props) {
-        super(props);
+      super(props);
 
-        this.state = {
-            loaded: false
-        }
+      this.state = {
+        loaded: false
+      }
     }
 
     fetchPost(slug) {
-        butter.post.retrieve(slug).then((resp) => {
-            this.setState({
-                loaded: true,
-                post: resp.data.data
-            })
-        });
+      butter.post.retrieve(slug).then((resp) => {
+        this.setState({
+          loaded: true,
+            post: resp.data.data
+          })
+      });
     }
 
     componentWillMount() {
@@ -30,28 +29,35 @@ class FullPost extends React.Component {
       this.fetchPost(slug);
     }
 
-    render() {
-        if (this.state.loaded) {
-            const post = this.state.post;
+    componentWillReceiveProps(nextProps) {
 
-            return (
-                <div className="container col-xs-12 col-md-9">
-                    <div className="post">
-                        <h1>{post.title}</h1>
-                        <div dangerouslySetInnerHTML={{__html: post.body}} />
-                    </div>
-                </div>
-            )
-        } else {
-            return (
-                <div className="container col-xs-12 col-md-9">
-                    <div className="post">
-                        Loading...
-                    </div>
-                </div>
-            )
-        }
+      this.setState({loaded: false});
+
+      let slug = nextProps.slug;
+      this.fetchPost(slug)
     }
+
+    render() {
+      if (this.state.loaded) {
+        const post = this.state.post;
+
+        return (
+          <div className="container col-xs-12 col-md-9">
+            <div className="post">
+              <h1>{post.title}</h1>
+              <div dangerouslySetInnerHTML={{__html: post.body}} /></div>
+            </div>
+        )
+        } else {
+          return (
+            <div className="container col-xs-12 col-md-9">
+              <div className="post">
+                  Loading...
+                </div>
+              </div>
+          )
+        }
+      }
 }
 
 export default FullPost

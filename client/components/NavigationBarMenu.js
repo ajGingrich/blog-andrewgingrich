@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class NavigationBarMenu extends React.Component {
     showSettings (event) {
@@ -9,7 +10,7 @@ export default class NavigationBarMenu extends React.Component {
     render () {
         return (
             <div>
-                <p>AJG</p>
+                <Link to={`/`}><p>AJG</p></Link>
                 <a id="about" className="menu-item" href="https://andrewgingrich.com/">About Me</a>
                 <a id="home" className="menu-item" href="/">Login</a>
                 <a id="contact" className="menu-item" href="/contact">Tags</a>
