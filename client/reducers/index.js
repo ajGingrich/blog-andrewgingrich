@@ -1,12 +1,11 @@
-//this combines all the reducers
-
 import { combineReducers } from 'redux';
 import { reducer as burgerMenu } from 'redux-burger-menu';
+import { responsiveStateReducer } from 'redux-responsive';
 
 const reducer = combineReducers({
-        burgerMenu
+        burgerMenu,
+        browser: responsiveStateReducer,
     }
 );
 
 export default reducer;
-

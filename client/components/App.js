@@ -2,7 +2,6 @@ import React from 'react';
 import PostContainer from '../containers/PostContainer';
 import LinkContainer from '../containers/LinkContainer';
 import NavigationContainer from '../containers/NavigationContainer';
-//import IntroContainer from '../containers/IntroContainer';
 
 const App = ({ match: { params } }) => {
     return <div>
@@ -15,6 +14,5 @@ const App = ({ match: { params } }) => {
         </div>
     </div>;
 };
-
 
 export default App
