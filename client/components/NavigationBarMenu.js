@@ -21,7 +21,7 @@ class NavigationBarMenu extends React.Component {
 
   render () {
     const { browser } = this.props;
-    if (browser.lessThan.medium) {
+    if (browser.lessThan.small) {
       return (
         <div>
           <Link to={`/`}><p>AJG</p></Link>
