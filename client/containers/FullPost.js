@@ -42,7 +42,7 @@ class FullPost extends React.Component {
         const post = this.state.post;
 
         return (
-          <div className="container col-xs-12 col-md-9">
+          <div className="col-xs-12 col-md-9">
             <div className="post">
               <h1>{post.title}</h1>
               <div dangerouslySetInnerHTML={{__html: post.body}} /></div>
@@ -50,7 +50,7 @@ class FullPost extends React.Component {
         )
         } else {
           return (
-            <div className="container col-xs-12 col-md-9">
+            <div className="col-xs-12 col-md-9">
               <div className="post">
                   Loading...
                 </div>

@@ -1,16 +1,16 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: fixed;
+  position: relative;
   font-size: 12px;
-  width: 6em;
-  height: 4em;
+  width: 36px;
+  height: 24px;
   right: 36px;
   top: 36px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: white;
 }
 
 /* Position and sizing of clickable cross button */

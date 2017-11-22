@@ -30,7 +30,7 @@ class LinkContainer extends React.Component {
     render() {
         if (this.state.loaded) {
             return (
-                <div className="container col-md-3">
+                <div className="col-md-3">
                     <div className="sidebar">
                         {this.state.resp.data.map((post) => {
                             //console.log(post);
@@ -47,7 +47,7 @@ class LinkContainer extends React.Component {
             )
         } else {
             return (
-                <div className="container col-md-3">
+                <div className="col-md-3">
                     <div className="sidebar">
                         Loading...
                     </div>

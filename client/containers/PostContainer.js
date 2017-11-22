@@ -42,7 +42,7 @@ class PostContainer extends React.Component {
             const { next_page, previous_page } = this.state.resp.meta;
 
             return (
-                <div className="container col-xs-12 col-md-9">
+                <div className="col-xs-12 col-md-9">
                     <div className="post">
                         {this.state.resp.data.map((post) => {
                             return (
@@ -63,7 +63,7 @@ class PostContainer extends React.Component {
             )
         } else {
             return (
-                <div className="container col-xs-12 col-md-9">
+                <div className="col-xs-12 col-md-9">
                     <div className="post">
                         Loading...
                     </div>

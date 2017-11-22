@@ -1,11 +1,11 @@
 import React from 'react';
 import PostContainer from '../containers/PostContainer';
 import LinkContainer from '../containers/LinkContainer';
-import NavigationContainer from '../containers/NavigationContainer';
+import Navigation from '../containers/Navigation';
 
 const App = ({ match: { params } }) => {
     return <div>
-        <NavigationContainer/>
+        <Navigation />
         <div className="container">
             <div className="row">
                 <LinkContainer/>

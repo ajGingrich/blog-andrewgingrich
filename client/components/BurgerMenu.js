@@ -9,7 +9,6 @@ class Hamburger extends React.Component {
     event.preventDefault();
   }
 
-    // include sidebar in this hamburger menu on mobile//include it no matter what
   render () {
     return (
       <Menu>
