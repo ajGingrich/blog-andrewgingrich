@@ -16,7 +16,6 @@ class Hamburger extends React.Component {
         <a id="home" className="menu-item" href="/">Login</a>
         <a id="contact" className="menu-item" href="/contact">Tags</a>
         <a onClick={ this.showSettings } className="menu-item--small" href="">Search</a>
-        <LinkContainer />
       </Menu>
     );
   }

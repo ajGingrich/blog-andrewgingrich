@@ -4,21 +4,18 @@ import { connect } from 'react-redux';
 import Hamburger from '../components/BurgerMenu'
 
 const defaultBreakpoints = {
-    extraSmall: 480,
-    small: 768,
-    medium: 992,
-    large: 1200,
+  extraSmall: 480,
+  small: 768,
+  medium: 992,
+  large: 1200,
 }
 
 function browserSelector({browser}) {
-    return {browser}
+  return {browser}
 }
 
 @connect(browserSelector)
 class Navigation extends React.Component {
-  showSettings (event) {
-    event.preventDefault();
-  }
 
   render () {
     const { browser } = this.props;
@@ -26,8 +23,10 @@ class Navigation extends React.Component {
       return (
         <div className="navigation">
           <div className="container">
-            <li className="navInitials"><Link to={`/`}><p>AJG</p></Link></li>
-            <li><Hamburger /></li>
+            <ul>
+              <li className="navInitials"><Link to={`/`}><p>AJG</p></Link></li>
+              <li><Hamburger /></li>
+            </ul>
           </div>
         </div>
       )
@@ -46,7 +45,6 @@ class Navigation extends React.Component {
         </div>
       )
     }
-
   }
 }
 
