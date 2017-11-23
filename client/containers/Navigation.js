@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Hamburger from '../components/BurgerMenu'
+import { slide as Menu } from 'react-burger-menu';
 
 const defaultBreakpoints = {
   extraSmall: 480,
@@ -17,6 +17,10 @@ function browserSelector({browser}) {
 @connect(browserSelector)
 class Navigation extends React.Component {
 
+  showSettings (event) {
+    event.preventDefault();
+  }
+
   render () {
     const { browser } = this.props;
     if (browser.lessThan.medium) {
@@ -25,9 +29,14 @@ class Navigation extends React.Component {
           <div className="container">
             <ul>
               <li className="navInitials"><Link to={`/`}><p>AJG</p></Link></li>
-              <li><Hamburger /></li>
             </ul>
           </div>
+          <Menu>
+            <a id="about" className="menu-item" href="https://andrewgingrich.com/">About Me</a>
+            <a id="home" className="menu-item" href="/">Login</a>
+            <a id="contact" className="menu-item" href="/contact">Tags</a>
+            <a onClick={ this.showSettings } className="menu-item--small" href="">Search</a>
+          </Menu>
         </div>
       )
     } else {

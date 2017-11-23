@@ -1,11 +1,10 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: relative;
-  font-size: 12px;
-  width: 36px;
-  height: 24px;
-  padding: 10px 10px 0 0;
-  /*right: 36px;*/
+  position: fixed;
+  width: 24px;
+  height: 20px;
+  margin: 15px 0 0 0;
+  /*left: 36px;*/
   /*top: 36px;*/
 }
 
@@ -22,7 +21,7 @@
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+  background: white;
 }
 
 /* General sidebar styles */
@@ -30,12 +29,6 @@
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-  z-index: 500;
-}
-
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
 }
 
 /* Wrapper for item list */
@@ -47,5 +40,5 @@
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
-  z-index: 20;
+  z-index: 20 !important;
 }

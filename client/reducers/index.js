@@ -8,11 +8,10 @@ const reducer = combineReducers({
     }
 );
 
-const initialState = {
+/*const initialState = {
   burgerMenu: {
     isOpen: false
   }
-};
+};*/
 
 export default reducer;
-export default initialState;

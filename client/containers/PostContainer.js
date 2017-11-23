@@ -33,7 +33,7 @@ class PostContainer extends React.Component {
     componentWillReceiveProps(nextProps) {
         this.setState({loaded: false});
 
-        let page = this.nextProps.page;;
+        let page = nextProps.page;
         this.fetchPosts(page)
     }
 
