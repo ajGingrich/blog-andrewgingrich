@@ -27,9 +27,7 @@ class Navigation extends React.Component {
       return (
         <div className="navigation">
           <div className="container">
-            <ul>
-              <li className="navInitials"><Link to={`/`}><p>AJG</p></Link></li>
-            </ul>
+            <div className="navInitials"><Link to={`/`}><p>AJG</p></Link></div>
           </div>
           <Menu>
             <a id="about" className="menu-item" href="https://andrewgingrich.com/">About Me</a>

@@ -7,32 +7,31 @@ const butter = Butter(process.env.BUTTERCMS_KEY);
 
 class FullPost extends React.Component {
 
-    constructor(props) {
-      super(props);
+  constructor(props) {
+    super(props);
 
-      this.state = {
-        loaded: false
-      }
+    this.state = {
+      loaded: false
     }
+  }
 
-    fetchPost(slug) {
-      butter.post.retrieve(slug).then((resp) => {
-        this.setState({
-          loaded: true,
-            post: resp.data.data
-          })
-      });
-    }
+  fetchPost(slug) {
+    butter.post.retrieve(slug).then((resp) => {
+      this.setState({
+        loaded: true,
+        post: resp.data.data
+      })
+    });
+  }
 
-    componentWillMount() {
-      let slug = this.props.slug;
-      this.fetchPost(slug);
-    }
+  componentWillMount() {
+    let slug = this.props.slug;
+    this.fetchPost(slug);
+  }
 
-    componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
 
-      this.setState({loaded: false});
-
+    this.setState({loaded: false});
       let slug = nextProps.slug;
       this.fetchPost(slug)
     }
@@ -48,16 +47,16 @@ class FullPost extends React.Component {
               <div dangerouslySetInnerHTML={{__html: post.body}} /></div>
             </div>
         )
-        } else {
-          return (
-            <div className="col-xs-12 col-md-9">
-              <div className="post">
-                  Loading...
-                </div>
-              </div>
-          )
-        }
+      } else {
+        return (
+          <div className="col-xs-12 col-md-9">
+            <div className="post">
+              Loading...
+            </div>
+          </div>
+        )
       }
+  }
 }
 
 export default FullPost

@@ -1,6 +1,5 @@
 .navigation {
   margin-bottom: 0;
-  border-bottom: 1px solid white;
   text-transform: uppercase;
   background: url(../img/nav_background.jpg);
   color: white;
@@ -50,10 +49,16 @@
   z-index: 20;
 }
 
+@media (max-width: 767px) {
+  .navInitials {
+    float: left;
+    padding: 10px 0 0 5px;
+  }
+}
+
 @media (min-width: 768px) {
   .navigation {
     padding: 20px 0;
-    border-bottom: none;
     letter-spacing: 1px;
     -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
