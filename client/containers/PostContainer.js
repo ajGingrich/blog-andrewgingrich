@@ -48,7 +48,7 @@ class PostContainer extends React.Component {
                             return (
                                 <div key={post.slug}>
                                     <Link to={`/article/${post.slug}`}><h1 className="postTitle">{post.title}</h1></Link>
-                                    <Link to={`/article/${post.slug}`}><div>{post.summary}</div></Link>
+                                    <div>{post.summary}</div>
                                 </div>
                             )
                         })}

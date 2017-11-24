@@ -1,5 +1,9 @@
 .navigation {
   margin-bottom: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  /*right: 0;*/
   text-transform: uppercase;
   background: url(../img/nav_background.jpg);
   color: white;
