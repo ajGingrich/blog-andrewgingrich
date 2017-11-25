@@ -43,10 +43,10 @@ class Navigation extends React.Component {
           <div className="container">
             <ul>
               <li className="navInitials"><Link to={`/`}>AJG</Link></li>
-              <li><a id="about" className="menu-item" href="https://andrewgingrich.com/">About Me</a></li>
-              <li><a id="home" className="menu-item" href="/">Login</a></li>
-              <li><a id="contact" className="menu-item" href="/contact">Tags</a></li>
-              <li><a onClick={ this.showSettings } className="menu-item--small" href="">Search</a></li>
+                <li className="navRightItems"><a id="about" className="menu-item" href="https://andrewgingrich.com/">About Me</a></li>
+                <li className="navRightItems"><a id="home" className="menu-item" href="/">Login</a></li>
+                <li className="navRightItems"><a id="contact" className="menu-item" href="/contact">Tags</a></li>
+                <li className="navRightItems"><a onClick={ this.showSettings } className="menu-item--small" href="">Search</a></li>
             </ul>
           </div>
         </div>
