@@ -5,12 +5,12 @@ import Navigation from '../containers/Navigation';
 
 const App = ({ match: { params } }) => {
   return<div>
-      <Navigation />
-        <div className="container">
-        <div className="row">
-        <LinkContainer/>
-        <PostContainer page={params.page || 1}/>
-        </div>
+    <Navigation />
+      <div className="container">
+      <div className="row">
+      <LinkContainer/>
+      <PostContainer page={params.page || 1}/>
+      </div>
     </div>
   </div>;
 };
