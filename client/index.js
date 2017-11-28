@@ -2,27 +2,28 @@ import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import Routes from './routes';
+//import Routes from './routes';
+import App from './App'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import './styles/style.scss';
 import store from './store';
 
 const render = Component =>
-    ReactDOM.render(
-        <AppContainer>
-            <Provider store={store}>
-                <Component />
-            </Provider>
-        </AppContainer>,
-        document.getElementById('root')
-    );
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
+        <Component />
+      </Provider>
+    </AppContainer>,
+    document.getElementById('root')
+  );
 
-render(Routes);
+render(App);
 
 if(module.hot) {
-    module.hot.accept('./routes', () => {
-        const NextApp = require('./routes').default;
-        render(NextApp);
-    })
+  module.hot.accept('./App', () => {
+    const NextApp = require('./App').default;
+    render(NextApp);
+  })
 }
