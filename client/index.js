@@ -2,8 +2,7 @@ import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-//import Routes from './routes';
-import App from './App'
+import Root from './Root'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import './styles/style.scss';
@@ -19,11 +18,11 @@ const render = Component =>
     document.getElementById('root')
   );
 
-render(App);
+render(Root);
 
 if(module.hot) {
-  module.hot.accept('./App', () => {
-    const NextApp = require('./App').default;
+  module.hot.accept('./Root', () => {
+    const NextApp = require('./Root').default;
     render(NextApp);
   })
 }

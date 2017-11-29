@@ -5,8 +5,13 @@ import Navigation from '../containers/Navigation';
 
 class FullPostPage extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    console.log('im a full post')
+    const params = this.props.match.params;
+
     return (
       <div>
         <Navigation />

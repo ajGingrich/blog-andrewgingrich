@@ -3,9 +3,15 @@ import PostContainer from '../containers/PostContainer';
 import LinkContainer from '../containers/LinkContainer';
 import Navigation from '../containers/Navigation';
 
-class HomePage extends React.Component(props) {
+class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
 
   render() {
+    const params = this.props.match.params;
+
     return (
       <div>
         <Navigation />
