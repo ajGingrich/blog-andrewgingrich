@@ -33,7 +33,6 @@ class LinkContainer extends React.Component {
         <div className="col-md-3">
           <div className="sidebar">
             {this.state.resp.data.map((post) => {
-              //console.log(post);
               return (
                 <div className="postLink" key={post.slug}>
                   <Link to={`/article/${post.slug}`}>

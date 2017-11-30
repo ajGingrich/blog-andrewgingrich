@@ -15,10 +15,11 @@ a:hover {
   text-decoration: none;
 }
 
-@import "navigation.scss";
+@import "navigation";
 @import "burger-menu";
-@import "post.scss";
-@import "sidebar.scss";
+@import "post";
+@import "sidebar";
+@import "footer";
 
 body {
   width: 100%;
