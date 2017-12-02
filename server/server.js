@@ -1,15 +1,21 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
+import http from 'http';
+import https from 'https';
+import forceSSL from 'express-force-ssl';
 import favicon from 'serve-favicon';
 import webpack from 'webpack';
 
 const config = require('../webpack.config');
 const compiler = webpack(config);
 const routes = require('./routes/index');
+let sslOptions = {};
+let secureServer = '';
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
+const server = http.createServer(app);
 
 app.use(favicon(path.join(__dirname,'../client','img','favicon.ico')));
 
@@ -40,6 +46,7 @@ app.engine('html', function (path, options, callbacks) {
 });
 
 app.use(express.static(path.join(__dirname, '../client')));
+if (!isDevelopment) app.use(forceSSL);
 app.use('/', routes);
 
 // catch 404 and forward to error handler
@@ -49,18 +56,23 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-const port = process.env.PORT || 52000;
+const port = 51900;
+const securePort = 52000;
 
-app.enable('trust proxy');
-app.use (function (req, res, next) {
-  if (req.secure) {
-    // request was via https, so do no special handling
-    next();
-  } else {
-    // request was via http, so redirect to https
-    res.redirect('https://' + req.headers.host + req.url);
-  }
+server.listen(port,  function () {
+    console.log('Node.js insecure but listening on port ' + port + '...');
 });
-app.listen(port,  function () {
-    console.log('Node.js listening on port ' + port + '...');
-});
+
+if (!isDevelopment) {
+  sslOptions = {
+    key: fs.readFileSync('./keys/private.key') || null,
+    cert: fs.readFileSync('./keys/cert.crt') || null,
+    ca: fs.readFileSync('./keys/intermediate.crt') || null
+  };
+  secureServer = https.createServer(sslOptions, app);
+  app.use(forceSSL);
+  secureServer.listen(securePort,  function () {
+    console.log('Node.js listening securely on port ' + port + '...');
+  });
+}
+
