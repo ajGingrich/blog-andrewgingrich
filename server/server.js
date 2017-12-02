@@ -59,16 +59,14 @@ app.use(function(req, res, next) {
 const port = 51900;
 const securePort = 52000;
 
-server.listen(port,  function () {
+if (isDevelopment) {
+  server.listen(port,  function () {
     console.log('Node.js insecure but listening on port ' + port + '...');
-});
-
-console.log('testy');
-
-if (!isDevelopment) {
+  });
+} else {
   console.log('im not in development');
   sslOptions = {
-    key: fs.readFileSync('./keys/private.key') || null,
+    key: fs.readFileSync('../ssl/keys/private.key') || null,
     cert: fs.readFileSync('./keys/cert.crt') || null,
     ca: fs.readFileSync('./keys/intermediate.crt') || null
   };
