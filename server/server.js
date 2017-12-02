@@ -59,8 +59,8 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-const port = 52000;
-const securePort = 53000;
+const port = 51000;
+const securePort = 52000;
 
 if (isDevelopment) {
   server.listen(port,  function () {
