@@ -77,4 +77,7 @@ if (isDevelopment) {
   secureServer.listen(securePort,  function () {
     console.log('Node.js listening securely on port ' + port + '...');
   });
+  server.listen(port,  function () {
+    console.log('Node.js insecure but listening on port ' + port + '...');
+  });
 }
