@@ -13,7 +13,12 @@ const routes = require('./routes/index');
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
-/*if (!isDevelopment) app.use(forceSSL);*/
+if (!isDevelopment) {
+  app.set('forceSSLOptions', {
+    httpsPort: securePort
+  });
+  app.use(forceSSL);
+}
 const server = http.createServer(app);
 
 app.use(favicon(path.join(__dirname,'../client','img','favicon.ico')));
@@ -67,12 +72,7 @@ if (isDevelopment) {
     cert: fs.readFileSync(path.join(__dirname,'../../ssl','certs','blog_andrewgingrich_com_d4949_a7893_1516368886_394c918cc2a1b0c3b85aa99074f40022.crt')),
     ca: fs.readFileSync(path.join(__dirname,'../../ssl','certs','blog_andrewgingrich_com_be4d0_08dd5_1540130279_1ba04fe5b80527780985dc843942140c.crt'))
   };
-
-  app.set('forceSSLOptions', {
-    httpsPort: securePort
-  });
   const secureServer = https.createServer(sslOptions, app);
-
   secureServer.listen(securePort,  function () {
     console.log('Node.js listening securely on port ' + securePort + '...');
   });
