@@ -10,17 +10,17 @@ import webpack from 'webpack';
 const config = require('../webpack.config');
 const compiler = webpack(config);
 const routes = require('./routes/index');
-const port = 51000;
+const port = 51900;
 const securePort = 52000;
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
-/*if (!isDevelopment) {
+if (!isDevelopment) {
   app.set('forceSSLOptions', {
     httpsPort: securePort
   });
-  app.use(forceSSL);
-}*/
+  //app.use(forceSSL);
+}
 const server = http.createServer(app);
 
 app.use(favicon(path.join(__dirname,'../client','img','favicon.ico')));
