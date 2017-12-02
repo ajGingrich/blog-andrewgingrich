@@ -15,12 +15,12 @@ const securePort = 52000;
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
-if (!isDevelopment) {
+/*if (!isDevelopment) {
   app.set('forceSSLOptions', {
     httpsPort: securePort
   });
   app.use(forceSSL);
-}
+}*/
 const server = http.createServer(app);
 
 app.use(favicon(path.join(__dirname,'../client','img','favicon.ico')));
@@ -75,5 +75,5 @@ if (isDevelopment) {
   secureServer.listen(securePort,  function () {
     console.log('Node.js listening securely on port ' + securePort + '...');
   });
-  server.listen(port);
+  //server.listen(port);
 }
