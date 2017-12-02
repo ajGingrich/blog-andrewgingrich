@@ -44,7 +44,7 @@ app.engine('html', function (path, options, callbacks) {
 });
 
 app.use(express.static(path.join(__dirname, '../client')));
-if (!isDevelopment) app.use(forceSSL);
+/*if (!isDevelopment) app.use(forceSSL);*/
 app.use('/', routes);
 
 // catch 404 and forward to error handler
@@ -72,6 +72,7 @@ if (isDevelopment) {
     httpsPort: 52000
   });
   const secureServer = https.createServer(sslOptions, app);
+  app.use(forceSSL);
 
   secureServer.listen(securePort,  function () {
     console.log('Node.js listening securely on port ' + securePort + '...');
