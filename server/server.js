@@ -10,8 +10,6 @@ import webpack from 'webpack';
 const config = require('../webpack.config');
 const compiler = webpack(config);
 const routes = require('./routes/index');
-let sslOptions = {};
-let secureServer = '';
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
@@ -64,11 +62,10 @@ if (isDevelopment) {
     console.log('Node.js insecure but listening on port ' + port + '...');
   });
 } else {
-  console.log('im not in development');
   sslOptions = {
-    key: fs.readFileSync('../../ssl/keys/d4949_a7893_0c9e1ac46d6e0e4882754486fda5ab67.key') || null,
-    cert: fs.readFileSync('../../ssl/certs/blog_andrewgingrich_com_be4d0_08dd5_1540130279_1ba04fe5b80527780985dc843942140c.crt') || null,
-    ca: fs.readFileSync('../../ssl/certs/blog_andrewgingrich_com_d4949_a7893_1516368886_394c918cc2a1b0c3b85aa99074f40022.crt') || null
+    key: fs.readFileSync('../../../ssl/keys/d4949_a7893_0c9e1ac46d6e0e4882754486fda5ab67.key') || null,
+    cert: fs.readFileSync('../../../ssl/certs/blog_andrewgingrich_com_be4d0_08dd5_1540130279_1ba04fe5b80527780985dc843942140c.crt') || null,
+    ca: fs.readFileSync('../../../ssl/certs/blog_andrewgingrich_com_d4949_a7893_1516368886_394c918cc2a1b0c3b85aa99074f40022.crt') || null
   };
   secureServer = https.createServer(sslOptions, app);
   app.use(forceSSL);
