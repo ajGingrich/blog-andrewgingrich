@@ -10,17 +10,17 @@ import webpack from 'webpack';
 const config = require('../webpack.config');
 const compiler = webpack(config);
 const routes = require('./routes/index');
-const port = 51900;
+const port = 52000;
 const securePort = 52000;
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
-if (!isDevelopment) {
+/*if (!isDevelopment) {
   app.set('forceSSLOptions', {
     httpsPort: securePort
   });
   //app.use(forceSSL);
-}
+}*/
 const server = http.createServer(app);
 
 app.use(favicon(path.join(__dirname,'../client','img','favicon.ico')));
@@ -61,7 +61,11 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-if (isDevelopment) {
+server.listen(port,  function () {
+  console.log('Node.js insecure but listening on port ' + port + '...');
+});
+
+/*if (isDevelopment) {
   server.listen(port,  function () {
     console.log('Node.js insecure but listening on port ' + port + '...');
   });
@@ -76,4 +80,4 @@ if (isDevelopment) {
     console.log('Node.js listening securely on port ' + securePort + '...');
   });
   //server.listen(port);
-}
+}*/
