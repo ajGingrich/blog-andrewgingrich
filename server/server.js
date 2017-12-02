@@ -63,7 +63,10 @@ server.listen(port,  function () {
     console.log('Node.js insecure but listening on port ' + port + '...');
 });
 
+console.log('testy');
+
 if (!isDevelopment) {
+  console.log('im not in development');
   sslOptions = {
     key: fs.readFileSync('./keys/private.key') || null,
     cert: fs.readFileSync('./keys/cert.crt') || null,
@@ -71,6 +74,10 @@ if (!isDevelopment) {
   };
   secureServer = https.createServer(sslOptions, app);
   app.use(forceSSL);
+  app.set('forceSSLOptions', {
+    httpsPort: 52000
+  });
+
   secureServer.listen(securePort,  function () {
     console.log('Node.js listening securely on port ' + port + '...');
   });
