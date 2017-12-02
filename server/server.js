@@ -63,9 +63,9 @@ if (isDevelopment) {
   });
 } else {
   const sslOptions = {
-    key: fs.readFileSync(path.join(__dirname,'../../ssl','keys','d4949_a7893_0c9e1ac46d6e0e4882754486fda5ab67.key'), 'utf-8'),
-    cert: fs.readFileSync(path.join(__dirname,'../../ssl','certs','blog_andrewgingrich_com_d4949_a7893_1516368886_394c918cc2a1b0c3b85aa99074f40022.crt'), 'utf-8'),
-    ca: fs.readFileSync(path.join(__dirname,'../../ssl','certs','blog_andrewgingrich_com_be4d0_08dd5_1540130279_1ba04fe5b80527780985dc843942140c.crt'), 'utf-8')
+    key: fs.readFileSync(path.join(__dirname,'../../ssl','keys','d4949_a7893_0c9e1ac46d6e0e4882754486fda5ab67.key')),
+    cert: fs.readFileSync(path.join(__dirname,'../../ssl','certs','blog_andrewgingrich_com_d4949_a7893_1516368886_394c918cc2a1b0c3b85aa99074f40022.crt')),
+    ca: fs.readFileSync(path.join(__dirname,'../../ssl','certs','blog_andrewgingrich_com_be4d0_08dd5_1540130279_1ba04fe5b80527780985dc843942140c.crt'))
   };
 
   secureServer = https.createServer(sslOptions, app);
