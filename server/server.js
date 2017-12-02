@@ -10,6 +10,8 @@ import webpack from 'webpack';
 const config = require('../webpack.config');
 const compiler = webpack(config);
 const routes = require('./routes/index');
+const port = 51000;
+const securePort = 52000;
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
@@ -58,9 +60,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-const port = 51000;
-const securePort = 52000;
 
 if (isDevelopment) {
   server.listen(port,  function () {
