@@ -59,8 +59,8 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-const port = 51900;
-const securePort = 52000;
+const port = 52000;
+const securePort = 53000;
 
 if (isDevelopment) {
   server.listen(port,  function () {
@@ -76,5 +76,5 @@ if (isDevelopment) {
   secureServer.listen(securePort,  function () {
     console.log('Node.js listening securely on port ' + securePort + '...');
   });
-  //server.listen(port);
+  server.listen(port);
 }
