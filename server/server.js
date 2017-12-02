@@ -55,7 +55,7 @@ app.use(function(req, res, next) {
 });
 
 const port = 51900;
-const securePort = 51900;
+const securePort = 52000;
 
 if (isDevelopment) {
   server.listen(port,  function () {
@@ -69,7 +69,7 @@ if (isDevelopment) {
   };
 
   app.set('forceSSLOptions', {
-    httpsPort: 51900
+    httpsPort: securePort
   });
   const secureServer = https.createServer(sslOptions, app);
 
