@@ -68,11 +68,11 @@ if (isDevelopment) {
     ca: fs.readFileSync(path.join(__dirname,'../../ssl','certs','blog_andrewgingrich_com_be4d0_08dd5_1540130279_1ba04fe5b80527780985dc843942140c.crt'))
   };
 
-  secureServer = https.createServer(sslOptions, app);
-  app.use(forceSSL);
   app.set('forceSSLOptions', {
     httpsPort: 52000
   });
+  const secureServer = https.createServer(sslOptions, app);
+  app.use(forceSSL);
 
   secureServer.listen(securePort,  function () {
     console.log('Node.js listening securely on port ' + port + '...');
