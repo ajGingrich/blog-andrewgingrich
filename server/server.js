@@ -74,7 +74,7 @@ if (isDevelopment) {
   const secureServer = https.createServer(sslOptions, app);
 
   secureServer.listen(securePort,  function () {
-    console.log('Node.js listening securely on port ' + port + '...');
+    console.log('Node.js listening securely on port ' + securePort + '...');
   });
   server.listen(port);
 }
