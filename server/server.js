@@ -13,6 +13,7 @@ const routes = require('./routes/index');
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
+/*if (!isDevelopment) app.use(forceSSL);*/
 const server = http.createServer(app);
 
 app.use(favicon(path.join(__dirname,'../client','img','favicon.ico')));
@@ -44,7 +45,6 @@ app.engine('html', function (path, options, callbacks) {
 });
 
 app.use(express.static(path.join(__dirname, '../client')));
-if (!isDevelopment) app.use(forceSSL);
 app.use('/', routes);
 
 // catch 404 and forward to error handler
@@ -76,5 +76,5 @@ if (isDevelopment) {
   secureServer.listen(securePort,  function () {
     console.log('Node.js listening securely on port ' + securePort + '...');
   });
-  server.listen(port);
+  //server.listen(port);
 }
