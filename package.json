@@ -25,6 +25,7 @@
     "express-session": "^1.15.4",
     "file-loader": "^1.1.5",
     "font-awesome": "^4.7.0",
+    "http-proxy": "^1.16.2",
     "mysql": "^2.15.0",
     "path": "^0.12.7",
     "react": "^16.0.0",
