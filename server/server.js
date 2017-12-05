@@ -2,25 +2,15 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import http from 'http';
-import httpProxy from 'http-proxy';
-//import https from 'https';
-//import forceSSL from 'express-force-ssl';
 import favicon from 'serve-favicon';
 import webpack from 'webpack';
 
 const config = require('../webpack.config');
 const compiler = webpack(config);
 const routes = require('./routes/index');
-const port = 52000;
 
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
-/*if (!isDevelopment) {
-  app.use(forceSSL);
-  app.set('forceSSLOptions', {
-    httpsPort: securePort
-  });
-}*/
 const server = http.createServer(app);
 
 app.use(favicon(path.join(__dirname,'../client','img','favicon.ico')));
@@ -51,6 +41,8 @@ app.engine('html', function (path, options, callbacks) {
     fs.readFile(path, 'utf-8', callback)
 });
 
+// Proxy (https://expressjs.com/en/guide/behind-proxies.html)
+app.enable('trust proxy', 'localhost', '66.198.253.199');
 app.use(express.static(path.join(__dirname, '../client')));
 app.use('/', routes);
 
@@ -61,29 +53,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-if (isDevelopment) {
-  server.listen(port,  function () {
-    console.log('Node.js insecure but listening on port ' + port + '...');
-  });
-} else {
-  const key = fs.readFileSync(path.join(__dirname,'../../ssl','keys','d4949_a7893_0c9e1ac46d6e0e4882754486fda5ab67.key'));
-  const cert = fs.readFileSync(path.join(__dirname,'../../ssl','certs','blog_andrewgingrich_com_d4949_a7893_1516368886_394c918cc2a1b0c3b85aa99074f40022.crt'));
-  /*const sslOptions = {
-    key: fs.readFileSync(path.join(__dirname,'../../ssl','keys','d4949_a7893_0c9e1ac46d6e0e4882754486fda5ab67.key')),
-    cert: fs.readFileSync(path.join(__dirname,'../../ssl','certs','blog_andrewgingrich_com_d4949_a7893_1516368886_394c918cc2a1b0c3b85aa99074f40022.crt')),
-    ca: fs.readFileSync(path.join(__dirname,'../../ssl','certs','blog_andrewgingrich_com_be4d0_08dd5_1540130279_1ba04fe5b80527780985dc843942140c.crt'))
-  };
-  const secureServer = https.createServer(sslOptions, app);
-  secureServer.listen(port,  function () {
-    console.log('Node.js listening securely on port ' + port + '...');
-  });*/
-  //server.listen(port);
-  httpProxy.createServer({
-    ssl: {
-      key: key,
-      cert: cert
-    },
-    target: 'https://localhost:52000',
-    secure: true
-  }).listen(443);
-}
+const port = 52000;
+server.listen(port,  function () {
+  console.log('Node.js listening on port ' + port + '...');
+});
