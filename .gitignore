@@ -7,4 +7,3 @@ bower_components
 package-lock.json
 build/
 client/dist
-.htaccess
