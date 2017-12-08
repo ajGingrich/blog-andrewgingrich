@@ -7,7 +7,10 @@ class Footer extends React.Component {
 
     return (
       <div className="footer">
-        © Andrew Gingrich 2017. Powered by&nbsp;<a href="https://buttercms.com/"><img className="img-responsive" src={buttercms} /></a>
+        <div className="container">
+          <span>© Andrew Gingrich 2017.</span>
+          <span className="butterSpan">Powered by<a href="https://buttercms.com/"><img className="butterImg" src={buttercms} /></a></span>
+        </div>
       </div>
     )
   }

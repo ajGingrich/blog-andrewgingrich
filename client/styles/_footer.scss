@@ -1,13 +1,24 @@
 .footer {
-  margin: 20px 0 0 0;
-  display: flex;
-  justify-content: center;
+  margin: 20px 0 15px 0;
+
+  .container {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   a {
     z-index: 500
   }
 
-  img {
-    height: 40%;
+  .butterSpan {
+    margin-left: 5px;
+  }
+
+  .butterImg {
+    margin-left: 5px;
+    height: 15px;
   }
 }
