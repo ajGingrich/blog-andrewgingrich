@@ -43,19 +43,21 @@ class PostContainer extends React.Component {
       return (
         <div className="col-xs-12 col-md-9">
           <div className="post">
-            {this.state.resp.data.map((post) => {
-              return (
+            <div className="postContainer">
+              {this.state.resp.data.map((post) => {
+                return (
                 <div key={post.slug}>
                   <Link to={`/article/${post.slug}`}><h1 className="postTitle">{post.title}</h1></Link>
                     <div>{post.summary}</div>
                 </div>
-              )
-            })}
-            <br />
-            {/*<div>
-              {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
-              {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
-              </div>*/}
+                )
+              })}
+              <br />
+              {/*<div>
+                {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
+                {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
+                </div>*/}
+            </div>
           </div>
         </div>
       )

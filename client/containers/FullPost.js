@@ -43,9 +43,12 @@ class FullPost extends React.Component {
         return (
           <div className="col-xs-12 col-md-9">
             <div className="post">
-              <h1>{post.title}</h1>
-              <div dangerouslySetInnerHTML={{__html: post.body}} /></div>
+              <div className="postContainer">
+                <h1>{post.title}</h1>
+                <div dangerouslySetInnerHTML={{__html: post.body}} />
+              </div>
             </div>
+          </div>
         )
       } else {
         return (

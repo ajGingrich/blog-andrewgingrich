@@ -6,8 +6,29 @@
   color: black;
 }
 
+.postContainer {
+  padding: 5px 0 10px 0;
+  width: 95%;
+  margin: auto;
+}
+
+.markdown {
+  background: pink;
+  border-radius: 5px;
+}
+
+.markdownContainer {
+  padding: 5px 0 10px 0;
+  width: 95%;
+  margin: auto;
+}
+
+.code {
+  background: blue;
+}
+
 @media (min-width: 992px) {
   .post {
-    color: orange;
+    color: black;
   }
 }
