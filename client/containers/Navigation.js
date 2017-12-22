@@ -23,7 +23,7 @@ class Navigation extends React.Component {
 
   render () {
     const { browser } = this.props;
-    console.log(browser)
+
     if (browser.lessThan.medium) {
       return (
         <div className="navigation">

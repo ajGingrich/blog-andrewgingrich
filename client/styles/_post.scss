@@ -2,7 +2,7 @@
   margin: 20px 0 0 0;
   background: white;
   z-index: 10;
-  border-radius: 5px;
+  border-radius: 10px;
   color: black;
 }
 
@@ -14,7 +14,7 @@
 
 .markdown {
   background: pink;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .markdownContainer {
@@ -23,8 +23,8 @@
   margin: auto;
 }
 
-.code {
-  background: blue;
+pre {
+  border-radius: 10px;
 }
 
 @media (min-width: 992px) {

@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import Root from './Root'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
+import '../node_modules/highlight.js/styles/darkula.css';
 import './styles/style.scss';
 import store from './store';
 

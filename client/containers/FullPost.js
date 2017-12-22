@@ -1,6 +1,8 @@
 import React from 'react';
+//import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 import Butter from 'buttercms';
+//import Highlight from 'react-highlight'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -30,11 +32,10 @@ class FullPost extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
     this.setState({loaded: false});
-      let slug = nextProps.slug;
-      this.fetchPost(slug)
-    }
+    let slug = nextProps.slug;
+    this.fetchPost(slug)
+  }
 
     render() {
       if (this.state.loaded) {
