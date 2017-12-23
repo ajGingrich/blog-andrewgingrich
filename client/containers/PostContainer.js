@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
+import { createTextDate } from '../helpers/dates'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -44,19 +45,30 @@ class PostContainer extends React.Component {
         <div className="col-xs-12 col-md-9">
           <div className="post">
             <div className="postContainer">
-              {this.state.resp.data.map((post) => {
-                return (
-                <div key={post.slug}>
-                  <Link to={`/article/${post.slug}`}><h1 className="postTitle">{post.title}</h1></Link>
-                    <div>{post.summary}</div>
+              {
+                <div className="pagination">
+                  {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
+                  {next_page && <Link className="nextLink" to={`/p/${next_page}`}>Next</Link>}
                 </div>
-                )
-              })}
+              }
+              {
+                this.state.resp.data.map((post) => {
+                  return (
+                    <div key={post.slug}>
+                      <Link to={`/article/${post.slug}`}><h1 className="postTitle">{post.title}</h1></Link>
+                      <div className="postSummary">{post.summary}</div>
+                      <div className="postDetails">By {post.author.first_name} {post.author.last_name} on {createTextDate(post.created)}</div>
+                    </div>
+                  )
+                })
+              }
               <br />
-              {/*<div>
-                {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
-                {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
-                </div>*/}
+              {
+                <div className="pagination">
+                  {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
+                  {next_page && <Link className="nextLink" to={`/p/${next_page}`}>Next</Link>}
+                </div>
+              }
             </div>
           </div>
         </div>
