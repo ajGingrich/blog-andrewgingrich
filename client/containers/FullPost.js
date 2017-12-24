@@ -5,7 +5,7 @@ import Butter from 'buttercms';
 //import Disqus from '../components/Disqus'
 import ReactDisqusComments from 'react-disqus-comments';
 //import Highlight from 'react-highlight'
-import { createPostUrl, createIdentifier } from '../helpers/disqus'
+import { createPostUrl } from '../helpers/disqus'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -57,10 +57,9 @@ class FullPost extends React.Component {
                 <div dangerouslySetInnerHTML={{__html: post.body}} />
                 <ReactDisqusComments
                   shortname={shortname}
-                  identifier={createIdentifier(post.url)}
+                  identifier="something-unique-12345"
                   title={post.title}
                   url={createPostUrl(post.url)}
-                  category_id={categoryId}
                   onNewComment={this.handleNewComment}
                 />
               </div>
