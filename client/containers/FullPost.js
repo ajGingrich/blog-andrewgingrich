@@ -47,7 +47,9 @@ class FullPost extends React.Component {
       if (this.state.loaded) {
         const post = this.state.post;
         const shortname = "andrewgingrich";
-        const categoryId = '123456';
+        //const categoryId = '123456';
+        console.log(post.slug);
+        console.log(createPostUrl(post.url))
 
         return (
           <div className="col-xs-12 col-md-9">
@@ -57,7 +59,7 @@ class FullPost extends React.Component {
                 <div dangerouslySetInnerHTML={{__html: post.body}} />
                 <ReactDisqusComments
                   shortname={shortname}
-                  identifier="something-unique-12345"
+                  identifier={post.slug}
                   title={post.title}
                   url={createPostUrl(post.url)}
                   onNewComment={this.handleNewComment}
