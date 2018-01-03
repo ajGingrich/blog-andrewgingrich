@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
+import _ from 'lodash';
+import { Map, fromJS, map } from 'immutable';
+import LinkMonthsInYear from './LinkMonthsInYear';
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -27,17 +30,32 @@ class LinkContainer extends React.Component {
     this.fetchPosts()
   }
 
+  /*{this.state.resp.data.map((post) => {
+    return (
+      <div className="postLink" key={post.slug}>
+        <Link to={`/article/${post.slug}`}>
+          <h5 className="postTitle">{post.title} - { post.published.slice(0, 10) }</h5>
+        </Link>
+      </div>
+    )
+  })}*/
+
   render() {
     if (this.state.loaded) {
+      const postList = this.state.resp.data;
+      const postYears = fromJS(_.groupBy(postList, item => item.published.slice(0, 4)))
+
       return (
         <div className="col-md-3">
           <div className="sidebar">
-            {this.state.resp.data.map((post) => {
+            {postYears.map(year => {
               return (
-                <div className="postLink" key={post.slug}>
-                  <Link to={`/article/${post.slug}`}>
-                    <h5 className="postTitle">{post.title} - { post.published.slice(0, 10) }</h5>
-                  </Link>
+                <div className="postLink">
+                  <h5 className="postTitle">{year.key}</h5>
+                  <LinkMonthsInYear
+                    isOpen={true}
+                    postsFromYear={year}
+                  />
                 </div>
               )
             })}

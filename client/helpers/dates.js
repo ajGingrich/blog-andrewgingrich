@@ -1,5 +1,4 @@
-const arrayOfMonths = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July',
-                      'August', 'September', 'October', 'November', 'December']
+import { months } from '../constants/constants'
 
 function createTextDate(dateString) {
   const date = new Date(dateString);
@@ -7,9 +6,14 @@ function createTextDate(dateString) {
   const month = date.getMonth();
   const year = date.getFullYear();
 
-  return arrayOfMonths[month] + ' ' + day + ', ' + year;
+  return months[month] + ' ' + day + ', ' + year;
+}
+
+function getNonArrayMonth(month) {
+  return arrayOfMonths[month - 1]
 }
 
 export {
   createTextDate,
+  getNonArrayMonth,
 }
