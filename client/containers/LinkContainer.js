@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
 import _ from 'lodash';
-import { Map, fromJS, map } from 'immutable';
+import { fromJS, map } from 'immutable';
 import LinkMonthsInYear from './LinkMonthsInYear';
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
@@ -13,8 +13,15 @@ class LinkContainer extends React.Component {
     super(props);
 
     this.state = {
-      loaded: false
+      isYearOpen: false,
     }
+  }
+
+  handleOpenYear = () => {
+    console.log('click worked')
+    this.setState({
+      isYearOpen: !this.state.isYearOpen
+    })
   }
 
   fetchPosts() {
@@ -44,6 +51,7 @@ class LinkContainer extends React.Component {
     if (this.state.loaded) {
       const postList = this.state.resp.data;
       const postYears = fromJS(_.groupBy(postList, item => item.published.slice(0, 4)))
+      console.log(postYears)
 
       return (
         <div className="col-md-3">
@@ -51,10 +59,12 @@ class LinkContainer extends React.Component {
             {postYears.map(year => {
               return (
                 <div className="postLink">
-                  <h5 className="postTitle">{year.key}</h5>
+                  <span onClick={this.handleOpenYear}>
+                    <h5 className="postTitle">woop</h5>
+                  </span>
                   <LinkMonthsInYear
-                    isOpen={true}
                     postsFromYear={year}
+                    isYearOpen={this.state.isYearOpen}
                   />
                 </div>
               )
