@@ -1,10 +1,8 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 import Butter from 'buttercms';
-//import Disqus from '../components/Disqus'
 import ReactDisqusComments from 'react-disqus-comments';
-//import Highlight from 'react-highlight'
+import Highlight from 'react-highlight'
 import { createPostUrl } from '../helpers/disqus'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
@@ -56,7 +54,9 @@ class FullPost extends React.Component {
             <div className="post">
               <div className="postContainer">
                 <h1>{post.title}</h1>
-                <div dangerouslySetInnerHTML={{__html: post.body}} />
+                <Highlight innerHTML={true} language={'java'}>
+                  {post.body}
+                </Highlight>
                 <ReactDisqusComments
                   shortname={shortname}
                   identifier={post.slug}
