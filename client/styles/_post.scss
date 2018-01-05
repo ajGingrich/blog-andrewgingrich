@@ -40,6 +40,12 @@
     height: auto;
   }
 
+  pre {
+    background-color: #2b2b2b;
+    border-radius: 10px;
+  }
+
+
   /* Responsive floating */
   @media only screen and (min-width: 720px)  {
     .butter-float-left {
@@ -70,8 +76,4 @@
       margin-left: auto;
     }
   }
-}
-
-.hljs {
-  background-color: #2b2b2b !important
 }
