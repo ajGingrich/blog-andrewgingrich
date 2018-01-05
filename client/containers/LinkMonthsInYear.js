@@ -12,7 +12,7 @@ class LinkMonthsInYear extends React.Component {
     }
   }
 
-  handleOpenMonth() {
+  handleOpenMonth = () => {
     this.setState({
       isMonthOpen: !this.state.isMonthOpen
     })
@@ -24,16 +24,16 @@ class LinkMonthsInYear extends React.Component {
     console.log(isYearOpen, 'im a prop')
 
     return (
-     <ToggleDisplay show={isYearOpen}>
+      <ToggleDisplay show={isYearOpen}>
       <div className="monthPostList">
-          {monthPostList.map(month => {
+          {monthPostList.entrySeq().map( ([month, data]) => {
             return (
               <div className="postLink">
-                <span onClick={this.handleOpenMonth.bind(this)}>
-                  <h5 className="postTitle">{month.key}</h5>
+                <span onClick={this.handleOpenMonth}>
+                  <h5 className="postTitle">{month}</h5>
                 </span>
                 <LinksInMonth
-                  postsFromMonth={month}
+                  postsFromMonth={data}
                   isMonthOpen={this.state.isMonthOpen}
                 />
               </div>

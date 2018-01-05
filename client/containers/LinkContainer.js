@@ -18,7 +18,6 @@ class LinkContainer extends React.Component {
   }
 
   handleOpenYear = () => {
-    console.log('click worked')
     this.setState({
       isYearOpen: !this.state.isYearOpen
     })
@@ -56,14 +55,14 @@ class LinkContainer extends React.Component {
       return (
         <div className="col-md-3">
           <div className="sidebar">
-            {postYears.map(year => {
+            {postYears.entrySeq().map( ([year, data]) => {
               return (
                 <div className="postLink">
                   <span onClick={this.handleOpenYear}>
-                    <h5 className="postTitle">woop</h5>
+                    <h5 className="postTitle">{year}</h5>
                   </span>
                   <LinkMonthsInYear
-                    postsFromYear={year}
+                    postsFromYear={data}
                     isYearOpen={this.state.isYearOpen}
                   />
                 </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { map } from 'immutable'
+import ToggleDisplay from 'react-toggle-display'
 
 class LinkDescription extends React.Component {
 
@@ -10,9 +11,7 @@ class LinkDescription extends React.Component {
   render() {
     const { LinksInDay} = this.props
 
-    if (isOpen) {
-
-      return (
+    return (
         <div className="monthPostList">
           {LinksInDay.map(link => {
             return (
@@ -22,12 +21,7 @@ class LinkDescription extends React.Component {
             )
           })}
         </div>
-      )
-    } else {
-      return (
-        <div></div>
-      )
-    }
+    )
   }
 }
 

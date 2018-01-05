@@ -1,41 +1,40 @@
 import React from 'react';
 import { Map, groupBy, map } from 'immutable';
 import LinkDescription from './LinkDescription';
+import ToggleDisplay from 'react-toggle-display'
 
 class LinksInMonth extends React.Component {
 
   constructor(props) {
     super(props);
-    /*this.state = {
-      isOpen: false,
-    }*/
+  }
+
+  handleOpenDay = () => {
+    this.setState({
+      isMonthOpen: !this.state.isMonthOpen
+    })
   }
 
   render() {
     const { isMonthOpen, postsFromMonth} = this.props
+    const linksList = postsFromMonth.groupBy(item => item.get('published').slice(8, 10))
 
-    if (isMonthOpen) {
-      const linksList = postsFromMonth.groupBy(item => item.get('published').slice(8, 10))
-
-      return (
+    return (
+      <ToggleDisplay show={isMonthOpen}>
         <div className="monthPostList">
-          {linksList.map(day => {
+          {linksList.entrySeq().map( ([day, data]) => {
             return (
               <div className="postLink">
-                <h5 className="postTitle">{day.key}</h5>
+                <h5 className="postTitle">{day}</h5>
                 <LinkDescription
-                  LinksInDay={day}
+                  LinksInDay={data}
                 />
               </div>
             )
           })}
         </div>
-      )
-    } else {
-      return (
-        <div></div>
-      )
-    }
+      </ToggleDisplay>
+    )
   }
 }
 
