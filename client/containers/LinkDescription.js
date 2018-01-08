@@ -12,15 +12,15 @@ class LinkDescription extends React.Component {
     const { LinksInDay} = this.props
 
     return (
-        <div className="monthPostList">
-          {LinksInDay.map(link => {
-            return (
-              <div className="postLink">
-                <h5 className="postTitle">{link.get('title')}</h5>
-              </div>
-            )
-          })}
-        </div>
+      <div className="linkDescription">
+        {LinksInDay.map(link => {
+          return (
+            <div className="postLink" key={link}>
+              <h5 className="postTitle">{link.get('title')}</h5>
+            </div>
+          )
+        })}
+      </div>
     )
   }
 }

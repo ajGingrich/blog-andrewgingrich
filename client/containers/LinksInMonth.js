@@ -1,7 +1,13 @@
-import React from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { Map, groupBy, map } from 'immutable';
 import LinkDescription from './LinkDescription';
-import ToggleDisplay from 'react-toggle-display'
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemTitle,
+    AccordionItemBody,
+} from 'react-accessible-accordion';
 
 class LinksInMonth extends React.Component {
 
@@ -9,31 +15,31 @@ class LinksInMonth extends React.Component {
     super(props);
   }
 
-  handleOpenDay = () => {
-    this.setState({
-      isMonthOpen: !this.state.isMonthOpen
-    })
-  }
-
   render() {
-    const { isMonthOpen, postsFromMonth} = this.props
+    const { month, isMonthOpen, postsFromMonth, year} = this.props
     const linksList = postsFromMonth.groupBy(item => item.get('published').slice(8, 10))
 
     return (
-      <ToggleDisplay show={isMonthOpen}>
-        <div className="monthPostList">
+      <div className="monthPostList">
           {linksList.entrySeq().map( ([day, data]) => {
+            const key = year + ' - ' + month + ' - ' + day
+
             return (
-              <div className="postLink">
-                <h5 className="postTitle">{day}</h5>
-                <LinkDescription
-                  LinksInDay={data}
-                />
-              </div>
+              <Accordion key={key}>
+                <AccordionItem>
+                  <AccordionItemTitle>
+                    <h5 className="postTitle">{day}</h5>
+                  </AccordionItemTitle>
+                  <AccordionItemBody>
+                    <LinkDescription
+                      LinksInDay={data}
+                    />
+                  </AccordionItemBody>
+                </AccordionItem>
+              </Accordion>
             )
           })}
-        </div>
-      </ToggleDisplay>
+      </div>
     )
   }
 }
