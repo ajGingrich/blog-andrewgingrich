@@ -16,7 +16,7 @@ class LinksInMonth extends React.Component {
   }
 
   render() {
-    const { month, isMonthOpen, postsFromMonth, year} = this.props
+    const { month, postsFromMonth, year} = this.props
     const linksList = postsFromMonth.groupBy(item => item.get('published').slice(8, 10))
 
     return (
