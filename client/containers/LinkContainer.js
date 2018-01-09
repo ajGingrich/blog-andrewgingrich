@@ -37,16 +37,6 @@ class LinkContainer extends React.Component {
     this.fetchPosts()
   }
 
-  /*{this.state.resp.data.map((post) => {
-    return (
-      <div className="postLink" key={post.slug}>
-        <Link to={`/article/${post.slug}`}>
-          <h5 className="postTitle">{post.title} - { post.published.slice(0, 10) }</h5>
-        </Link>
-      </div>
-    )
-  })}*/
-
   render() {
     if (this.state.loaded) {
       const postList = this.state.resp.data;
@@ -57,11 +47,16 @@ class LinkContainer extends React.Component {
           <div className="sidebar">
             <div className="yearPostList">
               {postYears.entrySeq().map( ([year, data]) => {
+                const isFirstTitle = year === 2017
+
                 return (
-                  <Accordion key={year}>
-                    <AccordionItem>
+                  <Accordion accordion={false} key={year}>
+                    <AccordionItem className="accordion__item">
                       <AccordionItemTitle>
-                        <h5 className="postTitle">{year}</h5>
+                        <h5 className="u-position-relative">
+                          {year}
+                          <div className="accordion__arrow" role="presentation" />
+                        </h5>
                       </AccordionItemTitle>
                       <AccordionItemBody>
                         <LinkMonthsInYear

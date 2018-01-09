@@ -12,7 +12,7 @@ const Routes = () => (
     <div>
       <Route exact path="/:page?" component={HomePage} />
       <Route path="/p/:page?" component={HomePage} />
-      <Route path="/article/:slug?" component={FullPostPage} />
+      <Route path="/post/:year/:month/:date/:slug?" component={FullPostPage} />
     </div>
   </Router>
 );

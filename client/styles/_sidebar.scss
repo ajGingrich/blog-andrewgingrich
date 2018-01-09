@@ -8,10 +8,129 @@ $largeMax: 767px;
   border-radius: 10px;
   display: block;
   color: black;
+
+  /*.yearPostList {
+    padding: 0.5em 1em 0.5em 1em
+  }*/
+
+  h5 {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 1em;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -.003em;
+  }
+
+  /********* Accordion ********/
+  .block {
+    padding: 1.25rem;
+  }
+
+  .u-margin-top {
+    margin-top: 1.875rem;
+  }
+
+  .u-margin-right {
+    margin-right: 1.875rem;
+  }
+
+  .u-margin-bottom-s {
+    margin-bottom: .5rem;
+  }
+
+
+  .u-position-absolute {
+    position: absolute;
+  }
+
+  .u-position-relative {
+    position: relative;
+  }
+
+  .accordion {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 2px;
+  }
+
+  .accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, .1);
+  }
+
+  .accordion__item--has-icon {
+    position: relative;
+  }
+
+.accordion__title {
+  color: #444;
+  cursor: pointer;
+  padding: 0.5em;
+  width: 100%;
+  text-align: left;
+  border: none;
 }
 
-.postLink {
-  margin: 10px 10px 10px 10px;
+[aria-selected="true"] {
+  background-color: #f4f4f4;
+}
+
+.accordion__title:hover {
+    background-color: #ddd;
+}
+
+
+    .accordion__body {
+      padding: 0.5em;
+    }
+
+    .accordion__title > *:last-child,
+    .accordion__body > *:last-child {
+        margin-bottom: 0;
+    }
+    .accordion__arrow {
+        display: inline-block;
+        position: relative;
+        width: 24px;
+        height: 12px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -12px;
+    }
+
+
+    .accordion__arrow::after,
+    .accordion__arrow::before {
+        display: block;
+        position: absolute;
+        top: 50%;
+        width: 10px;
+        height: 2px;
+        background-color: currentColor;
+        content: '';
+    }
+
+    .accordion__arrow::before {
+        left: 4px;
+        transform: rotate(45deg);
+    }
+
+    [aria-expanded="true"] .accordion__arrow::before {
+        transform: rotate(-45deg);
+    }
+
+    .accordion__arrow::after {
+        right: 4px;
+        transform: rotate(-45deg);
+    }
+
+    [aria-expanded="true"] .accordion__arrow::after {
+        transform: rotate(45deg);
+    }
+
+    .accordion__arrow::before, .accordion__arrow::after {
+        transition: transform .25s ease, -webkit-transform .25s ease;
+    }
+
 }
 
 @media (max-width: 991px) {

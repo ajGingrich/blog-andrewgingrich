@@ -25,10 +25,13 @@ class LinkMonthsInYear extends React.Component {
             const key = year + ' - ' + month
 
             return (
-              <Accordion key={key}>
-                <AccordionItem>
-                  <AccordionItemTitle>
-                    <h5 className="postTitle">{month}</h5>
+              <Accordion accordion={false} key={key}>
+                <AccordionItem className="accordion__item">
+                  <AccordionItemTitle >
+                    <h5 className="u-position-relative">
+                      {month}
+                      <div className="accordion__arrow" role="presentation" />
+                    </h5>
                   </AccordionItemTitle>
                   <AccordionItemBody>
                     <LinksInMonth
