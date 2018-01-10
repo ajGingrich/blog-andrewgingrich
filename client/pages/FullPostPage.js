@@ -1,6 +1,6 @@
 import React from 'react';
-import FullPost from '../containers/FullPost';
-import LinkContainer from '../containers/LinkContainer';
+import PostComplete from '../containers/PostComplete';
+import Sidebar from '../containers/Sidebar';
 import Navigation from '../containers/Navigation';
 import Footer from '../containers/Footer'
 
@@ -18,8 +18,8 @@ class FullPostPage extends React.Component {
         <Navigation />
           <div className="container">
             <div className="row">
-              <LinkContainer/>
-              <FullPost slug={params.slug || 'no slug'}/>
+              <Sidebar/>
+              <PostComplete slug={params.slug || 'no slug'}/>
             </div>
             <Footer />
           </div>

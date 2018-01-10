@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Map, groupBy, map } from 'immutable';
 import LinkDescription from './LinkDescription';
-import { getOrdinalIndicator, getSingleDigitDate } from '../helpers/dates'
+import { getOrdinalIndicator, getSingleDigitDate } from '../../helpers/dates'
 import {
     Accordion,
     AccordionItem,
@@ -10,7 +10,7 @@ import {
     AccordionItemBody,
 } from 'react-accessible-accordion';
 
-class LinksInMonth extends React.Component {
+class AccordionDays extends React.Component {
 
   constructor(props) {
     super(props);
@@ -48,4 +48,4 @@ class LinksInMonth extends React.Component {
   }
 }
 
-export default LinksInMonth
+export default AccordionDays

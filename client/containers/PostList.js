@@ -5,8 +5,7 @@ import { createTextDate } from '../helpers/dates'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
-
-class PostContainer extends React.Component {
+class PostList extends React.Component {
 
   constructor(props) {
     super(props);
@@ -55,9 +54,12 @@ class PostContainer extends React.Component {
                 this.state.resp.data.map((post) => {
                   return (
                     <div key={post.slug}>
-                      <Link to={`/article/${post.slug}`}><h1 className="postTitle">{post.title}</h1></Link>
-                      <div className="postSummary">{post.summary}</div>
-                      <div className="postDetails">By {post.author.first_name} {post.author.last_name} on {createTextDate(post.created)}</div>
+                      <Link to={`/article/${post.slug}`}>
+                        <h1 className="postTitle">{post.title}</h1>
+                      </Link>
+                      <div className="postSummary">
+                        {post.summary} by {post.author.first_name} {post.author.last_name} on {createTextDate(post.created)}
+                      </div>
                     </div>
                   )
                 })
@@ -85,4 +87,4 @@ class PostContainer extends React.Component {
   }
 }
 
-export default PostContainer
+export default PostList

@@ -10,11 +10,11 @@ import {
     AccordionItemTitle,
     AccordionItemBody,
 } from 'react-accessible-accordion';
-import LinkMonthsInYear from './LinkMonthsInYear';
+import AccordionMonths from './AccordionMonths';
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
-class LinkContainer extends React.Component {
+class AccordionPosts extends React.Component {
 
   constructor(props) {
     super(props);
@@ -46,10 +46,8 @@ class LinkContainer extends React.Component {
       const currentYear = date.getFullYear().toString();
 
       return (
-        <div className="col-md-3">
-          <div className="sidebar">
-            <div className="yearPostList">
-              {postYears.entrySeq().map( ([year, data]) => {
+        <div className="yearPostList">
+          {postYears.entrySeq().map( ([year, data]) => {
 
                 return (
                   <Accordion accordion={false} key={year}>
@@ -61,7 +59,7 @@ class LinkContainer extends React.Component {
                         </h5>
                       </AccordionItemTitle>
                       <AccordionItemBody>
-                        <LinkMonthsInYear
+                        <AccordionMonths
                           postsFromYear={data}
                           year={year}
                         />
@@ -69,21 +67,17 @@ class LinkContainer extends React.Component {
                     </AccordionItem>
                   </Accordion>
                 )
-              })}
-            </div>
-          </div>
+          })}
         </div>
       )
     } else {
       return (
-        <div className="col-md-3">
-          <div className="sidebar">
-            Loading...
-          </div>
+        <div className="yearPostList">
+          Loading...
         </div>
       )
     }
   }
 }
 
-export default LinkContainer
+export default AccordionPosts

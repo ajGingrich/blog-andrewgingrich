@@ -1,6 +1,6 @@
 import React from 'react';
-import PostContainer from '../containers/PostContainer';
-import LinkContainer from '../containers/LinkContainer';
+import PostList from '../containers/PostList';
+import Sidebar from '../containers/Sidebar';
 import Navigation from '../containers/Navigation';
 import Footer from '../containers/Footer'
 
@@ -18,8 +18,8 @@ class HomePage extends React.Component {
         <Navigation />
           <div className="container">
             <div className="row">
-              <LinkContainer/>
-              <PostContainer page={params.page || 1}/>
+              <Sidebar/>
+              <PostList page={params.page || 1}/>
             </div>
             <Footer />
           </div>

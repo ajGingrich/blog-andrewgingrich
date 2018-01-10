@@ -7,7 +7,7 @@ import { createPostUrl } from '../helpers/disqus'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
-class FullPost extends React.Component {
+class PostComplete extends React.Component {
 
   constructor(props) {
     super(props);
@@ -77,4 +77,4 @@ class FullPost extends React.Component {
   }
 }
 
-export default FullPost
+export default PostComplete

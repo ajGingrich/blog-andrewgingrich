@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Map, fromJS, map } from 'immutable'
-import LinksInMonth from './LinksInMonth'
-import { getNonArrayMonth, getSingleDigitDate } from '../helpers/dates'
+import AccordionDays from './AccordionDays'
+import { getNonArrayMonth, getSingleDigitDate } from '../../helpers/dates'
 import {
     Accordion,
     AccordionItem,
@@ -10,7 +10,7 @@ import {
     AccordionItemBody,
 } from 'react-accessible-accordion';
 
-class LinkMonthsInYear extends React.Component {
+class AccordionMonths extends React.Component {
 
   constructor(props) {
     super(props);
@@ -37,7 +37,7 @@ class LinkMonthsInYear extends React.Component {
                     </h5>
                   </AccordionItemTitle>
                   <AccordionItemBody>
-                    <LinksInMonth
+                    <AccordionDays
                       postsFromMonth={data}
                       year={year}
                       month={month}
@@ -52,4 +52,4 @@ class LinkMonthsInYear extends React.Component {
   }
 }
 
-export default LinkMonthsInYear
+export default AccordionMonths
