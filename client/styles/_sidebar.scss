@@ -3,7 +3,7 @@ $largeMax: 767px;
 .sidebar {
   background: white;
   min-height: 85vh;
-  margin: 20px 0 0 0;
+  margin: 20px 0 0;
   top: 20px;
   z-index: 10;
   border-radius: 10px;
@@ -17,7 +17,6 @@ $largeMax: 767px;
     font-weight: 400;
     letter-spacing: -.003em;
   }
-
   /********* Accordion ********/
   .block {
     padding: 1.25rem;
@@ -32,9 +31,8 @@ $largeMax: 767px;
   }
 
   .u-margin-bottom-s {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
-
 
   .u-position-absolute {
     position: absolute;
@@ -57,89 +55,87 @@ $largeMax: 767px;
     position: relative;
   }
 
-.accordion__title {
-  color: #444;
-  cursor: pointer;
-  padding: 0.5em;
-  width: 100%;
-  text-align: left;
-  border: none;
-}
+  .accordion__title {
+    color: #444;
+    cursor: pointer;
+    padding: 0.5em;
+    width: 100%;
+    text-align: left;
+    border: none;
+  }
 
-[aria-expanded="true"] {
-  background-color: #ddd;
-}
+  [aria-expanded="true"] {
+    background-color: #ddd;
+  }
 
-.accordion__title:hover {
-  background-color: #f4f4f4;
-}
-
+  .accordion__title:hover {
+    background-color: #f4f4f4;
+  }
 
   .accordion__body {
-      padding: 0.5em;
-    }
+    padding: 0.5em;
+  }
 
-    #accordion__title-0 {
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
-    }
+  #accordion__title-0 {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
 
-    .accordion__title > *:last-child,
-    .accordion__body > *:last-child {
-        margin-bottom: 0;
-    }
-    .accordion__arrow {
-        display: inline-block;
-        position: relative;
-        width: 24px;
-        height: 12px;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        margin-top: -12px;
-    }
+  .accordion__body > *:last-child,
+  .accordion__title > *:last-child {
+    margin-bottom: 0;
+  }
 
+  .accordion__arrow {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -12px;
+  }
 
-    .accordion__arrow::after,
-    .accordion__arrow::before {
-        display: block;
-        position: absolute;
-        top: 50%;
-        width: 10px;
-        height: 2px;
-        background-color: currentColor;
-        content: '';
-    }
+  .accordion__arrow::after,
+  .accordion__arrow::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 2px;
+    background-color: currentColor;
+    content: '';
+  }
 
-    .accordion__arrow::before {
-        left: 4px;
-        transform: rotate(45deg);
-    }
+  .accordion__arrow::before {
+    left: 4px;
+    transform: rotate(45deg);
+  }
 
-    [aria-expanded="true"] .accordion__arrow::before {
-        transform: rotate(-45deg);
-    }
+  [aria-expanded="true"] .accordion__arrow::before {
+    transform: rotate(-45deg);
+  }
 
-    .accordion__arrow::after {
-        right: 4px;
-        transform: rotate(-45deg);
-    }
+  .accordion__arrow::after {
+    right: 4px;
+    transform: rotate(-45deg);
+  }
 
-    [aria-expanded="true"] .accordion__arrow::after {
-        transform: rotate(45deg);
-    }
+  [aria-expanded="true"] .accordion__arrow::after {
+    transform: rotate(45deg);
+  }
 
-    .accordion__arrow::before, .accordion__arrow::after {
-        transition: transform .25s ease, -webkit-transform .25s ease;
-    }
+  .accordion__arrow::after,
+  .accordion__arrow::before {
+    transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+  }
 
-    .yearPostList > :first-child {
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
-    }
-
+  .yearPostList > :first-child {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
 }
-
 @media (max-width: 991px) {
   .sidebar {
     color: blue;
