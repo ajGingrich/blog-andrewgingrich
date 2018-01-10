@@ -10,10 +10,26 @@ function createTextDate(dateString) {
 }
 
 function getNonArrayMonth(month) {
-  return arrayOfMonths[month - 1]
+  return months[month - 1]
+}
+
+function getOrdinalIndicator(date) {
+  if (date === '01' || date === '21' || date === '31') return 'st'
+  if (date === '02' || date === '22') return 'nd'
+  if (date === '03' || date === '23') return 'rd'
+
+  return 'th'
+}
+
+function getSingleDigitDate(date) {
+  if (parseInt(date) < 10) return date.slice(1)
+
+  return date
 }
 
 export {
   createTextDate,
   getNonArrayMonth,
+  getOrdinalIndicator,
+  getSingleDigitDate,
 }

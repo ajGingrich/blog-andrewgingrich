@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Map, fromJS, map } from 'immutable'
 import LinksInMonth from './LinksInMonth'
+import { getNonArrayMonth, getSingleDigitDate } from '../helpers/dates'
 import {
     Accordion,
     AccordionItem,
@@ -18,6 +19,8 @@ class LinkMonthsInYear extends React.Component {
   render() {
     const { year, postsFromYear } = this.props
     const monthPostList = postsFromYear.groupBy(item => item.get('published').slice(5, 7))
+    const date = new Date();
+    const currentMonth = (date.getMonth() + 1).toString();
 
     return (
       <div className="monthPostList">
@@ -26,10 +29,10 @@ class LinkMonthsInYear extends React.Component {
 
             return (
               <Accordion accordion={false} key={key}>
-                <AccordionItem className="accordion__item">
-                  <AccordionItemTitle >
+                <AccordionItem className="accordion__item" expanded={getSingleDigitDate(month) === currentMonth}>
+                  <AccordionItemTitle>
                     <h5 className="u-position-relative">
-                      {month}
+                      {getNonArrayMonth(month)}
                       <div className="accordion__arrow" role="presentation" />
                     </h5>
                   </AccordionItemTitle>

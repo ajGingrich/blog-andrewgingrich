@@ -32,7 +32,6 @@ class Navigation extends React.Component {
           </div>
           <Menu>
             <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user" /></a>
-            <a id="home" className="menu-item" href="/"><i className="fa fa-sign-in" /></a>
             <a id="contact" className="menu-item" href="/contact"><i className="fa fa-tags" /></a>
             <a onClick={ this.showSettings } className="menu-item--small" href=""><i className="fa fa-search" /></a>
           </Menu>
@@ -45,7 +44,6 @@ class Navigation extends React.Component {
             <ul>
               <li className="navInitials"><Link to={`/`}>AJG</Link></li>
               <li><a href="https://andrewgingrich.com/"><i className="fa fa-user" />About Me</a></li>
-              <li><a href="/"><i className="fa fa-sign-in" />Login</a></li>
               <li><a href="/contact"><i className="fa fa-tags" />Tags</a></li>
               <li><a onClick={ this.showSettings } href=""><i className="fa fa-search" />Search</a></li>
             </ul>

@@ -40,18 +40,20 @@ class LinkContainer extends React.Component {
   render() {
     if (this.state.loaded) {
       const postList = this.state.resp.data;
-      const postYears = fromJS(_.groupBy(postList, item => item.published.slice(0, 4)))
+      const sequentialPosts = _.groupBy(postList, item => item.published.slice(0, 4));
+      const postYears = fromJS(sequentialPosts)
+      const date = new Date();
+      const currentYear = date.getFullYear().toString();
 
       return (
         <div className="col-md-3">
           <div className="sidebar">
             <div className="yearPostList">
               {postYears.entrySeq().map( ([year, data]) => {
-                const isFirstTitle = year === 2017
 
                 return (
                   <Accordion accordion={false} key={year}>
-                    <AccordionItem className="accordion__item">
+                    <AccordionItem className="accordion__item" expanded={year === currentYear}>
                       <AccordionItemTitle>
                         <h5 className="u-position-relative">
                           {year}

@@ -2,16 +2,13 @@ $largeMax: 767px;
 
 .sidebar {
   background: white;
-  height: 500px;
+  min-height: 85vh;
   margin: 20px 0 0 0;
+  top: 20px;
   z-index: 10;
   border-radius: 10px;
   display: block;
   color: black;
-
-  /*.yearPostList {
-    padding: 0.5em 1em 0.5em 1em
-  }*/
 
   h5 {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
@@ -69,17 +66,22 @@ $largeMax: 767px;
   border: none;
 }
 
-[aria-selected="true"] {
-  background-color: #f4f4f4;
+[aria-expanded="true"] {
+  background-color: #ddd;
 }
 
 .accordion__title:hover {
-    background-color: #ddd;
+  background-color: #f4f4f4;
 }
 
 
-    .accordion__body {
+  .accordion__body {
       padding: 0.5em;
+    }
+
+    #accordion__title-0 {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
     }
 
     .accordion__title > *:last-child,
@@ -129,6 +131,11 @@ $largeMax: 767px;
 
     .accordion__arrow::before, .accordion__arrow::after {
         transition: transform .25s ease, -webkit-transform .25s ease;
+    }
+
+    .yearPostList > :first-child {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
     }
 
 }

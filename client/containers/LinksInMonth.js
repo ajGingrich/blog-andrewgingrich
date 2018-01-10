@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Map, groupBy, map } from 'immutable';
 import LinkDescription from './LinkDescription';
+import { getOrdinalIndicator, getSingleDigitDate } from '../helpers/dates'
 import {
     Accordion,
     AccordionItem,
@@ -29,7 +30,7 @@ class LinksInMonth extends React.Component {
                 <AccordionItem className="accordion__item" expanded={true}>
                   <AccordionItemTitle>
                     <h5 className="u-position-relative">
-                      {day}
+                      {getSingleDigitDate(day) + getOrdinalIndicator(day)}
                       <div className="accordion__arrow" role="presentation" />
                     </h5>
                   </AccordionItemTitle>
