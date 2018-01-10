@@ -1,7 +1,7 @@
 import React from 'react';
 import { map } from 'immutable'
 import { Link } from 'react-router-dom';
-import { createLink } from '../../helpers/links'
+import { createPostLinkFromImmutable } from '../../helpers/links'
 
 class LinkDescription extends React.Component {
 
@@ -18,7 +18,7 @@ class LinkDescription extends React.Component {
 
           return (
             <div className="postLink" key={link}>
-              <Link to={createLink(link)}>
+              <Link to={createPostLinkFromImmutable(link)}>
                 <h5 className="postTitle">{link.get('title')}</h5>
               </Link>
             </div>
