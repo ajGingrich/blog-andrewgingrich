@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { slide as Menu } from 'react-burger-menu';
 
@@ -28,7 +28,7 @@ class Navigation extends React.Component {
       return (
         <div className="navigation">
           <div className="container">
-            <div className="navInitials"><Link to={`/`}><p>AJG</p></Link></div>
+            <div className="navInitials"><NavLink to={`/`}><p>AJG</p></NavLink></div>
           </div>
           <Menu>
             <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user" /></a>
@@ -42,7 +42,7 @@ class Navigation extends React.Component {
         <div className="navigation">
           <div className="container">
             <ul>
-              <li className="navInitials"><Link to={`/`}>AJG</Link></li>
+              <li className="navInitials"><NavLink to={`/`}>AJG</NavLink></li>
               <li><a href="https://andrewgingrich.com/"><i className="fa fa-user" />About Me</a></li>
               <li><a href="/contact"><i className="fa fa-tags" />Tags</a></li>
               <li><a onClick={ this.showSettings } href=""><i className="fa fa-search" />Search</a></li>
