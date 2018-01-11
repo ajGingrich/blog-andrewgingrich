@@ -1,8 +1,10 @@
 import React from 'react';
-import PostComplete from '../containers/PostComplete';
-import Sidebar from '../containers/Sidebar';
-import Navigation from '../containers/Navigation';
-import Footer from '../containers/Footer'
+import {
+  PostComplete, 
+  Sidebar,
+  Navigation,
+  Footer
+} from 'Containers';
 
 class FullPostPage extends React.Component {
 

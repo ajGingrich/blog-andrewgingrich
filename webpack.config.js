@@ -15,6 +15,14 @@ module.exports = {
         publicPath: '/',
         filename: 'bundle.js'
     },
+    resolve: {
+      alias: {
+        'Containers': path.join(__dirname, 'client/containers'),
+        'Components': path.join(__dirname, 'client/components'),
+      },
+      extensions: ['.js', '.json'],
+      modules: [path.join(__dirname, 'client/'), 'node_modules']
+    },
     module: {
         loaders: [
             { test: /\.jsx?$/, loaders: ['babel-loader'], exclude: /node_modules/ },

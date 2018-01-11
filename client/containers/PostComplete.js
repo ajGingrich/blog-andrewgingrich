@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import Butter from 'buttercms';
 import ReactDisqusComments from 'react-disqus-comments';
 import Highlight from 'react-highlight'
-import { createPostUrl } from '../helpers/disqus'
+import { createPostUrl } from 'helpers/disqus'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 

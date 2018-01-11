@@ -47,6 +47,9 @@ class AccordionPosts extends React.Component {
 
       return (
         <div className="yearPostList">
+          <div className="sidebarTitleWrapper">
+            <h4>Blog Archive</h4>
+          </div>
           {postYears.entrySeq().map( ([year, data]) => {
 
                 return (

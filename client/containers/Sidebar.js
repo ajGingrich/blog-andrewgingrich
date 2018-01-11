@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AccordionPosts from './AccordionPosts/AccordionPosts'
+import { AccordionPosts } from 'Components'
 
 class Sidebar extends React.Component {
 

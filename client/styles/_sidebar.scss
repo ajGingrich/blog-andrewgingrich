@@ -10,8 +10,22 @@ $largeMax: 767px;
   display: block;
   color: black;
 
+  h4,
   h5 {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  .sidebarTitleWrapper {
+    display: flex;
+    justify-content: center
+  }
+
+  h4 {
+    padding: 1em 0 0.5em 0;
+    font-weight: 500;
+  }
+
+  h5 {
     font-size: 1em;
     line-height: 1;
     font-weight: 400;
@@ -76,11 +90,6 @@ $largeMax: 767px;
     padding: 0.5em;
   }
 
-  #accordion__title-0 {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-  }
-
   .accordion__body > *:last-child,
   .accordion__title > *:last-child {
     margin-bottom: 0;
@@ -129,11 +138,6 @@ $largeMax: 767px;
   .accordion__arrow::after,
   .accordion__arrow::before {
     transition: transform 0.25s ease, -webkit-transform 0.25s ease;
-  }
-
-  .yearPostList > :first-child {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
   }
 }
 @media (max-width: 991px) {

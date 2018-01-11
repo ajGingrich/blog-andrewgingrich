@@ -6,7 +6,6 @@ Can be seen [here](http://blog.andrewgingrich.com)
 1. npm run serve
 
 #### on server
-1. npm install if dependencies modified (fix)
+1. npm install if dependencies modified
 2. npm run build-client
 3. npm start
-

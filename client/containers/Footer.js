@@ -1,10 +1,9 @@
 import React from 'react';
-import buttercms from '../img/buttercms.png'
+import buttercms from 'img/buttercms.png'
 
 class Footer extends React.Component {
 
   render () {
-
     return (
       <div className="footer">
         <div className="container">

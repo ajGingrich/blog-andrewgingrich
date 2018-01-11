@@ -1,14 +1,15 @@
 import React from 'react';
-import PostList from '../containers/PostList';
-import Sidebar from '../containers/Sidebar';
-import Navigation from '../containers/Navigation';
-import Footer from '../containers/Footer'
+import {
+  PostList,
+  Sidebar,
+  Navigation,
+  Footer
+} from 'Containers';
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
   }
-
 
   render() {
     const params = this.props.match.params;

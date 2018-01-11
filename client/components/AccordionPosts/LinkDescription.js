@@ -1,7 +1,7 @@
 import React from 'react';
 import { map } from 'immutable'
 import { Link } from 'react-router-dom';
-import { createPostLinkFromImmutable } from '../../helpers/links'
+import { createPostLinkFromImmutable } from 'helpers/links'
 
 class LinkDescription extends React.Component {
 
