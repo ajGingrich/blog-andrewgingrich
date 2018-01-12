@@ -1,4 +1,4 @@
-import { months } from '../constants/constants'
+import { months } from 'constants/constants'
 
 function createTextDate(dateString) {
   const date = new Date(dateString);

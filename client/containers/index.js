@@ -1,5 +1,6 @@
 export { default as Footer } from './Footer'
 export { default as Navigation } from './Navigation'
-export { default as PostComplete } from './PostComplete'
-export { default as PostList } from './PostList'
+export { default as PostCompleteWrapper } from './PostComplete/PostCompleteWrapper'
+export { default as PostListWrapper } from './PostList/PostListWrapper'
 export { default as Sidebar } from './Sidebar'
+export { default as Tags } from './Tags'

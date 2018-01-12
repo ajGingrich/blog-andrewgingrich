@@ -18,8 +18,7 @@ module.exports = {
     resolve: {
       alias: {
         'Containers': path.join(__dirname, 'client/containers'),
-        'Components': path.join(__dirname, 'client/components'),
-        'Pages': path.join(__dirname, 'client/pages')
+        'Components': path.join(__dirname, 'client/components')
       },
       extensions: ['.js', '.json'],
       modules: [path.join(__dirname, 'client/'), 'node_modules']

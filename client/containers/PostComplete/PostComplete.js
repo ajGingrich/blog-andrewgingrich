@@ -47,30 +47,24 @@ class PostComplete extends React.Component {
         const shortname = "andrewgingrich";
 
         return (
-          <div className="col-xs-12 col-md-9">
-            <div className="post">
-              <div className="postContainer">
-                <h1>{post.title}</h1>
-                <Highlight innerHTML={true} language={'java'}>
-                  {post.body}
-                </Highlight>
-                <ReactDisqusComments
-                  shortname={shortname}
-                  identifier={post.slug}
-                  title={post.title}
-                  url={createPostUrl(post.url)}
-                  onNewComment={this.handleNewComment}
-                />
-              </div>
-            </div>
+          <div>
+            <h1>{post.title}</h1>
+            <Highlight innerHTML={true} language={'java'}>
+              {post.body}
+            </Highlight>
+            <ReactDisqusComments
+              shortname={shortname}
+              identifier={post.slug}
+              title={post.title}
+              url={createPostUrl(post.url)}
+              onNewComment={this.handleNewComment}
+            />
           </div>
         )
       } else {
         return (
-          <div className="col-xs-12 col-md-9">
-            <div className="post">
-              Loading...
-            </div>
+          <div>
+            Loading...
           </div>
         )
       }

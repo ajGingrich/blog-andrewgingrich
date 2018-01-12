@@ -140,9 +140,3 @@ $largeMax: 767px;
     transition: transform 0.25s ease, -webkit-transform 0.25s ease;
   }
 }
-@media (max-width: 991px) {
-  .sidebar {
-    color: blue;
-    display: none;
-  }
-}
