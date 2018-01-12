@@ -2,18 +2,20 @@ import React from 'react'
 import {
   HashRouter as Router,
   Route,
-  Link
+  Link,
+  Switch
 } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import FullPostPage from './pages/FullPostPage';
+import { HomePage, FullPostPage } from 'Pages';
+import { FourOhFourError } from 'Components'
 
 const Routes = () => (
   <Router>
-    <div>
-      <Route exact path="/:page?" component={HomePage} />
+    <Switch>
+      <Route exact path="/" component={HomePage} />
       <Route path="/p/:page?" component={HomePage} />
       <Route path="/post/:year/:month/:date/:slug?" component={FullPostPage} />
-    </div>
+      <Route component={FourOhFourError} />
+    </Switch>
   </Router>
 );
 
