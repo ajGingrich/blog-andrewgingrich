@@ -15,15 +15,8 @@ class Sidebar extends React.Component {
     super(props);
   }
 
-  componentWillReceiveProps(nextProps) {
-    //test that it should rerender here!
-    console.log(nextProps, 'nextProps')
-  }
-
   render() {
     const { browser, isMobile } = this.props;
-    console.log('rerendering...')
-    console.log(browser, 'browser')
 
     if (!browser.lessThan.large || isMobile) {
       return (

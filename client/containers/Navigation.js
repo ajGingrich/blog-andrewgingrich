@@ -1,9 +1,10 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { slide as Menu } from 'react-burger-menu';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { slide as Menu } from 'react-burger-menu'
 import { defaultBreakpoints } from 'constants/constants'
 import { Sidebar } from 'Containers'
+import { NavbarSearch } from 'Components'
 
 function browserSelector({browser}) {
   return {browser}
@@ -38,10 +39,18 @@ class Navigation extends React.Component {
         <div className="navigation">
           <div className="container">
             <ul>
-              <li className="navInitials"><NavLink to={`/`}>AJG</NavLink></li>
-              <li><NavLink to={`/search`}><i className="fa fa-search" /></NavLink></li>
-              <li><NavLink to={`/tags`}><i className="fa fa-tags" /></NavLink></li>
-              <li><a href="https://andrewgingrich.com/"><i className="fa fa-user" /></a></li>
+              <li className="navInitials">
+                <NavLink to={`/`}>AJG</NavLink>
+              </li>
+              <li>
+                <NavbarSearch />
+              </li>
+              <li>
+                <NavLink to={`/tags`}><i className="fa fa-tags" /></NavLink>
+              </li>
+              <li>
+                <a href="https://andrewgingrich.com/"><i className="fa fa-user" /></a>
+              </li>
             </ul>
           </div>
         </div>
