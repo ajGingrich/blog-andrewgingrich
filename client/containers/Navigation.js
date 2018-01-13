@@ -39,7 +39,7 @@ class Navigation extends React.Component {
           <div className="container">
             <ul>
               <li className="navInitials"><NavLink to={`/`}>AJG</NavLink></li>
-              <li><NavLink to={`/`}><i className="fa fa-search" /></NavLink></li>
+              <li><NavLink to={`/search`}><i className="fa fa-search" /></NavLink></li>
               <li><NavLink to={`/tags`}><i className="fa fa-tags" /></NavLink></li>
               <li><a href="https://andrewgingrich.com/"><i className="fa fa-user" /></a></li>
             </ul>

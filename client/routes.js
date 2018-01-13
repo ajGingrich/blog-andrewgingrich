@@ -9,8 +9,9 @@ import {
   Navigation,
   Sidebar,
   Footer,
-  PostCompleteWrapper,
-  PostListWrapper,
+  PostComplete,
+  PostList,
+  Search,
   Tags
 } from 'Containers';
 import { FourOhFourError } from 'Components'
@@ -26,10 +27,11 @@ const Routes = () => (
             <div className="post">
               <div className="postContainer">
                 <Switch>
-                  <Route exact path="/" component={PostListWrapper} />
-                  <Route path="/p/:page?" component={PostListWrapper} />
-                  <Route path="/post/:year/:month/:date/:slug?" component={PostCompleteWrapper} />
+                  <Route exact path="/" component={PostList} />
+                  <Route path="/p/:page?" component={PostList} />
+                  <Route path="/post/:year/:month/:date/:slug?" component={PostComplete} />
                   <Route path="/tags" component={Tags} />
+                  <Route path="/search" component={Search} />
                   <Route component={FourOhFourError} />
                 </Switch>
               </div>
