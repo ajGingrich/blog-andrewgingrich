@@ -46,10 +46,10 @@ class Navigation extends React.Component {
                 <NavbarSearch />
               </li>
               <li>
-                <NavLink to={`/tags`}><i className="fa fa-tags" /></NavLink>
+                <NavLink to={`/tags`}><i className="fa fa-tags fa-lg" /></NavLink>
               </li>
               <li>
-                <a href="https://andrewgingrich.com/"><i className="fa fa-user" /></a>
+                <a href="https://andrewgingrich.com/"><i className="fa fa-user fa-lg" /></a>
               </li>
             </ul>
           </div>

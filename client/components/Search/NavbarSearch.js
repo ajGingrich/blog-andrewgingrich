@@ -23,9 +23,17 @@ class NavbarSearch extends React.Component {
 
   _handleSubmit(event) {
     event.preventDefault();
+
+    if(this.state.value !== '') {
+      this.setState({
+        submitted: true
+      })
+    }
+  }
+
+  componentWillUnmount() {
     this.setState({
-      value: '',
-      submitted: true
+      value: ''
     })
   }
 
@@ -36,7 +44,7 @@ class NavbarSearch extends React.Component {
           <label>
             <input type="text" value={this.state.value} onChange={this._handleChange} />
           </label>
-          <NavLink to={`/search/${this.state.value}`}><i className="fa fa-search" /></NavLink>
+          <span onClick={this._handleSubmit}><i className="fa fa-search fa-lg" /></span>
         </form>
         {this.state.submitted &&
           <Redirect to={`/search/${this.state.value}`} />}
