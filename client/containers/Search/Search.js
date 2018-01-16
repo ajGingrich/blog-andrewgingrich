@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Butter from 'buttercms';
-
-const butter = Butter(process.env.BUTTERCMS_KEY);
+import SearchResults from './SearchResults'
 
 class Search extends React.Component {
 
@@ -27,9 +25,15 @@ class Search extends React.Component {
   }
 
   render() {
+    const { value } = this.state
+    //console.log(value, 'value sending')
+
     return (
       <div>
-        <h2>Searching for {this.state.value}</h2>
+        <div>
+          <h2>Searching for {value}</h2>
+        </div>
+        <SearchResults value={value}/>
       </div>
     )
   }
