@@ -26,7 +26,6 @@ class Search extends React.Component {
 
   render() {
     const { value } = this.state
-    //console.log(value, 'value sending')
 
     return (
       <div>
