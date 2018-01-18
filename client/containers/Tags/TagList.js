@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { TagIndividual } from 'Components'
 import Butter from 'buttercms';
+import { fromJS } from 'immutable';
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -13,7 +14,7 @@ class TagList extends React.Component {
   }
 
   fetchTagList() {
-    butter.tag.list().then((resp) => {
+    butter.tag.list({include: 'recent_posts'}).then((resp) => {
       this.setState({
         loaded: true,
         resp: resp.data
@@ -30,11 +31,20 @@ class TagList extends React.Component {
 
     if (loaded) {
       const { resp } = this.state
-      console.log(resp.data, 'data')
-      ///sort and add dups for a count (sort by count)
+      const tagData = fromJS(resp.data)
+        .filter(tag => tag.get('recent_posts').size > 0)
+        .sortBy(tag => -tag.get('recent_posts').size)
+
       return (
         <div>
-          Hi
+          {tagData.map((tag) =>
+            <TagIndividual
+              key={tag.get('slug')}
+              tagName={tag.get('name')}
+              count={tag.get('recent_posts').size}
+              posts={tag.get('recent_posts')}
+            />
+          )}
         </div>
       )
     } else {
