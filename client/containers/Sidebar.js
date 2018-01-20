@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { AccordionPosts } from 'Components'
+import { AccordionPosts, Subscription } from 'Components'
 import { defaultBreakpoints } from 'constants/constants'
 
 function browserSelector({browser}) {
@@ -23,6 +23,7 @@ class Sidebar extends React.Component {
         <div className="col-md-3">
           <div className="sidebar">
             <AccordionPosts />
+            <Subscription />
           </div>
         </div>
       )
