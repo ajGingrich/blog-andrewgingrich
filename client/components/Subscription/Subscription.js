@@ -2,6 +2,10 @@ import React from 'react';
 // import { client } from '@sendgrid/client'
 //
 // client.setApiKey(process.env.SENDGRID_KEY);
+import axios from 'axios'
+
+const sendgridKey = process.env.SENDGRID_KEY;
+//const listId = '2842861';
 
 class Subscription extends React.Component {
 
@@ -17,22 +21,22 @@ class Subscription extends React.Component {
     this._handleSubmit = this._handleSubmit.bind(this);
   }
 
-  // addContact(email) {
-  //   const addEmail = {
-  //     body: None,
-  //     method: 'POST',
-  //     url: '/v3/contactdb/lists/blog-andrewgingrich/recipients/' + email
-  //   };
-  //
-  //   client.request(addEmail)
-  //   .then(([response, body]) => {
-  //     console.log(response.statusCode);
-  //     console.log(body);
-  //     this.setState({
-  //       hasSubscription: true
-  //     })
-  //   })
-  // }
+  addRecipient(value) {
+    const data = JSON.stringify([{ email: value }])
+    const config = {
+      headers: {
+        'Authorization': 'Bearer ' + process.env.SENDGRID_KEY,
+        'Content-Type': 'application/json'
+      }
+    }
+
+    axios.post('https://api.sendgrid.com/v3/contactdb/recipients', data, config)
+    .then(function (response) {
+      console.log(response);
+    }).catch(function (error) {
+      console.log(error);
+    });
+  }
 
   _handleChange(event) {
     this.setState({
@@ -46,7 +50,7 @@ class Subscription extends React.Component {
     const { value } = this.state
 
     if(value !== '') {
-      //this.addContact(email)
+      this.addRecipient(value)
       this.setState({
         hasSubscription: true
       })

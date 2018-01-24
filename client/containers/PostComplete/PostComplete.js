@@ -49,7 +49,7 @@ class PostComplete extends React.Component {
         return (
           <div>
             <h1>{post.title}</h1>
-            <Highlight innerHTML={true} language={'java'}>
+            <Highlight innerHTML={true} languages={['javascript', 'C']}>
               {post.body}
             </Highlight>
             <ReactDisqusComments
