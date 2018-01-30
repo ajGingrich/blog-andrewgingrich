@@ -1,11 +1,4 @@
 import React from 'react';
-// import { client } from '@sendgrid/client'
-//
-// client.setApiKey(process.env.SENDGRID_KEY);
-import axios from 'axios'
-
-const sendgridKey = process.env.SENDGRID_KEY;
-//const listId = '2842861';
 
 class Subscription extends React.Component {
 
@@ -22,20 +15,16 @@ class Subscription extends React.Component {
   }
 
   addRecipient(value) {
-    const data = JSON.stringify([{ email: value }])
-    const config = {
-      headers: {
-        'Authorization': 'Bearer ' + process.env.SENDGRID_KEY,
-        'Content-Type': 'application/json'
-      }
-    }
-
-    axios.post('https://api.sendgrid.com/v3/contactdb/recipients', data, config)
-    .then(function (response) {
-      console.log(response);
-    }).catch(function (error) {
-      console.log(error);
-    });
+      fetch('/api/addcontact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: value,
+        })
+      }).then(res => console.log(res))
+        .catch(error => console.log(error))
   }
 
   _handleChange(event) {

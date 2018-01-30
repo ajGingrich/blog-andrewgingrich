@@ -4,6 +4,7 @@ import fs from 'fs';
 import http from 'http';
 import favicon from 'serve-favicon';
 import webpack from 'webpack';
+import bodyParser from 'body-parser';
 
 const config = require('../webpack.config');
 const compiler = webpack(config);
@@ -12,8 +13,11 @@ const routes = require('./routes/index');
 const app = express();
 const isDevelopment  = app.get('env') !== "production";
 const server = http.createServer(app);
+require('dotenv').config();
 
 app.use(favicon(path.join(__dirname,'../client','img','favicon.ico')));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 if (isDevelopment) {
     //logger with morgan
