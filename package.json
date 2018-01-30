@@ -10,7 +10,7 @@
     "build-client": "webpack --config=webpack.prod.config.js",
     "build-server": "babel -d ./build ./server",
     "start": "export NODE_ENV=production npm run clean && npm run build-server && node build/server.js",
-    "serve": "babel-node server/server.js",
+    "serve": "nodemon --exec babel-node server/server.js",
     "dev": "webpack"
   },
   "dependencies": {
@@ -66,6 +66,7 @@
     "jsx": "^0.9.89",
     "jsx-loader": "^0.13.2",
     "node-sass": "^4.5.3",
+    "nodemon": "^1.14.11",
     "postcss-loader": "^2.0.9",
     "react-dom": "^16.0.0",
     "sass-loader": "^6.0.6",
