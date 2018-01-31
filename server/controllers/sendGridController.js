@@ -1,16 +1,10 @@
 import axios from 'axios';
 import CircularJSON from 'circular-json';
+import { sendGridConfig, sendGridCampaignId } from '../constants/sendgrid'
 
 exports.addContact = function(req, res, next) {
   const email = req.body.email.slice(0)
   const data = JSON.stringify([{ 'email': email }])
-
-  const config = {
-    headers: {
-      'Authorization': 'Bearer ' + process.env.SENDGRID_KEY,
-      'Content-Type': 'application/json'
-    }
-  }
 
   axios.post('https://api.sendgrid.com/v3/contactdb/recipients', data, config)
     .then(function (response) {
@@ -24,7 +18,18 @@ exports.addContact = function(req, res, next) {
 
 exports.sendEmail = function(req, res) {
   const isPostCreated = req.body
+  const data = null
+
   if (isPostCreated) {
-    console.log('do stuff')
+    axios.post('https://api.sendgrid.com/v3/campaigns/' + sendGridCampaignId + '/schedules/now', data, config)
+      .then(function (response) {
+        //const responseClone = CircularJSON.stringify(response)
+        //res.send(responseClone)
+        console.log(response)
+        Promise.resolve(response)
+      }).catch(function (error) {
+        console.log(error, 'error');
+        return next(error);
+      });
   }
 }
