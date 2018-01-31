@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+//import handleAxiosError from 'helpers/handleAxiosError'
 
 class Subscription extends React.Component {
 
@@ -15,22 +17,29 @@ class Subscription extends React.Component {
   }
 
   addRecipient(value) {
-      fetch('/api/addcontact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: value,
+    const email = value.slice(0);
+    const data = JSON.stringify({ 'email': email })
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    axios.post('/api/addcontact', data, config)
+      .then(response => {
+        console.log(response, 'response')
+        this.setState({
+          hasSubscription: true
         })
-      }).then(res => console.log(res))
-        .catch(error => console.log(error))
+        return Promise.resolve(response)
+      }).catch(error => {
+          handleAxiosError(error)
+        })
   }
 
   _handleChange(event) {
     this.setState({
-      value: event.target.value,
-      hasSubscription: false
+      value: event.target.value
     });
   }
 
@@ -40,9 +49,6 @@ class Subscription extends React.Component {
 
     if(value !== '') {
       this.addRecipient(value)
-      this.setState({
-        hasSubscription: true
-      })
     }
   }
 

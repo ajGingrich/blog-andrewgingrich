@@ -50,11 +50,10 @@ app.enable('trust proxy', 'localhost', '66.198.253.199');
 app.use(express.static(path.join(__dirname, '../client')));
 app.use('/', routes);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+// catch error and send to client
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.send(err)
 });
 
 const port = 52000;

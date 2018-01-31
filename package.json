@@ -10,7 +10,7 @@
     "build-client": "webpack --config=webpack.prod.config.js",
     "build-server": "babel -d ./build ./server",
     "start": "export NODE_ENV=production npm run clean && npm run build-server && node build/server.js",
-    "serve": "nodemon --exec babel-node server/server.js",
+    "serve": "nodemon --ignore 'client/' --exec babel-node server/server.js",
     "dev": "webpack"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
     "buttercms": "^1.0.17",
+    "circular-json": "^0.5.1",
     "dotenv": "^5.0.0",
     "dotenv-webpack": "^1.5.4",
     "ejs": "^2.5.6",
