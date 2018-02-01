@@ -3,7 +3,6 @@ import path from 'path';
 import axios from 'axios';
 const router = express.Router();
 import sendGridController from '../controllers/sendGridController';
-import butterController from '../controllers/butterController';
 
 //add email recipient
 router.post('/api/addcontact', sendGridController.addContact)
