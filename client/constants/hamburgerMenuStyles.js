@@ -8,7 +8,7 @@ export const hamburgerMenuStyles = {
     'zIndex': '500'
   },
   bmBurgerBars: {
-    background: 'white !important'
+    background: 'white'
   },
   bmCrossButton: {
     height: '24px',
@@ -20,13 +20,14 @@ export const hamburgerMenuStyles = {
   bmMenu: {
     background: '#373a47',
     padding: '2.5em 1.5em 0',
-    fontSize: '1.15em'
-  },
-  bmBurgerBars: {
-    background: '#373a47'
+    fontSize: '1.15em',
+    'zIndex': '500'
   },
   bmCrossButton: {
     height: '24px',
     width: '24px'
   },
+  bmOverlay: {
+    background: 'rgba(0, 0, 0, 0.3)'
+  }
 }
