@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { slide as Menu } from 'react-burger-menu'
 import { defaultBreakpoints } from 'constants/constants'
+import { hamburgerMenuStyles } from 'constants/hamburgerMenuStyles'
 import { Sidebar } from 'Containers'
 import { NavbarSearch } from 'Components'
 
@@ -22,7 +23,7 @@ class Navigation extends React.Component {
 
     if (browser.lessThan.large) {
       return [
-        <Menu key="hamburger-menu">
+        <Menu key="hamburger-menu" styles={hamburgerMenuStyles}>
           <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user" /></a>
           <a id="contact" className="menu-item" href="/contact"><i className="fa fa-tags" /></a>
           <a onClick={ this.showSettings } className="menu-item--small" href=""><i className="fa fa-search" /></a>
