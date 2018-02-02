@@ -21,19 +21,19 @@ class Navigation extends React.Component {
     const { browser } = this.props;
 
     if (browser.lessThan.large) {
-      return (
-        <div className="navigation">
+      return [
+        <Menu key="hamburger-menu">
+          <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user" /></a>
+          <a id="contact" className="menu-item" href="/contact"><i className="fa fa-tags" /></a>
+          <a onClick={ this.showSettings } className="menu-item--small" href=""><i className="fa fa-search" /></a>
+          <Sidebar isMobile={true} />
+        </Menu>,
+        <div className="navigation" key="mobile-nav-bar">
           <div className="container">
             <div className="navInitials"><NavLink to={`/`}><p>AJG</p></NavLink></div>
           </div>
-          <Menu>
-            <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user" /></a>
-            <a id="contact" className="menu-item" href="/contact"><i className="fa fa-tags" /></a>
-            <a onClick={ this.showSettings } className="menu-item--small" href=""><i className="fa fa-search" /></a>
-            <Sidebar isMobile={true} />
-          </Menu>
         </div>
-      )
+      ]
     } else {
       return (
         <div className="navigation">

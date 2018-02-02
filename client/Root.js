@@ -3,11 +3,9 @@ import Routes from './routes'
 import { ErrorBoundary } from 'Components'
 
 const Root = () => {
-  return <div>
-          <ErrorBoundary>
-            <Routes />
-          </ErrorBoundary>
-        </div>;
+  return <ErrorBoundary>
+          <Routes />
+        </ErrorBoundary>;
 };
 
 export default Root
