@@ -19,7 +19,6 @@ export const hamburgerMenuStyles = {
   },
   bmMenu: {
     position: 'relative',
-    background: '#373a47',
     padding: '2.5em 1.5em 0',
     fontSize: '1.15em',
     'zIndex': '50'

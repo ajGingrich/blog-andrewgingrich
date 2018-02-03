@@ -12,6 +12,9 @@
 
 .navigation .container {
   background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 .navigation .container ul {
@@ -55,8 +58,10 @@
 }
 
 .searchForm form label input {
-  border-radius: 1px;
   margin-right: 10px;
+  padding: 0 0.3em 0 0.35em;
+  border-radius: 5px;
+  font-weight: lighter;
 }
 
 @media (max-width: 768px) {
