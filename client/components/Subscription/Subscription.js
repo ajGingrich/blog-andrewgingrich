@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-//import handleAxiosError from 'helpers/handleAxiosError'
 
 class Subscription extends React.Component {
 
@@ -60,10 +59,14 @@ class Subscription extends React.Component {
         <div className="subscriptionContainer">
           <div className='searchForm'>
             <form onSubmit={this._handleSubmit}>
-              <label>
-                <input type="text" value={this.state.value} onChange={this._handleChange} placeholder="email..." />
-              </label>
-              <button className="btn btn-primary" type="submit" value="Submit">Subscribe</button>
+              <div className='sidebarCenterWrapper'>
+                <label>
+                  <input type="text" value={this.state.value} onChange={this._handleChange} placeholder="email..." />
+                </label>
+              </div>
+              <div className="sidebarCenterWrapper subscriptionButton">
+                <button className="btn btn-primary" type="submit" value="Submit">Subscribe</button>
+              </div>
             </form>
           </div>
         </div>
@@ -71,7 +74,9 @@ class Subscription extends React.Component {
     } else {
       return (
         <div className="subscriptionContainer">
-          Thanks for subscribing!
+          <div className="subsciptionText">
+            Thanks for subscribing!
+          </div>
         </div>
       )
     }

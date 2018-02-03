@@ -13,13 +13,34 @@ $largeMax: 767px;
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  .sidebarTitleWrapper {
+  .sidebarCenterWrapper {
     display: flex;
-    justify-content: center
+    justify-content: center;
+    text-decoration: underline;
+
+    label input {
+      padding: 0 0.3em 0 0.35em;
+      border-radius: 5px;
+      font-weight: lighter;
+    }
+  }
+
+  .subsciptionText {
+    text-align: center;
+    padding: 0 0.5em 0.5em 0.5em;
+  }
+
+  .subscriptionWrapper {
+    vertical-align: bottom;
+  }
+
+  .subscriptionButton {
+    text-decoration: none;
+    margin: 0.25em 0 0.5em 0;
   }
 
   h4 {
-    padding: 1em 0 0.5em 0;
+    padding: 1em 0 0 0;
     font-weight: 500;
   }
 
