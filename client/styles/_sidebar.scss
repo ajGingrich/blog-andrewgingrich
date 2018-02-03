@@ -2,9 +2,7 @@ $largeMax: 767px;
 
 .sidebar {
   background: white;
-  min-height: 85vh;
   margin: 20px 0 0;
-  top: 20px;
   z-index: 10;
   border-radius: 10px;
   display: block;
@@ -145,5 +143,14 @@ $largeMax: 767px;
   .sidebar {
     width: 120%;
     margin-left: -10%;
+    min-height: 82vh;
+  }
+}
+
+@media (min-width: 993px) {
+  .sidebar {
+    height: 90vh;
+    overflow-y: auto;
+    position: fixed;
   }
 }

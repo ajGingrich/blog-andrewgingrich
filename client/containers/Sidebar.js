@@ -17,13 +17,13 @@ class Sidebar extends React.Component {
 
   render() {
     const { browser, isMobile } = this.props;
-    //const sideBarBootstrapStyles = isMobile ? 'col-md-5' : "col-md-3"
-    //console.log(isMobile, 'isMobile')
+    const sidebarWidth = browser.is.infinity ? '262.5px ': '212.5px'
+    const sidebarStyles = { width: sidebarWidth }
 
     if (!browser.lessThan.large || isMobile) {
       return (
         <div className="col-md-3">
-          <div className="sidebar">
+          <div className="sidebar" style={sidebarStyles}>
             <AccordionPosts />
             <Subscription />
           </div>
