@@ -140,3 +140,10 @@ $largeMax: 767px;
     transition: transform 0.25s ease, -webkit-transform 0.25s ease;
   }
 }
+
+@media (max-width: 992px) {
+  .sidebar {
+    width: 120%;
+    margin-left: -10%;
+  }
+}

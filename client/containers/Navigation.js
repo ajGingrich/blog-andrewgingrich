@@ -24,9 +24,19 @@ class Navigation extends React.Component {
     if (browser.lessThan.large) {
       return [
         <Menu key="hamburger-menu" styles={hamburgerMenuStyles}>
-          <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user" /></a>
-          <a id="contact" className="menu-item" href="/contact"><i className="fa fa-tags" /></a>
-          <a onClick={ this.showSettings } className="menu-item--small" href=""><i className="fa fa-search" /></a>
+          <div className="navFaContainer">
+            <ul>
+              <li>
+                <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user fa-2x" /></a>
+              </li>
+              <li>
+                <NavLink to={`/tags`}><i className="fa fa-tags fa-lg fa-2x" /></NavLink>
+              </li>
+              <li>
+                <i className="fa fa-search fa-lg fa-2x" />
+              </li>
+            </ul>
+          </div>
           <Sidebar isMobile={true} />
         </Menu>,
         <div className="navigation" key="mobile-nav-bar">

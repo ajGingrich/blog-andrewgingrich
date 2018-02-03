@@ -17,6 +17,8 @@ class Sidebar extends React.Component {
 
   render() {
     const { browser, isMobile } = this.props;
+    //const sideBarBootstrapStyles = isMobile ? 'col-md-5' : "col-md-3"
+    //console.log(isMobile, 'isMobile')
 
     if (!browser.lessThan.large || isMobile) {
       return (

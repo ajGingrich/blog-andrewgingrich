@@ -1,7 +1,7 @@
 export const months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July',
                       'August', 'September', 'October', 'November', 'December'];
 
-const defaultBreakpoints = {
+export const defaultBreakpoints = {
   extraSmall: 480,
   small: 768,
   medium: 992,

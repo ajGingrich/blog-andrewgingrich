@@ -1,44 +1,20 @@
-/* Position and sizing of burger button */
-.bm-burger-button {
-  position: fixed;
-  width: 24px;
-  height: 20px;
-  right: 20px;
-  top: 15px;
+.bm-menu-wrap {
   z-index: 50 !important;
 }
 
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: white;
-}
+.navFaContainer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+  padding: 0.5em 1em 0 1em;
 
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
+  li {
+    display: inline;
+  }
 
-/* Color/shape of close button cross */
-.bm-cross {
-  background: white;
-}
-
-/* General sidebar styles */
-.bm-menu {
-  background: #373a47;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-  color: #b8b7ad;
-  padding: 0.8em;
-}
-
-/* Styling of overlay */
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
-  /*z-index: 20 !important;*/
+  a {
+    color: white;
+  }
 }
