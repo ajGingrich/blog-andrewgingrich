@@ -18,7 +18,7 @@ a:hover {
 @import "navigation";
 /***@import "burger-menu";****/
 .bm-menu-wrap {
-  z-index: 50;
+  z-index: 50 !important;
 }
 @import "post";
 @import "sidebar";
