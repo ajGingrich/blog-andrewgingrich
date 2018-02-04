@@ -3,7 +3,8 @@ import { responsiveStoreEnhancer } from 'redux-responsive';
 import reducer from './reducers';
 
 const store = createStore(
-  reducer,
-  //initialState,
+  reducer, //combine reducers has the initialState
   responsiveStoreEnhancer);
 export default store;
+
+//console.log(store.getState())

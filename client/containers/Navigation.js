@@ -5,7 +5,7 @@ import { slide as Menu } from 'react-burger-menu'
 import { defaultBreakpoints } from 'constants/constants'
 import { hamburgerMenuStyles } from 'constants/hamburgerMenuStyles'
 import { Sidebar } from 'Containers'
-import { NavbarSearch } from 'Components'
+import { NavbarSearch, SideBarController } from 'Components'
 
 function browserSelector({browser}) {
   return {browser}
@@ -58,6 +58,9 @@ class Navigation extends React.Component {
               </li>
               <li>
                 <NavLink to={`/tags`}><i className="fa fa-tags fa-lg" /></NavLink>
+              </li>
+              <li>
+                <SideBarController />
               </li>
               <li>
                 <a href="https://andrewgingrich.com/"><i className="fa fa-user fa-lg" /></a>
