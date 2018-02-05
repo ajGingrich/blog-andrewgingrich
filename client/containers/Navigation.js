@@ -6,6 +6,7 @@ import { defaultBreakpoints } from 'constants/constants'
 import { hamburgerMenuStyles } from 'constants/hamburgerMenuStyles'
 import { Sidebar } from 'Containers'
 import { NavbarSearch, SideBarController } from 'Components'
+//import axios from 'axios'
 
 function browserSelector({browser}) {
   return {browser}
