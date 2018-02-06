@@ -1,6 +1,7 @@
 import { months } from 'constants/constants'
 
 function createTextDate(dateString) {
+  ///published
   const date = new Date(dateString);
   const day = date.getDate();
   const month = date.getMonth();

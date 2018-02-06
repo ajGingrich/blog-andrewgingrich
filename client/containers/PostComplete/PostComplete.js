@@ -26,10 +26,6 @@ class PostComplete extends React.Component {
     });
   }
 
-  handleNewComment(comment) {
-    console.log(comment.text);
-  }
-
   componentWillMount() {
     let slug = this.props.slug;
     this.fetchPost(slug);

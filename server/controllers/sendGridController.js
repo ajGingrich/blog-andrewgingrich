@@ -1,8 +1,8 @@
 import axios from 'axios';
 import CircularJSON from 'circular-json';
 import {
-  sendGridCampaignId
-} from '../constants/sendgrid'
+  getNextCampaignId
+} from '../helpers/sendgrid'
 
 
 exports.addContact = function(req, res, next) {
@@ -30,6 +30,7 @@ exports.addContact = function(req, res, next) {
 exports.sendEmail = function(req, res, next) {
   const isPostCreated = req.body
   const data = JSON.stringify({})
+  const sendGridCampaignId = getNextCampaignId()
   const sendUrl = 'https://api.sendgrid.com/v3/campaigns/' + sendGridCampaignId + '/schedules/now'
   const config = {
     headers: {

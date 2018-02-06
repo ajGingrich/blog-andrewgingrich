@@ -12,7 +12,8 @@ import {
   PostComplete,
   PostList,
   Search,
-  Tags
+  Tags,
+  TagComplete,
 } from 'Containers';
 import { FourOhFourError } from 'Components'
 
@@ -31,6 +32,7 @@ const Routes = () => (
                   <Route path="/p/:page?" component={PostList} />
                   <Route path="/post/:year/:month/:date/:slug?" component={PostComplete} />
                   <Route path="/tags" component={Tags} />
+                  <Route path="/tag/:tag?" component={TagComplete} />
                   <Route path="/search/:query?" component={Search} />
                   <Route component={FourOhFourError} />
                 </Switch>

@@ -16,7 +16,7 @@ class TagIndividual extends React.Component {
     const { tagName, count } = this.props
     return (
         <div>
-          {tagName} x {count}
+          <Link to={`/tag/${tagName}`}>{tagName}</Link> x {count}
         </div>
       )
     }
