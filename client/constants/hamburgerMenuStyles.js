@@ -5,7 +5,7 @@ export const hamburgerMenuStyles = {
     height: '20px',
     right: '20px',
     top: '15px',
-    'zIndex': '50'
+    'zIndex': '49'
   },
   bmBurgerBars: {
     background: 'white'

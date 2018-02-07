@@ -5,7 +5,11 @@ import { slide as Menu } from 'react-burger-menu'
 import { defaultBreakpoints } from 'constants/constants'
 import { hamburgerMenuStyles } from 'constants/hamburgerMenuStyles'
 import { Sidebar } from 'Containers'
-import { NavbarSearch, SideBarController } from 'Components'
+import {
+  NavbarSearch,
+  SideBarController,
+  MobileLinkIcons
+} from 'Components'
 
 function browserSelector({browser}) {
   return {browser}
@@ -23,20 +27,8 @@ class Navigation extends React.Component {
 
     if (browser.lessThan.large) {
       return [
-        <Menu key="hamburger-menu" styles={hamburgerMenuStyles}>
-          <div className="navFaContainer">
-            <ul>
-              <li>
-                <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user fa-2x" /></a>
-              </li>
-              <li>
-                <NavLink to={`/tags`}><i className="fa fa-tags fa-lg fa-2x" /></NavLink>
-              </li>
-              <li>
-                <i className="fa fa-search fa-lg fa-2x" />
-              </li>
-            </ul>
-          </div>
+        <Menu key="hamburger-menu" right styles={hamburgerMenuStyles}>
+          <MobileLinkIcons />
           <Sidebar isMobile={true} />
         </Menu>,
         <div className="navigation" key="mobile-nav-bar">
