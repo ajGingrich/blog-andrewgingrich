@@ -20,7 +20,7 @@ import { FourOhFourError } from 'Components'
 const Routes = () => (
   <Router>
     <div>
-      <Navigation />
+      <Navigation/>
       <div className="container">
         <div className="row">
           <Sidebar isMobile={false}/>

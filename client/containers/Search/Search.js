@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchResults from './SearchResults'
+import SearchPage from './SearchPage'
 
 class Search extends React.Component {
 
@@ -30,9 +30,9 @@ class Search extends React.Component {
     return (
       <div>
         <div>
-          <h2>Searching for {value}</h2>
+          <h2>Search</h2>
         </div>
-        <SearchResults value={value}/>
+        <SearchPage value={value} />
       </div>
     )
   }
