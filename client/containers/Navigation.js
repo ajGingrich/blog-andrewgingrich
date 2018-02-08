@@ -1,14 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { slide as Menu } from 'react-burger-menu'
-import { defaultBreakpoints } from 'constants/constants'
-import { hamburgerMenuStyles } from 'constants/hamburgerMenuStyles'
-import { Sidebar } from 'Containers'
 import {
   NavbarSearch,
   SideBarController,
-  MobileLinkIcons
+  MobileLinkIcons,
+  ReactBurgerMenu,
 } from 'Components'
 
 function browserSelector({browser}) {
@@ -27,10 +24,7 @@ class Navigation extends React.Component {
 
     if (browser.lessThan.large) {
       return [
-        <Menu key="hamburger-menu" right styles={hamburgerMenuStyles}>
-          <MobileLinkIcons />
-          <Sidebar isMobile={true} />
-        </Menu>,
+        <ReactBurgerMenu key="hamburger-menu" />,
         <div className="navigation" key="mobile-nav-bar">
           <div className="container">
             <div className="navInitials"><NavLink to={`/`}><p>AJG</p></NavLink></div>

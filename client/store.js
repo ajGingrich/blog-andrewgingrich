@@ -6,5 +6,3 @@ const store = createStore(
   reducer, //combine reducers has the initialState
   responsiveStoreEnhancer);
 export default store;
-
-//console.log(store.getState())
