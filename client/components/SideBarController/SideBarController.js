@@ -23,7 +23,7 @@ class SideBarController extends React.Component {
     const isOpen = sidebar.isOpen
 
     return (
-      <span onClick={this._handleOnClick} className ="tooltip-bottom" data-tooltip="Toggle Archive">
+      <span onClick={this._handleOnClick} className ="tooltip-bottom sidebarToggle" data-tooltip="Toggle Archive">
         <i className="fa fa-bars fa-lg" />
       </span>
 

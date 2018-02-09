@@ -42,11 +42,9 @@
 .navigation li a,
 .searchForm form span {
   cursor: pointer;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
 }
 .navigation li a:hover,
+.sidebarToggle:hover,
 .searchForm form span:hover {
   color: rgba(255, 255, 255, 0.8);
   outline: none;
@@ -74,9 +72,6 @@
 @media (min-width: 769px) {
   .navigation {
     letter-spacing: 1px;
-    -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-    -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
   }
 
   .navigation li {
