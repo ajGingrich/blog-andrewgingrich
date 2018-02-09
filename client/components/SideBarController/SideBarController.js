@@ -16,8 +16,6 @@ class SideBarController extends React.Component {
   _handleOnClick() {
     const { sidebar } = this.props;
     const isOpen = sidebar.isOpen
-
-    console.log(isOpen)
   }
 
   render() {
@@ -25,7 +23,7 @@ class SideBarController extends React.Component {
     const isOpen = sidebar.isOpen
 
     return (
-      <span onClick={this._handleOnClick}>
+      <span onClick={this._handleOnClick} className ="tooltip-bottom" data-tooltip="Toggle Archive">
         <i className="fa fa-bars fa-lg" />
       </span>
 

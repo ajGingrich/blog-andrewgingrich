@@ -52,7 +52,9 @@ class NavbarSearch extends React.Component {
           <label>
             <input type="text" value={value} onChange={this._handleChange} placeholder="Search..." />
           </label>
-          <span onClick={this._handleSubmit}><i className="fa fa-search fa-lg" /></span>
+          <span onClick={this._handleSubmit} className ="tooltip-bottom" data-tooltip="Search">
+            <i className="fa fa-search fa-lg" />
+          </span>
         </form>
       </div>
     );

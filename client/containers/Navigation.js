@@ -37,19 +37,29 @@ class Navigation extends React.Component {
           <div className="container">
             <ul>
               <li className="navInitials">
-                <NavLink to={`/`}>AJG</NavLink>
+                <NavLink to={`/`}>
+                  <span className ="tooltip-bottom" data-tooltip="Home">
+                    AJG
+                  </span>
+                </NavLink>
               </li>
               <li>
                 <NavbarSearch />
               </li>
               <li>
-                <NavLink to={`/tags`}><i className="fa fa-tags fa-lg" /></NavLink>
+                <NavLink to={`/tags`}>
+                  <span className ="tooltip-bottom" data-tooltip="Tags">
+                    <i className="fa fa-tags fa-lg" />
+                  </span>
+                </NavLink>
               </li>
               <li>
                 <SideBarController />
               </li>
               <li>
-                <a href="https://andrewgingrich.com/"><i className="fa fa-user fa-lg" /></a>
+                <span className ="tooltip-bottom" data-tooltip="About Me">
+                  <a href="https://andrewgingrich.com/"><i className="fa fa-user fa-lg" /></a>
+                </span>
               </li>
             </ul>
           </div>

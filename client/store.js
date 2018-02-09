@@ -5,4 +5,5 @@ import reducer from './reducers';
 const store = createStore(
   reducer, //combine reducers has the initialState
   responsiveStoreEnhancer);
+
 export default store;

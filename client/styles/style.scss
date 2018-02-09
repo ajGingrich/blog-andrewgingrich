@@ -22,11 +22,12 @@ a:hover {
 @import "burger-menu";
 @import "post";
 @import "sidebar";
+@import "tooltip";
 @import "footer";
 
 body {
   width: 100%;
   height: 100%;
   font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #f4f7fc
+  background: #f4f7fc;
 }
