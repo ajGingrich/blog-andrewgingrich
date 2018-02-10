@@ -69,6 +69,29 @@
   }
 }
 
+@media (max-width: 992px) {
+  .searchForm {
+
+  }
+
+  .mobileSearchButton {
+    transform: translateX(-100%);
+    margin-top: 1px;
+    border-radius: 5px;
+    position: absolute;
+  }
+
+  .navbarSearchLabel {
+    width: 100%;
+    margin-bottom: -5px;
+  }
+
+  .searchForm form label input {
+    height: 35px;
+    width: 100%;
+  }
+}
+
 @media (min-width: 769px) {
   .navigation {
     letter-spacing: 1px;
