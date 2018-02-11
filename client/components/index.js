@@ -7,3 +7,4 @@ export { default as SubscriptionWrapper } from './Subscription/SubscriptionWrapp
 export { default as SideBarController } from './SideBarController/SideBarController'
 export { default as MobileLinkIcons } from './MobileLinkIcons/MobileLinkIcons'
 export { default as ReactBurgerMenu } from './ReactBurgerMenu/ReactBurgerMenu'
+export { default as MainHeader } from './MainHeader/MainHeader'

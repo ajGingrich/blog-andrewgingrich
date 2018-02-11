@@ -1,0 +1,31 @@
+.tagWrapper {
+  display: flex;
+  color: rgb(68, 68, 68);
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 100;
+  font-size: 16px;
+  margin-bottom: 1em;
+}
+
+.tagContainer {
+  background: transparent;
+  box-shadow: none;
+  width: 100%;
+  padding: 0px;
+}
+
+.tagName {
+  background: rgb(51, 122, 183);
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  margin: 0 0.5em 0 0;
+
+  a {
+    color: white;
+  }
+}
+
+.tagCount {
+  margin-top: 5px;
+}

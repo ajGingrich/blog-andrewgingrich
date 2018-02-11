@@ -36,7 +36,7 @@ class TagList extends React.Component {
         .sortBy(tag => -tag.get('recent_posts').size)
 
       return (
-        <div>
+        <div className="container tagContainer">
           {tagData.map((tag) =>
             <TagIndividual
               key={tag.get('slug')}

@@ -17,8 +17,6 @@
 
   h1, h2, h3, h4, h5 {
     font-weight: 600;
-    //margin-bottom: 1em;
-    //margin-top: 1.5em;
   }
 
   ul, ol {
@@ -49,6 +47,23 @@
     border-radius: 10px;
   }
 
+  .mainTitle {
+    color: rgb(68, 68, 68);
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 400;
+  }
+
+  .postHeaderDivider {
+    margin-top: -10px;
+    background-color: #979797;
+    border: 0 none;
+    color: #979797;
+    height: 1px;
+  }
+
+  .completePostTitle {
+    color: rgb(51, 122, 183);
+  }
 
   /* Responsive floating */
   @media only screen and (min-width: 720px)  {

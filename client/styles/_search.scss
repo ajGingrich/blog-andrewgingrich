@@ -1,0 +1,18 @@
+.pageSearchForm {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 24px;
+  width: 100%;
+
+  .searchForm form label input {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+  }
+}
+
+.emptySearch {
+  display: flex;
+  justify-content: center;
+}

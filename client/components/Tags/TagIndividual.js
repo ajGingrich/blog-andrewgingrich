@@ -15,8 +15,13 @@ class TagIndividual extends React.Component {
   render() {
     const { tagName, count } = this.props
     return (
-        <div>
-          <Link to={`/tag/${tagName}`}>{tagName}</Link> x {count}
+        <div className="col-xs-6 col-sm-4 col-md-3 tagWrapper">
+          <div className="tagName">
+            <Link to={`/tag/${tagName}`}>{tagName}</Link>
+          </div>
+          <div className="tagCount">
+            x {count}
+          </div>
         </div>
       )
     }

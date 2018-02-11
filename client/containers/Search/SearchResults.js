@@ -48,7 +48,7 @@ class SearchResults extends React.Component {
 
     if (loaded) {
       const { resp } = this.state
-      const errorMessage = resp.data.length < 1 ? <div>Sorry, there are no results</div> : null
+      const errorMessage = resp.data.length < 1 ? <div className="emptySearch">Sorry, there are no results</div> : null
 
       return (
         <div>

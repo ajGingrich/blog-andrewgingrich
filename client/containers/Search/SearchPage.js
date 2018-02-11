@@ -62,13 +62,15 @@ class SearchPage extends React.Component {
     const { value } = this.state
     return (
       <div>
-        <div className='searchForm'>
-          <form onSubmit={this._handleSubmit}>
-            <label>
-              <input type="text" value={value} onChange={this._handleChange} placeholder="Search..." />
-            </label>
-            <span onClick={this._handleSubmit}><i className="fa fa-search fa-lg" /></span>
-          </form>
+        <div className="pageSearchForm">
+          <div className='searchForm'>
+            <form onSubmit={this._handleSubmit}>
+              <label>
+                <input type="text" value={value} onChange={this._handleChange} placeholder="Search..." />
+              </label>
+              <span onClick={this._handleSubmit}><i className="fa fa-search fa-lg" /></span>
+            </form>
+          </div>
         </div>
         {value && <SearchResults value={value}/>}
       </div>

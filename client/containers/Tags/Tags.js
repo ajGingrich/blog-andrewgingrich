@@ -1,5 +1,6 @@
 import React from 'react';
 import TagList from './TagList'
+import { MainHeader } from 'Components'
 
 class Tags extends React.Component {
 
@@ -11,7 +12,7 @@ class Tags extends React.Component {
 
     return (
       <div>
-        <h2>Tags</h2>
+        <MainHeader title="Tags" />
         <TagList />
       </div>
     )
