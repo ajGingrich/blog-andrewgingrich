@@ -27,6 +27,7 @@
     "express": "^4.15.3",
     "firebase": "^4.9.1",
     "font-awesome": "^4.7.0",
+    "googleapis": "^26.0.1",
     "highlight.js": "^9.12.0",
     "immutable": "^3.8.2",
     "lodash": "^4.17.4",
