@@ -1,5 +1,5 @@
-// import * as firebase from "firebase";
-import google from 'googleapis'
+
+const google = require("googleapis");
 import axios from 'axios'
 
 const serviceAccount = require('./serviceAccountKey')
@@ -22,15 +22,18 @@ getFirebaseToken = function() {
     } else if (tokens.access_token === null) {
       console.log("Provided service account does not have permission to generate access tokens");
     } else {
+      console.log(tokens.access_token, 'token baby')
       return tokens.access_token;
     }
   });
 }
 
+exports.getSendGridCampaigns = function() {
 
-
-exports.getSendGridCampaigns() {
-    axios.get('https://blog-9ccca.firebaseio.com/blog/sendgridCampaign.json?access=hiding')
+    const access_token = getFirebaseToken();
+    //need a promise here??
+    console.log(access_token, 'another token')
+    axios.get('https://blog-9ccca.firebaseio.com/blog/sendgridCampaign.json?access_token=' + access_token)
       .then(function(response) {
         const campaignIds = response.data.ids
         console.log(campaignIds[0].toString(), 'ids')
