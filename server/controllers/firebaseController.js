@@ -1,20 +1,22 @@
 
 const google = require("googleapis");
+const Promise = require("bluebird");
+
 import axios from 'axios'
 
-const serviceAccount = require('./serviceAccountKey')
+const serviceAccount = require('./serviceAccountKey.json')
 const scopes = ["https://www.googleapis.com/auth/firebase.database"]
-//const database url
+const databaseUrl = "https://blog-9ccca.firebaseio.com/blog/sendgridCampaign.json"
 
 // Authenticate a JWT client with the service account.
-const jwtClient = new google.auth.JWT(
+const jwtClient = new google.google.auth.JWT(
   serviceAccount.client_email,
   null,
   serviceAccount.private_key,
   scopes
 );
 
-getFirebaseToken = function() {
+const getFirebaseToken = function() {
   // Use the JWT client to generate an access token.
   jwtClient.authorize(function(error, tokens) {
     if (error) {
@@ -31,9 +33,10 @@ getFirebaseToken = function() {
 exports.getSendGridCampaigns = function() {
 
     const access_token = getFirebaseToken();
-    //need a promise here??
+    //need a promise here
+    
     console.log(access_token, 'another token')
-    axios.get('https://blog-9ccca.firebaseio.com/blog/sendgridCampaign.json?access_token=' + access_token)
+    axios.get(databaseURL + '?access_token=' + access_token)
       .then(function(response) {
         const campaignIds = response.data.ids
         console.log(campaignIds[0].toString(), 'ids')

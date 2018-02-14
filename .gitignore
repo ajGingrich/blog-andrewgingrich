@@ -5,6 +5,6 @@ bower_components
 .idea
 *.iml
 package-lock.json
+serviceAccountKey.json
 build/
 client/dist
-*.json
