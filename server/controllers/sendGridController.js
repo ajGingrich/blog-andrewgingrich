@@ -28,26 +28,40 @@ exports.addContact = function(req, res, next) {
 exports.sendEmail = function(req, res, next) {
   const isPostCreated = req.body
   const data = JSON.stringify({})
-  const hi = firebaseController.getSendGridCampaigns()
-  console.log(hi)
-  const sendGridCampaignId = '2384144'
-  const sendUrl = 'https://api.sendgrid.com/v3/campaigns/' + sendGridCampaignId + '/schedules/now'
-  const config = {
-    headers: {
-      'authorization': 'Bearer ' + process.env.SENDGRID_KEY
-    }
-  }
+  const campaignIds = firebaseController.getSendGridCampaigns()
 
   if (isPostCreated) {
-    axios.post(sendUrl, data, config)
-      .then(function (response) {
-        const responseClone = CircularJSON.stringify(response)
+    const config = {
+      headers: {
+        'authorization': 'Bearer ' + process.env.SENDGRID_KEY
+      }
+    }
 
-        Promise.resolve(response)
-      }).catch(function (error) {
-        const errorClone = CircularJSON.stringify(error)
+    campaignIds.then(function(ids) {
+      console.log(ids)
+      const idsArray = ids.slice(0)
+      const sendGridCampaignId = idsArray.shift()
+      const sendUrl = 'https://api.sendgrid.com/v3/campaigns/' + sendGridCampaignId + '/schedules/now'
 
-        // return next(errorClone);
-      });
+      axios.post(sendUrl, data, config)
+        .then(function (response) {
+          const responseClone = CircularJSON.stringify(response)
+
+          console.log(responseClone)
+
+          //then post new array here
+          Promise.resolve(response)
+        }).catch(function (error) {
+          const errorClone = CircularJSON.stringify(error)
+
+          console.log(errorClone)
+          return next(errorClone);
+        });
+    }).catch(function(error) {
+      console.log(error)
+      //Promise reject?
+      reject(error)
+    })
+
   }
 }

@@ -35,21 +35,18 @@ const getFirebaseToken = function() {
 }
 
 exports.getSendGridCampaigns = function() {
-    const access_token = getFirebaseToken()
+  const access_token = getFirebaseToken()
 
+  return new Promise(function(resolve, reject) {
     access_token.then(function(token) {
       axios.get(databaseUrl + '?access_token=' + token)
         .then(function(response) {
-          const campaignIds = response.data.ids
-          console.log(campaignIds[0].toString(), 'ids')
-          //Promise resolve/return?
+          resolve(response.data.ids)
         }).catch(function(error) {
-          console.log(error, 'error')
-          //Promise reject error here?
+          reject(error)
         });
-
-        //return a promise here? returnnnnn
     }).catch(function(error) {
-      console.log(error ,'this is an error')
+      reject(error)
     })
-  }
+  })
+}
