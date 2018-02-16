@@ -40,13 +40,25 @@ exports.getSendGridCampaigns = function() {
   return new Promise(function(resolve, reject) {
     access_token.then(function(token) {
       axios.get(databaseUrl + '?access_token=' + token)
-        .then(function(response) {
-          resolve(response.data.ids)
-        }).catch(function(error) {
-          reject(error)
-        });
-    }).catch(function(error) {
-      reject(error)
-    })
+        .then(response => resolve(response.data.ids))
+        .catch(error => console.log(error))
+    }).catch(error => reject(error))
   })
+}
+
+exports.updateSendGridCampaigns = function(ids) {
+  const access_token = getFirebaseToken()
+  const data = JSON.stringify(ids)
+
+  access_token.then(function(token) {
+    const config = {
+      headers: {
+        'authorization': 'Bearer ' + token
+      }
+    }
+
+    axios.put(databaseUrl, data, config)
+      .then(response => console.log(response))
+      .catch(error => console.log(error))
+  }).catch(error => reject(error))
 }

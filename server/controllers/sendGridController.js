@@ -12,15 +12,12 @@ exports.addContact = function(req, res, next) {
     }
   }
 
-
   axios.post('https://api.sendgrid.com/v3/contactdb/recipients', data, config)
     .then(function (response) {
       const responseClone = CircularJSON.stringify(response)
-
       res.send(responseClone)
     }).catch(function (error) {
       const errorClone = CircularJSON.stringify(error)
-
       return next(errorClone);
     });
 }
@@ -38,7 +35,6 @@ exports.sendEmail = function(req, res, next) {
     }
 
     campaignIds.then(function(ids) {
-      console.log(ids)
       const idsArray = ids.slice(0)
       const sendGridCampaignId = idsArray.shift()
       const sendUrl = 'https://api.sendgrid.com/v3/campaigns/' + sendGridCampaignId + '/schedules/now'
@@ -47,21 +43,12 @@ exports.sendEmail = function(req, res, next) {
         .then(function (response) {
           const responseClone = CircularJSON.stringify(response)
 
-          console.log(responseClone)
-
-          //then post new array here
           Promise.resolve(response)
+          firebaseController.updateSendGridCampaigns(idsArray)
         }).catch(function (error) {
           const errorClone = CircularJSON.stringify(error)
-
           console.log(errorClone)
-          return next(errorClone);
         });
-    }).catch(function(error) {
-      console.log(error)
-      //Promise reject?
-      reject(error)
-    })
-
+    }).catch(error => reject(error))
   }
 }
