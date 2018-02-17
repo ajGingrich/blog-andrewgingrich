@@ -1,5 +1,5 @@
 node_modules/
-.eslintrc
+.DS_Store
 .env
 bower_components
 .idea
