@@ -49,6 +49,6 @@ exports.sendEmail = function(req, res, next) {
           const errorClone = CircularJSON.stringify(error)
           console.log(errorClone)
         });
-    }).catch(error => reject(error))
+    }).catch(error => console.log(error))
   }
 }
