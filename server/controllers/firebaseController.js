@@ -40,7 +40,7 @@ exports.getSendGridCampaigns = function() {
   return new Promise(function(resolve, reject) {
     access_token.then(function(token) {
       axios.get(databaseUrl + '?access_token=' + token)
-        .then(response => resolve(response.data.ids))
+        .then(response => resolve(response.data || response.data.ids))
         .catch(error => console.log(error))
     }).catch(error => reject(error))
   })

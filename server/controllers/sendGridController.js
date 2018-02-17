@@ -35,8 +35,8 @@ exports.sendEmail = function(req, res, next) {
     }
 
     campaignIds.then(function(ids) {
-      const idsArray = ids.slice(0)
-      const sendGridCampaignId = idsArray.shift()
+      const idsArray = ids && ids.slice(0)
+      const sendGridCampaignId = idsArray && idsArray.shift()
       const sendUrl = 'https://api.sendgrid.com/v3/campaigns/' + sendGridCampaignId + '/schedules/now'
 
       axios.post(sendUrl, data, config)
