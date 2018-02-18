@@ -27,7 +27,7 @@ class AccordionDays extends React.Component {
 
             return (
               <Accordion accordion={false} key={key}>
-                <AccordionItem className="accordion__item" expanded={true}>
+                <AccordionItem className="accordion__item" expanded>
                   <AccordionItemTitle>
                     <h5 className="u-position-relative">
                       {getSingleDigitDate(day) + getOrdinalIndicator(day)}
