@@ -16,6 +16,10 @@ class AccordionDays extends React.Component {
     super(props);
   }
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     const { month, postsFromMonth, year} = this.props
     const linksList = postsFromMonth.groupBy(item => item.get('published').slice(8, 10))
