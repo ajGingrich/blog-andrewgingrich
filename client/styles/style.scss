@@ -26,4 +26,22 @@ body {
   height: 100%;
   font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #f4f7fc;
+  overflow-y: hidden;
+}
+
+.fixedWrapper {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  position: fixed;
+}
+
+@media(max-width: 992px) {
+  .mainWrapper {
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    overflow-y: scroll;
+    position: fixed;
+    padding-bottom: 5em;
+  }
 }

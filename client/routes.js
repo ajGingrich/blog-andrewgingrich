@@ -19,9 +19,9 @@ import { FourOhFourError } from 'Components'
 
 const Routes = () => (
   <Router>
-    <div>
+    <div className="fixedWrapper">
       <Navigation/>
-      <div className="container">
+      <div className="container mainWrapper">
         <div className="row">
           <Sidebar isMobile={false}/>
           <div className="col-xs-12 col-md-9">
