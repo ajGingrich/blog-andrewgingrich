@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { toggleSidebar } from 'actions/sidebar'
+import store from 'store'
 
 function sidebarSelector({sidebar}) {
   return {sidebar}
@@ -17,6 +18,7 @@ class SideBarController extends React.Component {
   _handleOnClick() {
     const { sidebar } = this.props;
     const isOpen = sidebar.isOpen
+    store.dispatch(toggleSidebar(!isOpen))
   }
 
   render() {
@@ -31,24 +33,4 @@ class SideBarController extends React.Component {
   }
 };
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    active: ownProps.filter === state.visibilityFilter
-  }
-}
- 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    onClick: () => {
-      dispatch(setVisibilityFilter(ownProps.filter))
-    }
-  }
-}
-
-const SidebarLink = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SideBarController)
-
-//dispatch here?? on click
-export default connect()(SideBarController)
+export default SideBarController
