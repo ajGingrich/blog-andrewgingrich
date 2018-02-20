@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { toggleSidebar } from 'actions/sidebar'
 
 function sidebarSelector({sidebar}) {
   return {sidebar}
@@ -26,10 +27,28 @@ class SideBarController extends React.Component {
       <span onClick={this._handleOnClick} className ="tooltip-bottom sidebarToggle" data-tooltip="Toggle Archive">
         <i className="fa fa-bars fa-lg" />
       </span>
-
     )
   }
 };
 
+const mapStateToProps = (state, ownProps) => {
+  return {
+    active: ownProps.filter === state.visibilityFilter
+  }
+}
+ 
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onClick: () => {
+      dispatch(setVisibilityFilter(ownProps.filter))
+    }
+  }
+}
+
+const SidebarLink = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SideBarController)
+
 //dispatch here?? on click
-export default SideBarController
+export default connect()(SideBarController)
