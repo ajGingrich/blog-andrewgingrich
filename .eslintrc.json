@@ -10,5 +10,6 @@
         "no-unreachable": 2,
         "curly": 2
     },
-    "env": {}
+    "env": {},
+    "parser": "babel-eslint"
 }
