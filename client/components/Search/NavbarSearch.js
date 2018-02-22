@@ -59,6 +59,7 @@ class NavbarSearch extends React.Component {
     const { submitted, value } = this.state
     const { browser, history } = this.props
     const isBrowserLessThanLarge = browser.lessThan.large
+    //styles here for fadedown and fade up or somewhere ///
 
     return (
       <div className='searchForm'>

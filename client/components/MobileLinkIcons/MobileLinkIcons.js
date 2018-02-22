@@ -5,11 +5,6 @@ import { connect } from 'react-redux'
 import { action as toggleMenu } from 'redux-burger-menu'
 import store from 'store'
 
-function burgerMenuSelector({burgerMenu}) { //only for viewing
-  return {burgerMenu}
-}
-
-@connect(burgerMenuSelector)
 class MobileLinkIcons extends React.Component {
 
   constructor(props) {
@@ -37,7 +32,6 @@ class MobileLinkIcons extends React.Component {
 
   render() {
     const { isSearchOpen } = this.state
-    const { burgerMenu } = this.props //only for view
 
     return (
       <div className="navFaContainer">

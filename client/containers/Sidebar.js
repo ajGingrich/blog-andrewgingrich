@@ -17,24 +17,25 @@ class Sidebar extends React.Component {
 
   render() {
     const { browser, isMobile, sidebar } = this.props;
+    const isSidebarOpen = sidebar && sidebar.isOpen
     const sidebarWidth = browser.is.infinity ? '262.5px ': '212.5px'
     const sidebarStyles = browser.lessThan.large ? {} : { width: sidebarWidth }
-    const renderSidebar = sidebar.isOpen && (!browser.lessThan.large || isMobile)
+    const sidebarWrapperStyles = isSidebarOpen ? 'col-md-3 animated zoomInDown' : 'col-md-3 animated zoomOutUp'
 
-    if (renderSidebar) {
+    if (!browser.lessThan.large || isMobile) {
       return (
-        <div className="col-md-3">
+        <div className={sidebarWrapperStyles}>
           <div className="sidebar" style={sidebarStyles}>
             <AccordionPosts />
             <SubscriptionWrapper />
           </div>
         </div>
-      )
-    } else {
-      return (
-        <div></div>
-      )
-    }
+    )
+  } else {
+    return (
+      <div></div>
+    )
+  }
   }
 };
 

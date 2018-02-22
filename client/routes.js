@@ -27,7 +27,7 @@ class Routes extends React.Component {
 
   render() {
     const { sidebar } = this.props
-    const postClass = sidebar.isOpen ? 'col-xs-12 col-md-9' : 'col-xs-12 col-md-12'
+    const postClass = sidebar.isOpen ? 'col-xs-12 col-md-9 animated slideInUp' : 'col-xs-12 col-md-12 animated fadeInRightBig'
 
     return (
       <Router>
