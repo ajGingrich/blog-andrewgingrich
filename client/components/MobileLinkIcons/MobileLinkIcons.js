@@ -50,7 +50,7 @@ class MobileLinkIcons extends React.Component {
             </span>
           </li>
         </ul>
-        {isSearchOpen && <NavbarSearch />}
+        <NavbarSearch isOpen={isSearchOpen}/>
       </div>
     )
   }

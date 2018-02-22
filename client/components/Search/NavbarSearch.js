@@ -57,12 +57,12 @@ class NavbarSearch extends React.Component {
 
   render() {
     const { submitted, value } = this.state
-    const { browser, history } = this.props
+    const { browser, history, isOpen } = this.props
     const isBrowserLessThanLarge = browser.lessThan.large
-    //styles here for fadedown and fade up or somewhere ///
+    const searchFormClass = isOpen ? 'searchForm animated fadeInDown' : 'searchForm animated fadeOutUp'
 
     return (
-      <div className='searchForm'>
+      <div className={isBrowserLessThanLarge ? searchFormClass : 'searchForm'}>
         <form onSubmit={this._handleSubmit}>
           <label className="navbarSearchLabel">
             <input type="text" value={value} onChange={this._handleChange} placeholder="Search..." />
