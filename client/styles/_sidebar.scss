@@ -167,6 +167,9 @@ $largeMax: 767px;
     width: 120%;
     margin-left: -10%;
     min-height: 82vh;
+    z-index: 47;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
   }
 }
 

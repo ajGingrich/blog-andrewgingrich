@@ -11,6 +11,7 @@ class ReactBurgerMenu extends React.Component {
     return (
       <Menu right styles={hamburgerMenuStyles}>
         <MobileLinkIcons />
+        <div className="spacer">&nbsp;</div>
         <Sidebar isMobile={true} />
       </Menu>
     )

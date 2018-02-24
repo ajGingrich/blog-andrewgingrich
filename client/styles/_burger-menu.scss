@@ -6,6 +6,17 @@
   background: url(../img/nav_background.jpg);
 }
 
+.navFaContainer {
+  position: fixed;
+  top: 30px;
+  z-index: 51;
+}
+
+.spacer {
+  width: 100%;
+  height: 95px;
+}
+
 .navFaContainer ul {
   display: flex;
   flex-direction: row;
