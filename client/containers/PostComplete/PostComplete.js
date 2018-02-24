@@ -4,6 +4,7 @@ import Butter from 'buttercms';
 import ReactDisqusComments from 'react-disqus-comments';
 import Highlight from 'react-highlight'
 import { createPostUrl } from 'helpers/disqus'
+import { createTextDate } from 'helpers/dates'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -48,6 +49,7 @@ class PostComplete extends React.Component {
             <Highlight innerHTML={true} languages={['javascript', 'C']}>
               {post.body}
             </Highlight>
+            <span>Published on {createTextDate(post.created)}.</span>
             <ReactDisqusComments
               shortname={shortname}
               identifier={post.slug}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
-import { createTextDate } from 'helpers/dates'
 import { createPostLinkFromJS } from 'helpers/links'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
@@ -57,7 +56,11 @@ class PostList extends React.Component {
                     <h1 className="postTitle">{post.title}</h1>
                   </Link>
                   <div className="postSummary">
-                    {post.summary} by {post.author.first_name} {post.author.last_name} on {createTextDate(post.created)}
+                    {post.summary}
+                    &nbsp;
+                    <Link to={createPostLinkFromJS(post)}>
+                      Continue Reading...
+                    </Link>
                   </div>
                 </div>
               )

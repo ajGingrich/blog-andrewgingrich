@@ -6,8 +6,10 @@ function createTextDate(dateString) {
   const day = date.getDate();
   const month = date.getMonth();
   const year = date.getFullYear();
+  const ordinalIndicator = getOrdinalIndicator(day);
+  console.log(ordinalIndicator)
 
-  return months[month] + ' ' + day + ', ' + year;
+  return months[month] + ' ' + day + ordinalIndicator + ', ' + year;
 }
 
 function getNonArrayMonth(month) {
