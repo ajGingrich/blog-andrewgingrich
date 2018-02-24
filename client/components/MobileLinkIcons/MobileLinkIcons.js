@@ -33,6 +33,8 @@ class MobileLinkIcons extends React.Component {
   render() {
     const { isSearchOpen } = this.state
 
+    const mobileDividerStyles = isSearchOpen ? null : { 'margin-top': '-25px' }
+
     return (
       <div className="navFaContainer">
         <ul>
@@ -51,6 +53,7 @@ class MobileLinkIcons extends React.Component {
           </li>
         </ul>
         <NavbarSearch isOpen={isSearchOpen}/>
+        <hr style={mobileDividerStyles} className="mobileDivider"></hr>
       </div>
     )
   }

@@ -23,6 +23,12 @@
   }
 }
 
+.mobileDivider {
+  border: none;
+  height: 3px;
+  background-color: white;
+}
+
 @media (min-width: 769px) {
   .bm-burger-button {
     top: 10px !important;
