@@ -50,16 +50,20 @@ class PostList extends React.Component {
           }
           {
             this.state.resp.data.map((post) => {
+              const postImage = post.featured_image
               return (
                 <div key={post.slug}>
-                  <Link to={createPostLinkFromJS(post)}>
-                    <h1 className="postTitle">{post.title}</h1>
-                  </Link>
+                  <h1 className="postTitle">
+                    <Link to={createPostLinkFromJS(post)}>
+                      {post.title}
+                    </Link>
+                    {postImage && <img className="postIcon" src={postImage} />}
+                  </h1>
                   <div className="postSummary">
                     {post.summary}
                     &nbsp;
                     <Link to={createPostLinkFromJS(post)}>
-                      Continue Reading...
+                      Continue reading...
                     </Link>
                   </div>
                 </div>
