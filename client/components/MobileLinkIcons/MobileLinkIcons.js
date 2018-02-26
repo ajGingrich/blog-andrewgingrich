@@ -36,7 +36,7 @@ class MobileLinkIcons extends React.Component {
     const mobileDividerStyles = isSearchOpen ? null : { 'marginTop': '-25px' }
 
     return (
-      <div className="navFaContainer">
+      <div className="navFaContainer col-md-3">
         <ul>
           <li>
             <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user fa-2x" /></a>
