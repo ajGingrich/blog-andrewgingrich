@@ -51,6 +51,7 @@ class PostList extends React.Component {
           {
             this.state.resp.data.map((post) => {
               const postImage = post.featured_image
+
               return (
                 <div key={post.slug}>
                   <h1 className="postTitle">

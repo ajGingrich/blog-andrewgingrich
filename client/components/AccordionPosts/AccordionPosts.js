@@ -51,25 +51,24 @@ class AccordionPosts extends React.Component {
             <h4>Blog Archive</h4>
           </div>
           {postYears.entrySeq().map( ([year, data]) => {
-
-                return (
-                  <Accordion accordion={false} key={year}>
-                    <AccordionItem className="accordion__item" expanded={year === currentYear}>
-                      <AccordionItemTitle>
-                        <h5 className="u-position-relative">
-                          {year}
-                          <div className="accordion__arrow" role="presentation" />
-                        </h5>
-                      </AccordionItemTitle>
-                      <AccordionItemBody>
-                        <AccordionMonths
-                          postsFromYear={data}
-                          year={year}
-                        />
-                      </AccordionItemBody>
-                    </AccordionItem>
-                  </Accordion>
-                )
+            return (
+              <Accordion accordion={false} key={year}>
+                <AccordionItem className="accordion__item" expanded={year === currentYear}>
+                  <AccordionItemTitle>
+                    <h5 className="u-position-relative">
+                      {year}
+                      <div className="accordion__arrow" role="presentation" />
+                    </h5>
+                  </AccordionItemTitle>
+                  <AccordionItemBody>
+                    <AccordionMonths
+                      postsFromYear={data}
+                      year={year}
+                    />
+                  </AccordionItemBody>
+                </AccordionItem>
+              </Accordion>
+            )
           })}
         </div>
       )

@@ -8,7 +8,7 @@
     },
     "rules": {
         "no-unreachable": 2,
-        "curly": 2
+        "curly": ["error", "multi-line"]
     },
     "env": {},
     "parser": "babel-eslint"

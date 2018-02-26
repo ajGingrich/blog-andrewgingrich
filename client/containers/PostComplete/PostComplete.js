@@ -41,15 +41,19 @@ class PostComplete extends React.Component {
     render() {
       if (this.state.loaded) {
         const post = this.state.post;
+        const postImage = post.featured_image
         const shortname = "andrewgingrich";
 
         return (
           <div>
-            <h1 className="completePostTitle">{post.title}</h1>
+            <h1 className="completePostTitle">
+              {post.title}
+              {postImage && <img className="postIcon" src={postImage} />}
+            </h1>
             <Highlight innerHTML={true} languages={['javascript', 'C']}>
               {post.body}
             </Highlight>
-            <span>Published on {createTextDate(post.created)}.</span>
+            <span>Published on {createTextDate(post.published)}.</span>
             <ReactDisqusComments
               shortname={shortname}
               identifier={post.slug}

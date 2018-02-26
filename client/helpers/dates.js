@@ -1,13 +1,11 @@
 import { months } from 'constants/constants'
 
 function createTextDate(dateString) {
-  ///published
   const date = new Date(dateString);
   const day = date.getDate();
   const month = date.getMonth();
   const year = date.getFullYear();
   const ordinalIndicator = getOrdinalIndicator(day);
-  console.log(ordinalIndicator)
 
   return months[month] + ' ' + day + ordinalIndicator + ', ' + year;
 }
@@ -17,11 +15,19 @@ function getNonArrayMonth(month) {
 }
 
 function getOrdinalIndicator(date) {
+  if (typeof date === 'number') date = convertNumberDatetoString(date)
+
   if (date === '01' || date === '21' || date === '31') return 'st'
   if (date === '02' || date === '22') return 'nd'
   if (date === '03' || date === '23') return 'rd'
 
   return 'th'
+}
+
+function convertNumberDatetoString(num) {
+  if (num < 10) return '0' + num.toString()
+
+  return num.toString()
 }
 
 function getSingleDigitDate(date) {
