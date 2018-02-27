@@ -20,7 +20,14 @@ class Sidebar extends React.Component {
     const isSidebarOpen = sidebar && sidebar.isOpen
     const sidebarWidth = browser.is.infinity ? '262.5px ': '212.5px'
     const sidebarStyles = browser.lessThan.large ? {} : { width: sidebarWidth }
-    const sidebarWrapperStyles = isSidebarOpen ? 'sidebarMobileWrapper col-xs-12 animated zoomInDown' : 'sidebarMobileWrapper col-xs-12 animated zoomOutUp'
+
+    let sidebarWrapperStyles = 'sidebarMobileWrapper col-xs-12 col-md-3 animated'
+
+    if (isSidebarOpen) {
+      sidebarWrapperStyles += ' zoomInDown'
+    } else {
+      sidebarWrapperStyles += ' zoomOutUp'
+    }
 
     if (!browser.lessThan.large || isMobile) {
       return (
