@@ -36,24 +36,26 @@ class MobileLinkIcons extends React.Component {
     const mobileDividerStyles = isSearchOpen ? null : { 'marginTop': '-25px' }
 
     return (
-      <div className="navFaContainer col-md-3">
-        <ul>
-          <li>
-            <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user fa-2x" /></a>
-          </li>
-          <li>
-            <NavLink to={`/tags`} onClick={this._handleCloseMenu}>
-              <i className="fa fa-tags fa-lg fa-2x" />
-            </NavLink>
-          </li>
-          <li>
-            <span onClick={this._handleSearchDisplay}>
-              <i className="fa fa-search fa-lg fa-2x" />
-            </span>
-          </li>
-        </ul>
-        <NavbarSearch isOpen={isSearchOpen}/>
-        <hr style={mobileDividerStyles} className="mobileDivider"></hr>
+      <div className="mobileLinkWrapper">
+        <div className="navFaContainer col-md-3">
+          <ul>
+            <li>
+              <a id="about" className="menu-item" href="https://andrewgingrich.com/"><i className="fa fa-user fa-2x" /></a>
+            </li>
+            <li>
+              <NavLink to={`/tags`} onClick={this._handleCloseMenu}>
+                <i className="fa fa-tags fa-lg fa-2x" />
+              </NavLink>
+            </li>
+            <li>
+              <span onClick={this._handleSearchDisplay}>
+                <i className="fa fa-search fa-lg fa-2x" />
+              </span>
+            </li>
+          </ul>
+          <NavbarSearch isOpen={isSearchOpen}/>
+          <hr style={mobileDividerStyles} className="mobileDivider"></hr>
+        </div>
       </div>
     )
   }

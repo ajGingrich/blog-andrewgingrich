@@ -164,12 +164,10 @@ $largeMax: 767px;
 
 @media (max-width: 992px) {
   .sidebar {
-    width: 120%;
-    margin-left: -10%;
+    width: 100%;
     min-height: 82vh;
     margin-bottom: 20px;
     z-index: 47;
-    overflow-y: scroll;
   }
 }
 
