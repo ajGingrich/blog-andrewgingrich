@@ -48,6 +48,14 @@ body {
   }
 }
 
+@media(min-width: 768px) and (max-width: 992px) {
+  .mainWrapper {
+    margin-left: 50%;
+    overflow-x: visible;
+    transform: translate(-50%, 0);
+  }
+}
+
 @media(max-width: 992px) {
   .sidebarMobileWrapper {
     -webkit-overflow-scrolling: touch;
