@@ -37,8 +37,7 @@ body {
   position: fixed;
 }
 
-/*change this breakpoint!!!! > 992*/
-@media(max-width: 1300px) {
+@media(max-width: 1024px) {
   .mainWrapper {
     -webkit-overflow-scrolling: touch;
     height: 100%;
@@ -50,8 +49,7 @@ body {
   }
 }
 
-/*change this breakpoint!!!! > 992*/
-@media(min-width: 768px) and (max-width: 1300px) {
+@media(min-width: 768px) and (max-width: 1024px) {
   .mainWrapper {
     margin-left: 50%;
     transform: translate(-50%, 0);
