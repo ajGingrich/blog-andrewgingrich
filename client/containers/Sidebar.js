@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { AccordionPosts, SubscriptionWrapper } from 'Components'
-import { defaultBreakpoints } from 'constants/constants'
 
 function stateSelector({ browser, sidebar }) {
   return { browser, sidebar}
@@ -19,6 +18,7 @@ class Sidebar extends React.Component {
     const { browser, isMobile, sidebar } = this.props;
     const isSidebarOpen = sidebar && sidebar.isOpen
     const sidebarWidth = browser.is.infinity ? '262.5px ': '212.5px'
+    // const isBrowserLessThanLarge =
     const sidebarStyles = browser.lessThan.large ? {} : { width: sidebarWidth }
 
     let sidebarWrapperStyles = 'sidebarMobileWrapper col-xs-12 col-md-3 animated'

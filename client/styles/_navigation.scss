@@ -62,14 +62,14 @@
   font-weight: lighter;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .navInitials {
     float: left;
     padding-top: 10px;
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .mobileSearchButton {
     transform: translateX(-100%);
     margin-top: 1px;
@@ -94,7 +94,7 @@
   }
 }
 
-@media (min-width: 993px) {
+@media (min-width: 992px) {
   .navigation {
     letter-spacing: 1px;
   }
