@@ -8,3 +8,4 @@ export { default as SideBarController } from './SideBarController/SideBarControl
 export { default as MobileLinkIcons } from './MobileLinkIcons/MobileLinkIcons'
 export { default as ReactBurgerMenu } from './ReactBurgerMenu/ReactBurgerMenu'
 export { default as MainHeader } from './MainHeader/MainHeader'
+export { default as PostTitle } from './PostTitle/PostTitle'

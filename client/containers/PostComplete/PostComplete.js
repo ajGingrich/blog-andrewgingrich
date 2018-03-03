@@ -5,6 +5,7 @@ import ReactDisqusComments from 'react-disqus-comments';
 import Highlight from 'react-highlight'
 import { createPostUrl } from 'helpers/disqus'
 import { createTextDate } from 'helpers/dates'
+import { PostTitle } from 'Components'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -46,10 +47,7 @@ class PostComplete extends React.Component {
 
         return (
           <div>
-            <h1 className="completePostTitle">
-              {post.title}
-              {postImage && <img className="postIcon" src={postImage} />}
-            </h1>
+            <PostTitle postImage={postImage} post={post} />
             <Highlight innerHTML={true} languages={['javascript', 'C']}>
               {post.body}
             </Highlight>

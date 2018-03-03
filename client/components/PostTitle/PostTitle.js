@@ -1,0 +1,22 @@
+import React from 'react'
+import { Link } from 'react-router-dom';
+import { createPostLinkFromJS } from 'helpers/links'
+
+class PostTitle extends React.Component {
+  //add prop types
+
+  render() {
+    const { post, postImage } = this.props;
+
+    return (
+      <h1 className="postTitle">
+        <Link to={createPostLinkFromJS(post)}>
+          {post.title}
+        </Link>
+        {postImage && <img className="postIcon" src={postImage} />}
+      </h1>
+    )
+  }
+}
+
+export default PostTitle
