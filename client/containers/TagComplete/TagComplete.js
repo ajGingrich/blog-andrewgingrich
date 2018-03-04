@@ -3,7 +3,7 @@ import Butter from 'buttercms';
 import { Link } from 'react-router-dom';
 import { createPostLinkFromJS } from 'helpers/links'
 import { createTextDate } from 'helpers/dates'
-import { MainHeader } from 'Components'
+import { MainHeader, PostSummary, PostTitle } from 'Components'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -44,12 +44,8 @@ class TagComplete extends React.Component {
             recentPosts.map((post) => {
               return (
                 <div key={post.slug}>
-                  <Link to={createPostLinkFromJS(post)}>
-                    <h1 className="postTitle">{post.title}</h1>
-                  </Link>
-                  <div className="postSummary">
-                    {post.summary} By {post.author.first_name} {post.author.last_name} on {createTextDate(post.published)}
-                  </div>
+                  <PostTitle post={post} />
+                  <PostSummary post={post} />
                 </div>
               )
             })

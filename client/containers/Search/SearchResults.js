@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
 import { createTextDate } from 'helpers/dates'
 import { createPostLinkFromJS } from 'helpers/links'
+import { PostTitle, PostSummary } from 'Components'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -56,12 +57,8 @@ class SearchResults extends React.Component {
           {resp && resp.data.map((result) => {
             return (
               <div key={result.slug}>
-                <Link to={createPostLinkFromJS(result)}>
-                  <h1 className="postTitle">{result.title}</h1>
-                </Link>
-                <div className="postSummary">
-                  {result.summary} by {result.author.first_name} {result.author.last_name} on {createTextDate(result.created)}
-                </div>
+                <PostTitle post={result} />
+                <PostSummary post={result} />
               </div>
             )
           })}

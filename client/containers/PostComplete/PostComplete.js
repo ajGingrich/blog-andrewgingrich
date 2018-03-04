@@ -42,12 +42,11 @@ class PostComplete extends React.Component {
     render() {
       if (this.state.loaded) {
         const post = this.state.post;
-        const postImage = post.featured_image
         const shortname = "andrewgingrich";
 
         return (
           <div>
-            <PostTitle postImage={postImage} post={post} />
+            <PostTitle postImage={post.featured_image} post={post} />
             <Highlight innerHTML={true} languages={['javascript', 'C']}>
               {post.body}
             </Highlight>

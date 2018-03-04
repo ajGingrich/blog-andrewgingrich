@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
 import { createPostLinkFromJS } from 'helpers/links'
-import { PostTitle } from 'Components'
+import { PostTitle, PostSummary } from 'Components'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -51,18 +51,10 @@ class PostList extends React.Component {
           }
           {
             this.state.resp.data.map((post) => {
-              const postImage = post.featured_image
-
               return (
                 <div key={post.slug}>
-                  <PostTitle postImage={postImage} post={post} />
-                  <div className="postSummary">
-                    {post.summary}
-                    &nbsp;
-                    <Link to={createPostLinkFromJS(post)}>
-                      Continue reading...
-                    </Link>
-                  </div>
+                  <PostTitle post={post} />
+                  <PostSummary post={post} />
                 </div>
               )
             })

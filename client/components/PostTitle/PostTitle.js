@@ -6,7 +6,8 @@ class PostTitle extends React.Component {
   //add prop types
 
   render() {
-    const { post, postImage } = this.props;
+    const { post } = this.props;
+    const postImage = post.featured_image;
 
     return (
       <h1 className="postTitle">
