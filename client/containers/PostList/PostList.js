@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
 import { createPostLinkFromJS } from 'helpers/links'
-import { PostTitle, PostSummary } from 'Components'
+import { PostTitle, PostSummary, Pagination } from 'Components'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
@@ -43,12 +43,7 @@ class PostList extends React.Component {
 
       return (
         <div>
-          {
-            <div className="pagination">
-              {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
-              {next_page && <Link className="nextLink" to={`/p/${next_page}`}>Next</Link>}
-            </div>
-          }
+          <Pagination nextPage={next_page} previousPage={previous_page} />
           {
             this.state.resp.data.map((post) => {
               return (
@@ -60,12 +55,7 @@ class PostList extends React.Component {
             })
           }
           <br />
-          {
-            <div className="pagination">
-              {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
-              {next_page && <Link className="nextLink" to={`/p/${next_page}`}>Next</Link>}
-            </div>
-          }
+          <Pagination nextPage={next_page} previousPage={previous_page} />
         </div>
       )
     } else {
