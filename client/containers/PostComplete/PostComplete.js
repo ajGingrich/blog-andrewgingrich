@@ -1,14 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { withRouter } from 'react-router'
 import Butter from 'buttercms';
 import ReactDisqusComments from 'react-disqus-comments';
 import Highlight from 'react-highlight'
+import { connect } from 'react-redux'
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+} from 'react-share'
+
 import { createPostUrl } from 'helpers/disqus'
 import { createTextDate } from 'helpers/dates'
 import { PostTitle } from 'Components'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);
 
+function browserSelector({browser}) {
+  return {browser}
+}
+
+@connect(browserSelector)
 class PostComplete extends React.Component {
 
   constructor(props) {
@@ -41,16 +57,34 @@ class PostComplete extends React.Component {
 
     render() {
       if (this.state.loaded) {
-        const post = this.state.post;
+        const { post } = this.state;
+        const { history } = this.props;
         const shortname = "andrewgingrich";
+        const blogUrl = "https://blog.andrewgingrich.com/#/";
+        const historyLocation = history && history.location.pathname.slice(1)
+        const postLocation = blogUrl + historyLocation;
 
         return (
-          <div>
+          <div className="postBody">
             <PostTitle postImage={post.featured_image} post={post} />
             <Highlight innerHTML={true} languages={['javascript', 'C']}>
               {post.body}
             </Highlight>
-            <span>Published on {createTextDate(post.published)}.</span>
+            <div className="postFooter">
+              <span className="publishedDate">Published on {createTextDate(post.published)}.</span>
+              <span>
+                <span className="shareIcon"><i className="fa fa-share-alt fa-lg" /></span> |
+              </span>
+              <FacebookShareButton url={postLocation} className="shareButtons">
+                <FacebookIcon round size={32} />
+              </FacebookShareButton>
+              <TwitterShareButton url={postLocation} className="shareButtons">
+                <TwitterIcon round size={32} />
+              </TwitterShareButton>
+              <LinkedinShareButton url={postLocation} className="shareButtons">
+                <LinkedinIcon round size={32} />
+              </LinkedinShareButton>
+            </div>
             <ReactDisqusComments
               shortname={shortname}
               identifier={post.slug}
@@ -70,4 +104,4 @@ class PostComplete extends React.Component {
   }
 }
 
-export default PostComplete
+export default withRouter(PostComplete)

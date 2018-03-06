@@ -27,6 +27,25 @@
     }
   }
 
+  .publishedDate {
+    position: relative;
+    margin-right: auto;
+  }
+
+  .postFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .shareButtons {
+    padding-left: 0.5em;
+  }
+
+  .shareIcon {
+    color: orange;
+  }
+
   .postIcon {
     height: 40px;
     width: auto;
@@ -34,6 +53,7 @@
     margin: -10px 0 0 5px;
   }
 
+  /**edit this here for all texts**/
   p {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 1.25em;

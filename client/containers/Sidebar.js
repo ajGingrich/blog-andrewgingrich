@@ -18,7 +18,6 @@ class Sidebar extends React.Component {
     const { browser, isMobile, sidebar } = this.props;
     const isSidebarOpen = sidebar && sidebar.isOpen
     const sidebarWidth = browser.is.infinity ? '262.5px ': '212.5px'
-    // const isBrowserLessThanLarge =
     const sidebarStyles = browser.lessThan.large ? {} : { width: sidebarWidth }
 
     let sidebarWrapperStyles = 'sidebarMobileWrapper col-xs-12 col-md-3 animated'

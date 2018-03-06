@@ -57,7 +57,7 @@ class NavbarSearch extends React.Component {
 
   render() {
     const { submitted, value } = this.state
-    const { browser, history, isOpen } = this.props
+    const { browser, isOpen } = this.props
     const isBrowserLessThanLarge = browser.lessThan.large
     const searchFormClass = isOpen ? 'searchForm animated fadeInDown' : 'searchForm animated fadeOutUp'
 
