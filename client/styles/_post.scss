@@ -29,11 +29,6 @@
 
   .postFooter {
 
-    .publishedDate {
-      position: relative;
-      margin-right: auto;
-    }
-
     .container {
       background: transparent;
       display: flex;
@@ -45,6 +40,26 @@
       flex-wrap: wrap;
       padding: 0;
       width: 100%;
+    }
+
+    @media (max-width: 460px) {
+      .postFooterClearFix {
+        flex-basis: 100%;
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+      }
+
+      .container {
+        justify-content: center;
+      }
+    }
+
+    @media (min-width: 461px) {
+      .publishedDate {
+        position: relative;
+        margin-right: auto;
+      }
     }
 
     .shareButtons {

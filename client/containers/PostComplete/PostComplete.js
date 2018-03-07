@@ -73,6 +73,7 @@ class PostComplete extends React.Component {
             <div className="postFooter">
               <div className="container">
                 <span className="publishedDate">Published on {createTextDate(post.published)}.</span>
+                <div className="postFooterClearFix"></div>
                   <span className="shareIcon"><i className="fa fa-share-alt fa-lg" /></span>
                   <span className="shareDivider">|</span>
                   <FacebookShareButton url={postLocation} className="shareButtons">
