@@ -54,7 +54,11 @@
   }
 
   /**edit this here for all texts**/
-  p {
+  p,
+  .publishedDate,
+  .shareIcon,
+  .shareDivider,
+  li {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 1.25em;
     line-height: 1.58;
