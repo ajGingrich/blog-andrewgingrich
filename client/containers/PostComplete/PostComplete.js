@@ -71,20 +71,20 @@ class PostComplete extends React.Component {
               {post.body}
             </Highlight>
             <div className="postFooter">
-              <span className="publishedDate">Published on {createTextDate(post.published)}.</span>
-              <span>
-                <span className="shareIcon"><i className="fa fa-share-alt fa-lg" /></span>
-                <span className="shareDivider"> |</span>
-              </span>
-              <FacebookShareButton url={postLocation} className="shareButtons">
-                <FacebookIcon round size={32} />
-              </FacebookShareButton>
-              <TwitterShareButton url={postLocation} className="shareButtons">
-                <TwitterIcon round size={32} />
-              </TwitterShareButton>
-              <LinkedinShareButton url={postLocation} className="shareButtons">
-                <LinkedinIcon round size={32} />
-              </LinkedinShareButton>
+              <div className="container">
+                <span className="publishedDate">Published on {createTextDate(post.published)}.</span>
+                  <span className="shareIcon"><i className="fa fa-share-alt fa-lg" /></span>
+                  <span className="shareDivider">|</span>
+                  <FacebookShareButton url={postLocation} className="shareButtons">
+                    <FacebookIcon round size={32} />
+                  </FacebookShareButton>
+                  <TwitterShareButton url={postLocation} className="shareButtons">
+                    <TwitterIcon round size={32} />
+                  </TwitterShareButton>
+                  <LinkedinShareButton url={postLocation} className="shareButtons">
+                    <LinkedinIcon round size={32} />
+                  </LinkedinShareButton>
+              </div>
             </div>
             <ReactDisqusComments
               shortname={shortname}
