@@ -47,8 +47,8 @@ exports.sendEmail = function(req, res, next) {
           firebaseController.updateSendGridCampaigns(idsArray)
         }).catch(function (error) {
           const errorClone = CircularJSON.stringify(error)
-          console.log(errorClone)
+          console.log(errorClone) // eslint-disable-line no-console
         });
-    }).catch(error => console.log(error))
+    }).catch(error => console.log(error)) // eslint-disable-line no-console
   }
 }

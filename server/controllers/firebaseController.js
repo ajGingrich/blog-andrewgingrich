@@ -41,7 +41,7 @@ exports.getSendGridCampaigns = function() {
     access_token.then(function(token) {
       axios.get(databaseUrl + '?access_token=' + token)
         .then(response => resolve(response.data || response.data.ids))
-        .catch(error => console.log(error))
+        .catch(error => console.log(error)) // eslint-disable-line no-console
     }).catch(error => reject(error))
   })
 }
@@ -58,7 +58,7 @@ exports.updateSendGridCampaigns = function(ids) {
     }
 
     axios.put(databaseUrl, data, config)
-      .then(response => console.log(response))
-      .catch(error => console.log(error))
+      .then(response => console.log(response)) // eslint-disable-line no-console
+      .catch(error => console.log(error)) // eslint-disable-line no-console
   }).catch(error => reject(error))
 }

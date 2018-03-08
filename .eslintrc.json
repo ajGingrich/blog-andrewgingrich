@@ -8,7 +8,11 @@
     },
     "rules": {
         "no-unreachable": 2,
-        "curly": ["error", "multi-line"]
+        "curly": ["error", "multi-line"],
+        "no-console": "error",
+        "no-empty": "error",
+        "no-compare-neg-zero": "error",
+        "no-constant-condition": "error"
     },
     "env": {},
     "parser": "babel-eslint"

@@ -57,5 +57,5 @@ app.use(function(err, req, res, next) {
 
 const port = 52000;
 server.listen(port,  function () {
-  console.log('Node.js listening on port ' + port + '...');
+  console.log('Node.js listening on port ' + port + '...'); // eslint-disable-line no-console
 });
