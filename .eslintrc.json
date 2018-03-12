@@ -12,7 +12,8 @@
         "no-console": "error",
         "no-empty": "error",
         "no-compare-neg-zero": "error",
-        "no-constant-condition": "error"
+        "no-constant-condition": "error",
+        "no-trailing-spaces": [2, { "skipBlankLines": true }]
     },
     "env": {},
     "parser": "babel-eslint"
