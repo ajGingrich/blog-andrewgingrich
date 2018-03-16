@@ -13,10 +13,11 @@ RUN npm install
 # If you are building your code for production
 # RUN npm install --only=production
 
-RUN npm run build-client
-
 # Bundle app source
 COPY . .
+
+# build the client before starting
+RUN npm run build-client
 
 EXPOSE 52000
 
