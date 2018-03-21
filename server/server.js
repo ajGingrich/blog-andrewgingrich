@@ -11,7 +11,7 @@ const compiler = webpack(config);
 const routes = require('./routes/index');
 
 const app = express();
-const isDevelopment  = app.get('env') !== "production";
+const isDevelopment  = app.get('env') !== 'production';
 const server = http.createServer(app);
 require('dotenv').config();
 
@@ -26,7 +26,7 @@ if (isDevelopment) {
     }));
     app.use(require('webpack-hot-middleware')(compiler));
 
-    app.get("*", (req, res, next) => {
+    app.get('*', (req, res, next) => {
         compiler.outputFileSystem.readFile(path.join(__dirname, '../client/index.html'), (err, result) => {
             if (err) {
                 return next(err);

@@ -16,7 +16,8 @@
         "no-trailing-spaces": [2, { "skipBlankLines": true }],
         "no-var": "error",
         "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
-        "comma-spacing": ["error", { "before": false, "after": true }]
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        "quotes": ["error", "single"]
     },
     "env": {},
     "parser": "babel-eslint"

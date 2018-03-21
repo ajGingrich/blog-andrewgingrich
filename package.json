@@ -8,7 +8,8 @@
     "test": "do some karma/mocha tests here",
     "build-client": "webpack --config=webpack.prod.config.js",
     "build-server": "babel -d ./build ./server",
-    "lint": "eslint **/*.js --ignore-pattern node_modules/",
+    "lint": "eslint ./ **/*.js",
+    "lint-fix": "eslint --fix ./ **/*.js",
     "start": "export NODE_ENV=production npm run clean && npm run build-server && node build/server.js",
     "serve": "nodemon --ignore 'client/' --exec babel-node server/server.js",
     "dev": "webpack"
