@@ -27,7 +27,7 @@ class Navigation extends React.Component {
         <ReactBurgerMenu key="hamburger-menu" />,
         <div className="navigation" key="mobile-nav-bar">
           <div className="container">
-            <div className="navInitials"><NavLink to={`/`}><p>AJG</p></NavLink></div>
+            <div className="navInitials"><NavLink to={'/'}><p>AJG</p></NavLink></div>
           </div>
         </div>
       ]
@@ -37,7 +37,7 @@ class Navigation extends React.Component {
           <div className="container">
             <ul>
               <li className="navInitials">
-                <NavLink to={`/`}>
+                <NavLink to={'/'}>
                   <span className ="tooltip-bottom" data-tooltip="Home">
                     AJG
                   </span>
@@ -47,7 +47,7 @@ class Navigation extends React.Component {
                 <NavbarSearch />
               </li>
               <li>
-                <NavLink to={`/tags`}>
+                <NavLink to={'/tags'}>
                   <span className ="tooltip-bottom" data-tooltip="Tags">
                     <i className="fa fa-tags fa-lg" />
                   </span>

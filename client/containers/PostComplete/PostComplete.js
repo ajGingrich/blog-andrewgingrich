@@ -59,8 +59,8 @@ class PostComplete extends React.Component {
       if (this.state.loaded) {
         const { post } = this.state;
         const { history } = this.props;
-        const shortname = "andrewgingrich";
-        const blogUrl = "https://blog.andrewgingrich.com/#/";
+        const shortname = 'andrewgingrich';
+        const blogUrl = 'https://blog.andrewgingrich.com/#/';
         const historyLocation = history && history.location.pathname.slice(1)
         const postLocation = blogUrl + historyLocation;
 

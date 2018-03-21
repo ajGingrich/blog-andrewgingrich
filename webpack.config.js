@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
@@ -39,8 +39,8 @@ module.exports = {
             filename: '../index.html'
         }),
         new ExtractTextPlugin({
-            filename: "./client/styles/style.css",
-            disable: process.env.NODE_ENV === "development"
+            filename: './client/styles/style.css',
+            disable: process.env.NODE_ENV === 'development'
         }),
         new Dotenv()
     ]

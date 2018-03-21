@@ -26,7 +26,7 @@ class Subscription extends React.Component {
 
     axios.post('/api/addcontact', data, config)
       .then(response => {
-        console.log(response, 'response')
+        console.log(response, 'response') // eslint-disable-line no-console
         this.setState({
           hasSubscription: true
         })
