@@ -15,7 +15,7 @@ const isDevelopment  = app.get('env') !== "production";
 const server = http.createServer(app);
 require('dotenv').config();
 
-app.use(favicon(path.join(__dirname,'../client','img','favicon.ico')));
+app.use(favicon(path.join(__dirname, '../client', 'img', 'favicon.ico')));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
