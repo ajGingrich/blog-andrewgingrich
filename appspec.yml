@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /projects/test
+    destination: /home/server/projects/blog-andrewgingrich
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
