@@ -12,6 +12,7 @@ const routes = require('./routes/index');
 
 const app = express();
 const isDevelopment  = app.get('env') !== 'production';
+const isTesting = app.get('env') === 'testing'
 const server = http.createServer(app);
 require('dotenv').config();
 
@@ -56,6 +57,20 @@ app.use(function(err, req, res, next) {
 });
 
 const port = 52000;
-server.listen(port,  function () {
+if (!isTesting) {
+  server.listen(port,  function () {
+    console.log('Node.js listening on port ' + port + '...'); // eslint-disable-line no-console
+  });
+}
+
+exports.listen = function(port) {
   console.log('Node.js listening on port ' + port + '...'); // eslint-disable-line no-console
-});
+  server.listen(port)
+}
+
+exports.close = function() {
+  console.log('Node.js closing server') // eslint-disable-line no-console
+  server.close()
+}
+
+export default server

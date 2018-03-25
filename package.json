@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "test": "mocha",
+    "test": "NODE_ENV=testing mocha --require babel-core/register ./test/**/*.spec.js",
     "build-client": "webpack --config=webpack.prod.config.js",
     "build-server": "babel -d ./build ./server",
     "lint": "eslint ./ **/*.js",
@@ -61,6 +61,8 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
     "css-loader": "^0.28.7",
     "eslint": "^4.18.0",
     "eslint-config-google": "^0.9.1",
