@@ -17,7 +17,8 @@
         "no-var": "error",
         "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
         "comma-spacing": ["error", { "before": false, "after": true }],
-        "quotes": ["error", "single"]
+        "quotes": ["error", "single"],
+        "prefer-const": ["error", { "destructuring": "any","ignoreReadBeforeAssign": false }]
     },
     "env": {},
     "parser": "babel-eslint"

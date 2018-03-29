@@ -26,14 +26,14 @@ class PostList extends React.Component {
   }
 
   componentWillMount() {
-    let page = this.props.page;
+    const page = this.props.page;
     this.fetchPosts(page)
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({loaded: false});
 
-    let page = nextProps.page;
+    const page = nextProps.page;
     this.fetchPosts(page)
   }
 

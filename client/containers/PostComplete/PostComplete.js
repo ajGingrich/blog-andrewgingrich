@@ -45,13 +45,13 @@ class PostComplete extends React.Component {
   }
 
   componentWillMount() {
-    let slug = this.props.slug;
+    const slug = this.props.slug;
     this.fetchPost(slug);
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({loaded: false});
-    let slug = nextProps.slug;
+    const slug = nextProps.slug;
     this.fetchPost(slug)
   }
 
