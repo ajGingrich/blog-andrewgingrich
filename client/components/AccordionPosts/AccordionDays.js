@@ -1,6 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { Map, groupBy, map } from 'immutable';
 import LinkDescription from './LinkDescription';
 import { getOrdinalIndicator, getSingleDigitDate } from 'helpers/dates'
 import {

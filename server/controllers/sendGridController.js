@@ -22,7 +22,7 @@ exports.addContact = function(req, res, next) {
     });
 }
 
-exports.sendEmail = function(req, res, next) {
+exports.sendEmail = function(req, res, next) { // eslint-disable-line no-unused-vars
   const isPostCreated = req.body
   const data = JSON.stringify({})
   const campaignIds = firebaseController.getSendGridCampaigns()
@@ -41,8 +41,6 @@ exports.sendEmail = function(req, res, next) {
 
       axios.post(sendUrl, data, config)
         .then(function (response) {
-          const responseClone = CircularJSON.stringify(response)
-
           Promise.resolve(response)
           firebaseController.updateSendGridCampaigns(idsArray)
         }).catch(function (error) {

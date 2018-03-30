@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink, Redirect } from 'react-router-dom'
 import SearchResults from './SearchResults'
 
 class SearchPage extends React.Component {

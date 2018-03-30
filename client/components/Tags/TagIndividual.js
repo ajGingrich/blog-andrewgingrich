@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Butter from 'buttercms';
-
-const butter = Butter(process.env.BUTTERCMS_KEY);
 
 class TagIndividual extends React.Component {
 

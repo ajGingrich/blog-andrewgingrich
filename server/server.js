@@ -41,7 +41,7 @@ if (isDevelopment) {
 
 // view engine setup
 app.set('view engine', 'html');
-app.engine('html', function (path, options, callbacks) {
+app.engine('html', function (path, options, callback) {
     fs.readFile(path, 'utf-8', callback)
 });
 
@@ -51,7 +51,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use('/', routes);
 
 // catch error and send to client
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   res.status(err.status || 500);
   res.send(err)
 });

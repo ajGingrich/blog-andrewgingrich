@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import {
   NavbarSearch,
   SideBarController,
-  MobileLinkIcons,
   ReactBurgerMenu,
 } from 'Components'
 

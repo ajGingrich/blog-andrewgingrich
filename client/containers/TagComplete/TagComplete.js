@@ -1,8 +1,5 @@
 import React from 'react';
 import Butter from 'buttercms';
-import { Link } from 'react-router-dom';
-import { createPostLinkFromJS } from 'helpers/links'
-import { createTextDate } from 'helpers/dates'
 import { MainHeader, PostSummary, PostTitle } from 'Components'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);

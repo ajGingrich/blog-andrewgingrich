@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import { withRouter } from 'react-router'
 import Butter from 'buttercms';
 import ReactDisqusComments from 'react-disqus-comments';

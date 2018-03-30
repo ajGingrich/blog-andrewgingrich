@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
-import { createPostLinkFromJS } from 'helpers/links'
 import { PostTitle, PostSummary, Pagination } from 'Components'
 
 const butter = Butter(process.env.BUTTERCMS_KEY);

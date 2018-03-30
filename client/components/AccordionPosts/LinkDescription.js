@@ -1,5 +1,4 @@
 import React from 'react';
-import { map } from 'immutable'
 import { Link } from 'react-router-dom';
 import { createPostLinkFromImmutable } from 'helpers/links'
 import { action as toggleMenu } from 'redux-burger-menu'

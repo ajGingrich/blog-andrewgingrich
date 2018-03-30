@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import Menu from './Menu'
 import { hamburgerMenuStyles } from 'constants/hamburgerMenuStyles'
 import { Sidebar } from 'Containers'

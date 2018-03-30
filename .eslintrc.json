@@ -6,6 +6,9 @@
             "jsx": true
         }
     },
+    "plugins": [
+      "react"
+    ],
     "rules": {
         "no-unreachable": 2,
         "curly": ["error", "multi-line"],
@@ -19,7 +22,10 @@
         "comma-spacing": ["error", { "before": false, "after": true }],
         "quotes": ["error", "single"],
         "prefer-const": ["error", { "destructuring": "any","ignoreReadBeforeAssign": false }],
-        "no-const-assign": "error"
+        "no-const-assign": "error",
+        "no-unused-vars": "error",
+        "react/jsx-uses-vars": "error",
+        "react/jsx-uses-react": "error"
     },
     "env": {},
     "parser": "babel-eslint"

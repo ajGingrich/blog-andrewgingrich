@@ -1,6 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { Map, fromJS, map } from 'immutable'
 import AccordionDays from './AccordionDays'
 import { getNonArrayMonth, getSingleDigitDate } from 'helpers/dates'
 import {

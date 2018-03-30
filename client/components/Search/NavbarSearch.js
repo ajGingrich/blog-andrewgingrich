@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink, Redirect } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { connect } from 'react-redux'
 import { action as toggleMenu } from 'redux-burger-menu'
@@ -56,7 +55,7 @@ class NavbarSearch extends React.Component {
   }
 
   render() {
-    const { submitted, value } = this.state
+    const { value } = this.state
     const { browser, isOpen } = this.props
     const isBrowserLessThanLarge = browser.lessThan.large
     const searchFormClass = isOpen ? 'searchForm animated fadeInDown' : 'searchForm animated fadeOutUp'

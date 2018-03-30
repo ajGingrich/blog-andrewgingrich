@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-import axios from 'axios';
 const router = express.Router();
 import sendGridController from '../controllers/sendGridController';
 

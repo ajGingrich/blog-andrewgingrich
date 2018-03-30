@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import Subscription from './Subscription'
 
 class SubscriptionWrapper extends React.Component {

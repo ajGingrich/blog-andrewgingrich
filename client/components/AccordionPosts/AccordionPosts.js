@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
 import Butter from 'buttercms';
 import _ from 'lodash';
-import { fromJS, map } from 'immutable';
+import { fromJS } from 'immutable';
 import {
     Accordion,
     AccordionItem,
