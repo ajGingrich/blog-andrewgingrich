@@ -1,6 +1,6 @@
 [
     {
-        "name": "ecr-blog",
+        "name": "blog-container",
         "imageUri": "977082451932.dkr.ecr.us-east-1.amazonaws.com/ecr-blog:latest"
     }
 ]
