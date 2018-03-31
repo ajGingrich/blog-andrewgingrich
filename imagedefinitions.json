@@ -1,6 +1,6 @@
 [
     {
-        "name": "blog-app",
-        "imageUri": "registry.hub.docker.com/coys3000/blog:latest"
+        "name": "ecr-blog",
+        "imageUri": "977082451932.dkr.ecr.us-east-1.amazonaws.com/ecr-blog:latest"
     }
 ]
