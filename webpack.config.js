@@ -8,22 +8,22 @@ module.exports = {
     entry: [
         'react-hot-loader/patch',
         'webpack-hot-middleware/client',
-        './client/index.js'
+        './src/index.js'
     ],
     output: {
-        path: path.join(__dirname, 'client/dist'),
+        path: path.join(__dirname, 'src/dist'),
         publicPath: '/',
         filename: 'bundle.js'
     },
     resolve: {
       alias: {
-        'Containers': path.join(__dirname, 'client/containers'),
-        'Components': path.join(__dirname, 'client/components'),
-        'actions': path.join(__dirname, 'client/actions'),
-        'store': path.join(__dirname, 'client/store')
+        'Containers': path.join(__dirname, 'src/containers'),
+        'Components': path.join(__dirname, 'src/components'),
+        'actions': path.join(__dirname, 'src/actions'),
+        'store': path.join(__dirname, 'src/store')
       },
       extensions: ['.js', '.json'],
-      modules: [path.join(__dirname, 'client/'), 'node_modules']
+      modules: [path.join(__dirname, 'src/'), 'node_modules']
     },
     module: {
         loaders: [
@@ -35,11 +35,11 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            template: 'client/index.template.ejs',
+            template: 'src/index.template.ejs',
             filename: '../index.html'
         }),
         new ExtractTextPlugin({
-            filename: './client/styles/style.css',
+            filename: './src/styles/style.css',
             disable: process.env.NODE_ENV === 'development'
         }),
         new Dotenv()

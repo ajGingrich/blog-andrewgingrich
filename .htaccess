@@ -1,4 +1,4 @@
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-RewriteRule ^(.*)$ http://127.0.0.1:52000/$1 [P,L]
+RewriteRule ^(.*)$ http://127.0.0.1:4040/$1 [P,L]

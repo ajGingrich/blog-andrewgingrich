@@ -19,6 +19,6 @@ COPY . .
 # build the client before starting
 RUN npm run build-client
 
-EXPOSE 52000
+EXPOSE 4040
 
 CMD [ "npm", "start" ]

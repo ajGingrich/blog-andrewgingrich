@@ -7,4 +7,4 @@ bower_components
 package-lock.json
 serviceAccountKey.json
 build/
-client/dist
+src/dist
