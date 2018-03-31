@@ -1,0 +1,6 @@
+[
+    {
+        "name": "blog-app",
+        "imageUri": "registry.hub.docker.com/coys3000/blog:latest"
+    }
+]
