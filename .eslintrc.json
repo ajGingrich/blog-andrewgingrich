@@ -25,7 +25,8 @@
         "no-const-assign": "error",
         "no-unused-vars": "error",
         "react/jsx-uses-vars": "error",
-        "react/jsx-uses-react": "error"
+        "react/jsx-uses-react": "error",
+        "no-confusing-arrow": ["error", {"allowParens": true}]
     },
     "env": {},
     "parser": "babel-eslint"
