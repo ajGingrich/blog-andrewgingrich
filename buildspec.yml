@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  parameter-store:
+    BUTTERCMS_KEY: "BUTTERCMS_KEY"
+
 phases:
   pre_build:
     commands:
