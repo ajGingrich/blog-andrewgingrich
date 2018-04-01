@@ -26,7 +26,8 @@
         "no-unused-vars": "error",
         "react/jsx-uses-vars": "error",
         "react/jsx-uses-react": "error",
-        "no-confusing-arrow": ["error", {"allowParens": true}]
+        "no-confusing-arrow": ["error", {"allowParens": true}],
+        "no-global-assign": "error"
     },
     "env": {},
     "parser": "babel-eslint"

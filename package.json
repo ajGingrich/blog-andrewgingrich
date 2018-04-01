@@ -8,8 +8,8 @@
     "test": "NODE_ENV=testing mocha --require babel-core/register ./test/**/*.spec.js",
     "build-client": "webpack --config=webpack.prod.config.js",
     "build-server": "babel -d ./build ./server",
-    "lint": "eslint ./ **/*.js",
-    "lint-fix": "eslint --fix ./ **/*.js",
+    "lint": "eslint ./",
+    "lint-fix": "eslint --fix ./",
     "start": "export NODE_ENV=production npm run clean && npm run build-server && node build/server.js",
     "serve": "nodemon --ignore 'src/' --exec babel-node server/server.js",
     "dev": "webpack"
