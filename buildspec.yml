@@ -3,6 +3,7 @@ version: 0.2
 env:
   parameter-store:
     BUTTERCMS_KEY: "BUTTERCMS_KEY"
+    FIREBASE_KEY: "FIREBASE_KEY"
 
 phases:
   pre_build:
@@ -10,8 +11,9 @@ phases:
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
       - echo Creating .env File
-      - echo BUTTERCMS_KEY=$BUTTERCMS_KEY
       - echo BUTTERCMS_KEY=$BUTTERCMS_KEY > .env
+      - echo Creating serviceAccountKey.json
+      - echo $FIREBASE_KEY > serviceAccountKey.json
   build:
     commands:
       - echo Build started on `date`
