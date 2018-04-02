@@ -28,7 +28,8 @@
         "react/jsx-uses-react": "error",
         "no-confusing-arrow": ["error", {"allowParens": true}],
         "no-global-assign": "error",
-        "valid-typeof": "error"
+        "valid-typeof": "error",
+        "semi-spacing": ["error", {"before": false, "after": false}]
     },
     "env": {},
     "parser": "babel-eslint"
