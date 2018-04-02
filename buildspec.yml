@@ -7,7 +7,7 @@ env:
     SENDGRID_KEY: "SENDGRID_KEY"
 
 phases:
-  pre_build:x
+  pre_build:
     commands:
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
