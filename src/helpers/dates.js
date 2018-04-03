@@ -14,7 +14,9 @@ function getNonArrayMonth(month) {
   return months[month - 1]
 }
 
-function getOrdinalIndicator(date) {
+function getOrdinalIndicator(dateParam) {
+  let date = dateParam
+
   if (typeof date === 'number') date = convertNumberDatetoString(date)
 
   if (date === '01' || date === '21' || date === '31') return 'st'
