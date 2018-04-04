@@ -10,10 +10,6 @@ import {
 
 class AccordionMonths extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { year, postsFromYear } = this.props
     const monthPostList = postsFromYear.groupBy(item => item.get('published').slice(5, 7))

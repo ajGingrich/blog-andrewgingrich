@@ -6,10 +6,6 @@ import store from 'store'
 
 class LinkDescription extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   _handleCloseMenu() {
     const isOpen = false
     store.dispatch(toggleMenu(isOpen));

@@ -9,10 +9,6 @@ function stateSelector({ browser, sidebar }) {
 @connect(stateSelector)
 class Sidebar extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { browser, isMobile, sidebar } = this.props;
     const isSidebarOpen = sidebar && sidebar.isOpen

@@ -2,9 +2,6 @@ import React from 'react';
 import PostList from './PostList';
 
 class PostListWrapper extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const params = this.props.match.params;
