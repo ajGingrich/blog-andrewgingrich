@@ -38,7 +38,7 @@ class Navigation extends React.Component {
               <li className="navInitials">
                 <NavLink to={'/'}>
                   <span className ="tooltip-bottom" data-tooltip="Home">
-                    AJG
+                    AJG!
                   </span>
                 </NavLink>
               </li>
