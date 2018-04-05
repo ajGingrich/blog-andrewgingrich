@@ -15,7 +15,7 @@ class PostList extends React.Component {
   }
 
   fetchPosts(page) {
-    butter.post.list({page: page, page_size: 10}).then((resp) => {
+    butter.post.list({page: page, page_size: 10}).then((resp) => { // eslint-disable-line camelcase
       this.setState({
         loaded: true,
         resp: resp.data
@@ -37,11 +37,11 @@ class PostList extends React.Component {
 
   render() {
     if (this.state.loaded) {
-      const { next_page, previous_page } = this.state.resp.meta;
+      const { next_page: nextPage, previous_page: previousPage } = this.state.resp.meta; // eslint-disable-line camelcase
 
       return (
         <div>
-          <Pagination nextPage={next_page} previousPage={previous_page} />
+          <Pagination nextPage={nextPage} previousPage={previousPage} />
           {
             this.state.resp.data.map((post) => {
               return (
@@ -53,7 +53,7 @@ class PostList extends React.Component {
             })
           }
           <br />
-          <Pagination nextPage={next_page} previousPage={previous_page} />
+          <Pagination nextPage={nextPage} previousPage={previousPage} />
         </div>
       )
     } else {

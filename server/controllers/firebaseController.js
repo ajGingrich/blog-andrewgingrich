@@ -34,11 +34,11 @@ const getFirebaseToken = function() {
 }
 
 exports.getSendGridCampaigns = function() {
-  const access_token = getFirebaseToken()
+  const accessToken = getFirebaseToken()
 
   return new Promise(function(resolve, reject) {
-    access_token.then(function(token) {
-      axios.get(databaseUrl + '?access_token=' + token)
+    accessToken.then(function(token) {
+      axios.get(databaseUrl + '?access_token=' + token) // eslint-disable-line camelcase
         .then(response => resolve(response.data || response.data.ids))
         .catch(error => console.log(error)) // eslint-disable-line no-console
     }).catch(error => reject(error))
@@ -46,10 +46,10 @@ exports.getSendGridCampaigns = function() {
 }
 
 exports.updateSendGridCampaigns = function(ids) {
-  const access_token = getFirebaseToken()
+  const accessToken = getFirebaseToken()
   const data = JSON.stringify(ids)
 
-  access_token.then(function(token) {
+  accessToken.then(function(token) {
     const config = {
       headers: {
         'authorization': 'Bearer ' + token

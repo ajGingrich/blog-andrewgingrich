@@ -10,6 +10,7 @@
       "react"
     ],
     "rules": {
+        "camelcase": "error",
         "comma-spacing": ["error", { "before": false, "after": true }],
         "curly": ["error", "multi-line"],
         "eqeqeq": ["error", "always"],

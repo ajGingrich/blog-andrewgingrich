@@ -23,7 +23,7 @@ class AccordionPosts extends React.Component {
   }
 
   fetchPosts() {
-    butter.post.list({page: 1, page_size: 100000}).then((resp) => {
+    butter.post.list({page: 1, page_size: 100000}).then((resp) => { // eslint-disable-line camelcase
       this.setState({
         loaded: true,
         resp: resp.data
