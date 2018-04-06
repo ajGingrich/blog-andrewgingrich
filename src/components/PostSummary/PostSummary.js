@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link }  from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { createPostLinkFromJS } from 'helpers/links'
 
 class PostSummary extends React.Component {

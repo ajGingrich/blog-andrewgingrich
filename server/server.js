@@ -11,7 +11,7 @@ const compiler = webpack(config);
 const routes = require('./routes/index');
 
 const app = express();
-const isDevelopment  = app.get('env') !== 'production';
+const isDevelopment = app.get('env') !== 'production';
 const isTesting = app.get('env') === 'testing'
 const server = http.createServer(app);
 require('dotenv').config();
@@ -58,7 +58,7 @@ app.use(function(err, req, res, next) { // eslint-disable-line no-unused-vars
 
 const port = 4040;
 if (!isTesting) {
-  server.listen(port,  function () {
+  server.listen(port, function () {
     console.log('Node.js listening on port ' + port + '...'); // eslint-disable-line no-console
   });
 }
