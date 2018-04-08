@@ -15,6 +15,11 @@ phases:
       - echo BUTTERCMS_KEY=$BUTTERCMS_KEY > .env
       - echo SENDGRID_KEY=$SENDGRID_KEY >> .env
       - cat .env
+      - echo Installing jq...
+      - wget -qP /usr/local/bin https://stedolan.github.io/jq/download/linux64/jq && chmod +x /usr/local/bin/jq
+      - echo Saving firebase key...
+      - echo $FIREBASE_KEY
+      - echo $(cat FIREBASE_KEY | jq .) > serviceAccountKey.json
       - cat serviceAccountKey.json
   build:
     commands:
