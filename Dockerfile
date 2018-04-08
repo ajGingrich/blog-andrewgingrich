@@ -1,22 +1,19 @@
-FROM node:carbon
+FROM node:8.9.2
 
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+COPY package.json ./
 
-RUN npm install
-# If you are building your code for production
-# RUN npm install --only=production
+# Install only for production
+RUN npm install --only=production
 
 # Bundle app source
 COPY . .
 
-# build the client before starting
+# build the react client
 RUN npm run build-client
 
 EXPOSE 4040

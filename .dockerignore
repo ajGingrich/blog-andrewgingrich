@@ -1,2 +1,14 @@
+# Node and project specific
 node_modules
-npm-debug.log
+build/
+src/dist
+
+# Logs
+logs
+*.log
+
+# Ignore .git folder
+.git*
+
+# Ignore all Windows, Linux and OSX special files
+# https://www.gitignore.io/api/windows,linux,osx,vim
