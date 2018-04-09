@@ -11,6 +11,7 @@ const compiler = webpack(config);
 const routes = require('./routes/index');
 
 const app = express();
+const isProduction = app.get('env') === 'production'
 const isDevelopment = app.get('env') !== 'production';
 const isTesting = app.get('env') === 'testing'
 const server = http.createServer(app);
@@ -37,6 +38,13 @@ if (isDevelopment) {
             res.end();
         });
     });
+} else if (isProduction) {
+  //use gzip file
+  app.get('*.js', function (req, res, next) {
+    req.url = req.url + '.gz';
+    res.set('Content-Encoding', 'gzip');
+    next();
+  });
 }
 
 // view engine setup
@@ -55,13 +63,6 @@ app.use(function(err, req, res, next) { // eslint-disable-line no-unused-vars
   res.status(err.status || 500);
   res.send(err)
 });
-
-//use gzip file
-// app.get('*.js', function (req, res, next) {
-//   req.url = req.url + '.gz';
-//   res.set('Content-Encoding', 'gzip');
-//   next();
-// });
 
 const port = 4040;
 if (!isTesting) {

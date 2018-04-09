@@ -37,7 +37,7 @@ config.plugins.push(
   new CompressionPlugin({
     asset: "[path].gz[query]",
     algorithm: "gzip",
-    test: /\.js$|\.html$/,
+    test: /\.js$/,
     threshold: 0,
     minRatio: 0.6
   })
