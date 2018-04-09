@@ -3,8 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Root from './Root'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/font-awesome/css/font-awesome.min.css';
 import '../node_modules/highlight.js/styles/darcula.css';
 import '../node_modules/react-accessible-accordion/dist/react-accessible-accordion.css';
 import './styles/style.scss';

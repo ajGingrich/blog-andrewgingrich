@@ -31,7 +31,7 @@ module.exports = {
             { test: /\.s?css$/,
               use: ExtractTextPlugin.extract({
                   fallback: 'style-loader',
-                  use: [{ loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader']
+                  use: [{ loader: 'css-loader', options: { importLoaders: 1, minimize: true } }, 'postcss-loader', 'sass-loader']
               })
             },
             { test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=1000000' }
