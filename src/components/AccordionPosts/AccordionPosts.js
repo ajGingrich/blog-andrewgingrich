@@ -1,6 +1,6 @@
 import React from 'react';
 import Butter from 'buttercms';
-import _ from 'lodash';
+import _ from 'lodash/core';
 import { fromJS } from 'immutable';
 import {
     Accordion,

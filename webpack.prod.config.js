@@ -1,5 +1,8 @@
 const config = require('./webpack.config.js');
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 //remove hot loader and hot middleware
 config.entry.splice(0, 2);
@@ -17,10 +20,29 @@ config.plugins.push(
 );
 
 config.plugins.push(
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false
-    }
+  new MinifyPlugin()
+)
+
+config.plugins.push(
+  new UglifyJsPlugin({
+    uglifyOptions:{
+      output: {
+        comments: false, // remove comments
+      },
+      compress: {
+        warnings: false, // good for prod apps so users can't peek behind curtain
+      }
+    },
+  }),
+);
+
+config.plugins.push(
+  new CompressionPlugin({
+    asset: "[path].gz[query]",
+    algorithm: "gzip",
+    test: /\.js$|\.html$/,
+    threshold: 0,
+    minRatio: 0.6
   })
 );
 

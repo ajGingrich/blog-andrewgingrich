@@ -56,6 +56,13 @@ app.use(function(err, req, res, next) { // eslint-disable-line no-unused-vars
   res.send(err)
 });
 
+//use gzip file
+// app.get('*.js', function (req, res, next) {
+//   req.url = req.url + '.gz';
+//   res.set('Content-Encoding', 'gzip');
+//   next();
+// });
+
 const port = 4040;
 if (!isTesting) {
   server.listen(port, function () {

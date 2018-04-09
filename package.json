@@ -6,13 +6,13 @@
   "scripts": {
     "clean": "rm -rf build && mkdir build",
     "test": "NODE_ENV=testing mocha --require babel-core/register ./test/**/*.spec.js",
-    "build-client": "webpack --config=webpack.prod.config.js",
+    "build-client": "webpack --config=webpack.prod.config.js --progress",
     "build-server": "babel -d ./build ./server",
     "lint": "eslint ./",
     "lint-fix": "eslint --fix ./",
     "start": "export NODE_ENV=production npm run clean && npm run build-server && node build/server.js",
     "serve": "nodemon --ignore 'src/' --exec babel-node server/server.js",
-    "dev": "webpack"
+    "dev": "webpack --progress"
   },
   "dependencies": {
     "autoprefixer": "^7.2.1",
@@ -29,6 +29,7 @@
     "bootstrap": "^3.3.7",
     "buttercms": "^1.0.17",
     "circular-json": "^0.5.1",
+    "compression-webpack-plugin": "^1.1.11",
     "css-loader": "^0.28.7",
     "dotenv": "^5.0.0",
     "dotenv-webpack": "^1.5.4",
@@ -62,6 +63,7 @@
     "sass-loader": "^6.0.6",
     "serve-favicon": "^2.4.5",
     "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1"
   },
