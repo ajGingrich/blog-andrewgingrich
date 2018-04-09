@@ -2,7 +2,6 @@ const config = require('./webpack.config.js');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
-const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 //remove hot loader and hot middleware
 config.entry.splice(0, 2);
@@ -20,10 +19,6 @@ config.plugins.push(
 );
 
 config.plugins.push(
-  new MinifyPlugin()
-)
-
-config.plugins.push(
   new UglifyJsPlugin({
     uglifyOptions:{
       output: {
@@ -35,6 +30,8 @@ config.plugins.push(
     },
   }),
 );
+
+// make extract plugin only for production??
 
 config.plugins.push(
   new CompressionPlugin({

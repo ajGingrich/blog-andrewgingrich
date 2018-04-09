@@ -28,7 +28,12 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.jsx?$/, loaders: ['babel-loader'], exclude: /node_modules/ },
-            { test: /\.s?css$/, loaders: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader'] },
+            { test: /\.s?css$/,
+              use: ExtractTextPlugin.extract({
+                  fallback: 'style-loader',
+                  use: [{ loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader']
+              })
+            },
             { test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=1000000' }
       ]
     },
@@ -38,10 +43,7 @@ module.exports = {
             template: 'src/index.template.ejs',
             filename: '../index.html'
         }),
-        new ExtractTextPlugin({
-            filename: './src/styles/style.css',
-            disable: process.env.NODE_ENV === 'development'
-        }),
+        new ExtractTextPlugin('style.bundle.css'),
         new Dotenv()
     ]
 };
