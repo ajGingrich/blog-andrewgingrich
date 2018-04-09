@@ -31,12 +31,10 @@ config.plugins.push(
   }),
 );
 
-// make extract plugin only for production??
-
 config.plugins.push(
   new CompressionPlugin({
-    asset: "[path].gz[query]",
-    algorithm: "gzip",
+    asset: '[path].gz[query]',
+    algorithm: 'gzip',
     test: /\.js$/,
     threshold: 0,
     minRatio: 0.6
