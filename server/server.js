@@ -39,12 +39,17 @@ if (isDevelopment) {
         });
     });
 } else if (isProduction) {
-  //use gzip file
-  app.get('*.js', function (req, res, next) {
+
+  const serveGzip = contentType => (req, res, next) => {
     req.url = req.url + '.gz';
     res.set('Content-Encoding', 'gzip');
+    res.set('Content-Type', contentType);
+
     next();
-  });
+  };
+
+  app.get('*.js', serveGzip('text/javascript'));
+  app.get('*.css', serveGzip('text/css'));
 }
 
 // view engine setup
