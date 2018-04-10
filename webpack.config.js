@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: [
@@ -28,12 +28,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.jsx?$/, loaders: ['babel-loader'], exclude: /node_modules/ },
-            { test: /\.s?css$/,
-              use: ExtractTextPlugin.extract({
-                  fallback: 'style-loader',
-                  use: [{ loader: 'css-loader', options: { importLoaders: 1, minimize: true } }, 'postcss-loader', 'sass-loader']
-              })
-            },
+            { test: /\.s?css$/, loaders: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader'] },
             { test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=1000000' }
       ]
     },
@@ -43,7 +38,7 @@ module.exports = {
             template: 'src/index.template.ejs',
             filename: '../index.html'
         }),
-        new ExtractTextPlugin('style.bundle.css'),
-        new Dotenv()
+        new Dotenv(),
+        new BundleAnalyzerPlugin()
     ]
 };

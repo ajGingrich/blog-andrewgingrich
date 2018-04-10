@@ -7,7 +7,7 @@
     "clean": "rm -rf build && mkdir build",
     "clean-client": "rm -rf src/dist && mkdir src/dist",
     "test": "NODE_ENV=testing mocha --require babel-core/register ./test/**/*.spec.js",
-    "build-client": "npm run clean-client && webpack --config=webpack.prod.config.js --progress",
+    "build-client": "npm run clean-client && webpack -p --config=webpack.prod.config.js --progress",
     "build-server": "babel -d ./build ./server",
     "lint": "eslint ./",
     "lint-fix": "eslint --fix ./",
@@ -76,6 +76,7 @@
     "eslint-plugin-react": "^7.7.0",
     "mocha": "^5.0.5",
     "nodemon": "^1.14.11",
+    "webpack-bundle-analyzer": "^2.11.1",
     "webpack-dev-server": "^2.9.3",
     "webpack-hot-middleware": "^2.20.0"
   },
