@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: [ './src/index.js' ],
@@ -62,7 +63,6 @@ module.exports = {
           test: /\.js$/,
           threshold: 0,
           minRatio: 0.8
-        }),
-        new BundleAnalyzerPlugin()
+        })
     ]
 };
