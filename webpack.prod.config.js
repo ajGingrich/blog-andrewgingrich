@@ -32,7 +32,6 @@ module.exports = {
                   use: [{ loader: 'css-loader', options: { importLoaders: 1, minimize: true } }, 'postcss-loader', 'sass-loader']
               })
             },
-            // { test: /\.s?css$/, loaders: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader', 'sass-loader'] },
             { test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=1000000' }
       ]
     },
