@@ -23,6 +23,7 @@ exports.addContact = function(req, res, next) {
 }
 
 exports.sendEmail = function(req, res, next) { // eslint-disable-line no-unused-vars
+  console.log('first and most important: received hook')
   const isPostCreated = req.body
   const data = JSON.stringify({})
   const campaignIds = firebaseController.getSendGridCampaigns()
