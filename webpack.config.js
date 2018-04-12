@@ -38,7 +38,7 @@ module.exports = {
             template: 'src/index.template.ejs',
             filename: '../index.html'
         }),
-        new Dotenv(),
+        new Dotenv()
         // new BundleAnalyzerPlugin()
     ]
 };
