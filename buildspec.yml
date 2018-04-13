@@ -14,7 +14,7 @@ phases:
       - echo Creating .env File
       - echo BUTTERCMS_KEY=$BUTTERCMS_KEY > .env
       - echo SENDGRID_KEY=$SENDGRID_KEY >> .env
-      - echo Saving firebase key...
+      - echo Saving firebase key....
       - echo $FIREBASE_KEY > serviceAccountKey.json
       - cat serviceAccountKey.json
   build:
