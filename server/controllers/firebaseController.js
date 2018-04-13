@@ -1,9 +1,9 @@
-import path from 'path';
 import axios from 'axios'
-
+const appRoot = require('app-root-path');
 const google = require('googleapis');
 const Promise = require('bluebird');
-const serviceAccount = path.resolve('serviceAccountKey.json')
+const serviceAccount = require(appRoot + '/serviceAccountKey.json')
+
 const scopes = [
   'https://www.googleapis.com/auth/userinfo.email',
   'https://www.googleapis.com/auth/firebase.database'
